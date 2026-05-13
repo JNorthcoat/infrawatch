@@ -1,0 +1,366 @@
+[
+  {
+    "id": "n1",
+    "title": "Western Sydney Airport Metro contractor sacked after labour-fraud probe — 2027 opening at risk",
+    "src": "Australian Aviation",
+    "url": "https://australianaviation.com.au/2026/05/western-sydney-airport-metro-jettisons-contractor-after-scandal/",
+    "date": "2026-05-11T00:00:00.000Z",
+    "cats": [
+      "transport",
+      "political"
+    ],
+    "sev": "critical",
+    "pids": [
+      2
+    ]
+  },
+  {
+    "id": "n2",
+    "title": "Sydney property market forecast: ANZ projects −0.7% for 2026, +2.6% recovery in 2027",
+    "src": "Property Update",
+    "url": "https://propertyupdate.com.au/property-investment-sydney/",
+    "date": "2026-05-10T00:00:00.000Z",
+    "cats": [
+      "housing"
+    ],
+    "sev": "medium",
+    "pids": [
+      10,
+      11
+    ]
+  },
+  {
+    "id": "n3",
+    "title": "Sydney house prices fall 0.7% in April 2026 — quarterly decline of 1.4% as upper quartile leads downturn",
+    "src": "Cotality (CoreLogic)",
+    "url": "https://www.cotality.com/au/insights/articles/2025-delivers-strong-housing-gains-but-2026-set-for-a-softer-landing-as-rate-fears-and-affordability-bite",
+    "date": "2026-04-30T00:00:00.000Z",
+    "cats": [
+      "housing"
+    ],
+    "sev": "medium",
+    "pids": [
+      10,
+      11,
+      29,
+      30
+    ]
+  },
+  {
+    "id": "n4",
+    "title": "Snowy 2.0 transforms into $42 billion sinkhole — energy economists call for royal commission",
+    "src": "MacroBusiness",
+    "url": "https://www.macrobusiness.com.au/2026/04/snowy-hydro-2-0-transforms-into-42-billion-sinkhole/",
+    "date": "2026-04-27T00:00:00.000Z",
+    "cats": [
+      "energy",
+      "budget"
+    ],
+    "sev": "critical",
+    "pids": [
+      17
+    ]
+  },
+  {
+    "id": "n5",
+    "title": "Everything we know about Sydney's new international airport — terminal complete, cargo flights begin July 2026",
+    "src": "Time Out Sydney",
+    "url": "https://www.timeout.com/sydney/news/sydneys-huge-new-international-airport-is-almost-complete-heres-what-we-know-so-far-081525",
+    "date": "2026-04-07T00:00:00.000Z",
+    "cats": [
+      "transport"
+    ],
+    "sev": "low",
+    "pids": [
+      3
+    ]
+  },
+  {
+    "id": "n6",
+    "title": "Snowy 2.0 budget to be exhausted in coming months — S&P flags potential downgrade as costs blow past $12B",
+    "src": "Renew Economy",
+    "url": "https://reneweconomy.com.au/snowy-2-0-budget-to-be-exhausted-in-coming-months-ratings-agency-says-as-gas-plant-hit-by-new-delays/",
+    "date": "2026-03-25T00:00:00.000Z",
+    "cats": [
+      "energy",
+      "budget"
+    ],
+    "sev": "critical",
+    "pids": [
+      17
+    ]
+  },
+  {
+    "id": "n7",
+    "title": "Western Sydney Airport: first passenger flights confirmed for 26 October 2026 — Qantas, Jetstar and Virgin slots locked in",
+    "src": "The Urban List",
+    "url": "https://www.theurbanlist.com/sydney/a-list/western-sydney-airport-bankstown-update",
+    "date": "2026-03-11T00:00:00.000Z",
+    "cats": [
+      "transport"
+    ],
+    "sev": "medium",
+    "pids": [
+      3,
+      24
+    ]
+  },
+  {
+    "id": "n8",
+    "title": "Western Harbour Tunnel: how Sydney's $4.5B underground shortcut will reshape travel — opens late 2027/early 2028",
+    "src": "The Urban List",
+    "url": "https://www.theurbanlist.com/sydney/a-list/western-harbour-tunnel-sydney-update",
+    "date": "2026-03-11T00:00:00.000Z",
+    "cats": [
+      "transport"
+    ],
+    "sev": "medium",
+    "pids": [
+      20
+    ]
+  },
+  {
+    "id": "n9",
+    "title": "NSW issues default notice to M6 Stage 1 contractor CGU — completion pushed to late 2028 after sinkhole and rock-fault delays",
+    "src": "Wikipedia (M6 Motorway Sydney)",
+    "url": "https://en.wikipedia.org/wiki/M6_Motorway_(Sydney)",
+    "date": "2026-03-10T00:00:00.000Z",
+    "cats": [
+      "transport",
+      "political",
+      "budget"
+    ],
+    "sev": "critical",
+    "pids": [
+      6
+    ]
+  },
+  {
+    "id": "n10",
+    "title": "Sydney Metro West tunnelling complete: 24 km of twin tunnels excavated between Westmead and Hunter Street",
+    "src": "Time Out Sydney",
+    "url": "https://www.timeout.com/sydney/news/sydneys-next-metro-line-is-taking-shape-with-new-tunnels-now-complete-030126",
+    "date": "2026-03-01T00:00:00.000Z",
+    "cats": [
+      "transport"
+    ],
+    "sev": "medium",
+    "pids": [
+      1
+    ]
+  },
+  {
+    "id": "n11",
+    "title": "Sydney Metro airport line faces new setback with trains yet to arrive from Europe",
+    "src": "Time Out Sydney",
+    "url": "https://www.timeout.com/sydney/news/sydney-metro-airport-line-faces-new-setback-with-trains-yet-to-arrive-022526",
+    "date": "2026-02-25T00:00:00.000Z",
+    "cats": [
+      "transport"
+    ],
+    "sev": "high",
+    "pids": [
+      2
+    ]
+  },
+  {
+    "id": "n12",
+    "title": "Origin extends Eraring Power Station operations to April 2029 — slower renewables rollout cited",
+    "src": "Origin Energy",
+    "url": "https://www.originenergy.com.au/about/investors-media/origin-extends-eraring-power-station-operations-to-2029/",
+    "date": "2026-02-18T00:00:00.000Z",
+    "cats": [
+      "energy",
+      "political"
+    ],
+    "sev": "high",
+    "pids": [
+      14,
+      15,
+      16
+    ]
+  },
+  {
+    "id": "n13",
+    "title": "Parramatta Light Rail Stage 2 tracking to main construction — $3B funding to date, procurement begins for Stage 2a",
+    "src": "NSW Government",
+    "url": "https://www.nsw.gov.au/ministerial-releases/parramatta-light-rail-stage-2-tracking-to-main-construction",
+    "date": "2026-01-30T00:00:00.000Z",
+    "cats": [
+      "transport"
+    ],
+    "sev": "medium",
+    "pids": [
+      8
+    ]
+  },
+  {
+    "id": "n14",
+    "title": "Green light for delayed Stage 2 of Parramatta Light Rail — split into 2a (Camellia–Wentworth Point) and 2b (to Olympic Park)",
+    "src": "Parra News",
+    "url": "https://www.parranews.com.au/2026/01/green-light-for-delayed-stage-2-of-parramatta-light-rail/",
+    "date": "2026-01-30T00:00:00.000Z",
+    "cats": [
+      "transport",
+      "budget"
+    ],
+    "sev": "medium",
+    "pids": [
+      8
+    ]
+  },
+  {
+    "id": "n15",
+    "title": "NSW Energy Minister media statement: Origin confirms Eraring closure pushed to April 2029",
+    "src": "NSW Climate and Energy Action",
+    "url": "https://www.energy.nsw.gov.au/news/media-statement-eraring-power-station",
+    "date": "2026-01-20T00:00:00.000Z",
+    "cats": [
+      "energy",
+      "political"
+    ],
+    "sev": "high",
+    "pids": [
+      14,
+      15,
+      16
+    ]
+  },
+  {
+    "id": "n16",
+    "title": "Contract signings to progress Sydney Metro West in 2026 — Metro Trains West Consortium awarded $3.96B trains/systems/operations deal",
+    "src": "Sydney Metro",
+    "url": "https://www.sydneymetro.info/article/contract-signings-progress-sydney-metro-west-2026",
+    "date": "2026-01-15T00:00:00.000Z",
+    "cats": [
+      "transport",
+      "budget"
+    ],
+    "sev": "low",
+    "pids": [
+      1
+    ]
+  },
+  {
+    "id": "n17",
+    "title": "Metro West contracts open next phase of major works — four contracts worth $11.5B signed for stations, track and trains",
+    "src": "NSW Government",
+    "url": "https://www.nsw.gov.au/ministerial-releases/metro-west-contracts-open-next-phase-of-major-works",
+    "date": "2026-01-12T00:00:00.000Z",
+    "cats": [
+      "transport",
+      "budget"
+    ],
+    "sev": "medium",
+    "pids": [
+      1
+    ]
+  },
+  {
+    "id": "n18",
+    "title": "Westmead Metro station cavern fully lined — 26m-high formwork installed in 82-hour operation",
+    "src": "Gamuda",
+    "url": "https://gamuda.com/2026/01/engineering-milestone-marks-progress-at-the-future-westmead-station/news/",
+    "date": "2026-01-07T00:00:00.000Z",
+    "cats": [
+      "transport"
+    ],
+    "sev": "low",
+    "pids": [
+      1
+    ]
+  },
+  {
+    "id": "n19",
+    "title": "Ku-ring-gai TOD alternative scheme takes effect — 28-storey towers around Gordon and Lindfield, scaled back near heritage",
+    "src": "NSW Planning",
+    "url": "https://www.planning.nsw.gov.au/policy-and-legislation/housing/transport-oriented-development-program/transport-oriented-development",
+    "date": "2025-11-14T00:00:00.000Z",
+    "cats": [
+      "housing",
+      "political"
+    ],
+    "sev": "high",
+    "pids": [
+      10,
+      12
+    ]
+  },
+  {
+    "id": "n20",
+    "title": "Western Harbour Tunnel: TBMs to begin under-harbour drive in first half of 2026 after 1,200-tonne machines assembled at Birchgrove",
+    "src": "Felix Project News",
+    "url": "https://www.felix.net/project-news/delivery-of-western-harbour-tunnel-in-nsw-continues-to-progress",
+    "date": "2025-11-10T00:00:00.000Z",
+    "cats": [
+      "transport"
+    ],
+    "sev": "medium",
+    "pids": [
+      20
+    ]
+  },
+  {
+    "id": "n21",
+    "title": "Western Harbour Tunnel reaches major milestone with caverns completed — total cost now $7.4 billion",
+    "src": "SmoothX",
+    "url": "https://www.smoothx.com/western-harbour-tunnel-reaches-major-milestone-with-caverns-completed/",
+    "date": "2025-11-06T00:00:00.000Z",
+    "cats": [
+      "transport",
+      "budget"
+    ],
+    "sev": "high",
+    "pids": [
+      20
+    ]
+  },
+  {
+    "id": "n22",
+    "title": "Snowy 2.0 pumped hydro fiasco faces another cost blowout — 9-month line-by-line reassessment ordered",
+    "src": "Renew Economy",
+    "url": "https://reneweconomy.com.au/snowy-2-0-pumped-hydro-fiasco-faces-another-major-cost-blowout-analysts-expect-more-delays/",
+    "date": "2025-10-03T00:00:00.000Z",
+    "cats": [
+      "energy",
+      "budget"
+    ],
+    "sev": "critical",
+    "pids": [
+      17
+    ]
+  },
+  {
+    "id": "n23",
+    "title": "Sydney's plans for greater density face hostility — Ku-ring-gai Land & Environment Court challenge against TOD policy",
+    "src": "The Guardian / inkl",
+    "url": "https://www.inkl.com/news/i-m-not-against-development-but-sydney-s-plans-for-greater-density-face-a-morass-of-confusion-and-hostility",
+    "date": "2025-08-22T00:00:00.000Z",
+    "cats": [
+      "housing",
+      "political"
+    ],
+    "sev": "high",
+    "pids": [
+      10,
+      12,
+      29,
+      30
+    ]
+  },
+  {
+    "id": "n24",
+    "title": "South West Metro conversion period extended into 2026 — industrial action impacts 130+ days of works",
+    "src": "NSW Government",
+    "url": "https://www.nsw.gov.au/ministerial-releases/south-west-metro-conversion-period-to-be-extended-into-2026",
+    "date": "2025-03-05T00:00:00.000Z",
+    "cats": [
+      "transport",
+      "political"
+    ],
+    "sev": "high",
+    "pids": [
+      4
+    ]
+  }
+]

@@ -1,0 +1,448 @@
+{
+  "hospitals": [
+    {
+      "name": "Royal Prince Alfred",
+      "lat": -33.89,
+      "lon": 151.182,
+      "beds": 780
+    },
+    {
+      "name": "Westmead Hospital",
+      "lat": -33.804,
+      "lon": 150.987,
+      "beds": 980
+    },
+    {
+      "name": "Liverpool Hospital",
+      "lat": -33.927,
+      "lon": 150.926,
+      "beds": 855
+    },
+    {
+      "name": "Concord Hospital",
+      "lat": -33.86,
+      "lon": 151.105,
+      "beds": 430
+    },
+    {
+      "name": "Northern Beaches Hospital",
+      "lat": -33.752,
+      "lon": 151.226,
+      "beds": 488
+    },
+    {
+      "name": "Royal North Shore",
+      "lat": -33.825,
+      "lon": 151.193,
+      "beds": 600
+    },
+    {
+      "name": "St Vincent's",
+      "lat": -33.88,
+      "lon": 151.219,
+      "beds": 330
+    },
+    {
+      "name": "Prince of Wales",
+      "lat": -33.917,
+      "lon": 151.241,
+      "beds": 440
+    },
+    {
+      "name": "Sydney Children's",
+      "lat": -33.917,
+      "lon": 151.244,
+      "beds": 170
+    },
+    {
+      "name": "Bankstown Hospital",
+      "lat": -33.917,
+      "lon": 151.03,
+      "beds": 380
+    },
+    {
+      "name": "Campbelltown Hospital",
+      "lat": -34.075,
+      "lon": 150.815,
+      "beds": 413
+    },
+    {
+      "name": "Nepean Hospital",
+      "lat": -33.747,
+      "lon": 150.708,
+      "beds": 520
+    },
+    {
+      "name": "Mater Hospital North Sydney",
+      "lat": -33.832,
+      "lon": 151.213,
+      "beds": 200
+    },
+    {
+      "name": "Macquarie University Hospital",
+      "lat": -33.776,
+      "lon": 151.115,
+      "beds": 183
+    },
+    {
+      "name": "Hornsby Hospital",
+      "lat": -33.704,
+      "lon": 151.105,
+      "beds": 210
+    },
+    {
+      "name": "Sutherland Hospital",
+      "lat": -34.034,
+      "lon": 151.121,
+      "beds": 380
+    },
+    {
+      "name": "Rouse Hill Hospital (UC)",
+      "lat": -33.69,
+      "lon": 150.91,
+      "beds": 300
+    },
+    {
+      "name": "Children's Hospital at Westmead",
+      "lat": -33.806,
+      "lon": 150.988,
+      "beds": 307
+    }
+  ],
+  "universities": [
+    {
+      "name": "University of Sydney",
+      "lat": -33.889,
+      "lon": 151.187,
+      "students": 73000
+    },
+    {
+      "name": "UNSW Kensington",
+      "lat": -33.917,
+      "lon": 151.231,
+      "students": 68000
+    },
+    {
+      "name": "UTS",
+      "lat": -33.884,
+      "lon": 151.201,
+      "students": 46000
+    },
+    {
+      "name": "Macquarie University",
+      "lat": -33.775,
+      "lon": 151.115,
+      "students": 45000
+    },
+    {
+      "name": "Western Sydney University Parramatta",
+      "lat": -33.815,
+      "lon": 151.005,
+      "students": 18000
+    },
+    {
+      "name": "Western Sydney University Bankstown City Campus",
+      "lat": -33.917,
+      "lon": 151.034,
+      "students": 9000
+    },
+    {
+      "name": "Western Sydney University Liverpool",
+      "lat": -33.921,
+      "lon": 150.926,
+      "students": 8000
+    },
+    {
+      "name": "Western Sydney University Penrith",
+      "lat": -33.756,
+      "lon": 150.745,
+      "students": 11000
+    },
+    {
+      "name": "Australian Catholic University Strathfield",
+      "lat": -33.875,
+      "lon": 151.082,
+      "students": 7500
+    },
+    {
+      "name": "Notre Dame Broadway",
+      "lat": -33.884,
+      "lon": 151.197,
+      "students": 8500
+    },
+    {
+      "name": "UNSW Paddington (Art & Design)",
+      "lat": -33.886,
+      "lon": 151.23,
+      "students": 3500
+    },
+    {
+      "name": "International College of Management Manly",
+      "lat": -33.798,
+      "lon": 151.288,
+      "students": 1500
+    }
+  ],
+  "trainStations": [
+    {
+      "name": "Central",
+      "lat": -33.883,
+      "lon": 151.207,
+      "lines": "T1 T2 T3 T4 T8"
+    },
+    {
+      "name": "Town Hall",
+      "lat": -33.873,
+      "lon": 151.207,
+      "lines": "T1 T2 T3 T8"
+    },
+    {
+      "name": "Wynyard",
+      "lat": -33.866,
+      "lon": 151.206,
+      "lines": "T1 T2 T3"
+    },
+    {
+      "name": "Strathfield",
+      "lat": -33.872,
+      "lon": 151.094,
+      "lines": "T1 T2 T9"
+    },
+    {
+      "name": "Parramatta",
+      "lat": -33.817,
+      "lon": 151.006,
+      "lines": "T1 T5 T9"
+    },
+    {
+      "name": "Lidcombe",
+      "lat": -33.866,
+      "lon": 151.041,
+      "lines": "T1 T2 T3 T7"
+    },
+    {
+      "name": "Hornsby",
+      "lat": -33.704,
+      "lon": 151.099,
+      "lines": "T1 T9"
+    },
+    {
+      "name": "Chatswood",
+      "lat": -33.797,
+      "lon": 151.183,
+      "lines": "T1 Metro"
+    },
+    {
+      "name": "Epping",
+      "lat": -33.77,
+      "lon": 151.082,
+      "lines": "T9 Metro"
+    },
+    {
+      "name": "Bondi Junction",
+      "lat": -33.892,
+      "lon": 151.247,
+      "lines": "T4"
+    },
+    {
+      "name": "Hurstville",
+      "lat": -33.967,
+      "lon": 151.103,
+      "lines": "T4 T8"
+    },
+    {
+      "name": "Sutherland",
+      "lat": -34.03,
+      "lon": 151.058,
+      "lines": "T4"
+    },
+    {
+      "name": "Cronulla",
+      "lat": -34.057,
+      "lon": 151.151,
+      "lines": "T4"
+    },
+    {
+      "name": "Penrith",
+      "lat": -33.751,
+      "lon": 150.696,
+      "lines": "T1 T5"
+    },
+    {
+      "name": "Blacktown",
+      "lat": -33.769,
+      "lon": 150.907,
+      "lines": "T1 T5"
+    },
+    {
+      "name": "Liverpool",
+      "lat": -33.92,
+      "lon": 150.927,
+      "lines": "T2 T3 T5 T8"
+    },
+    {
+      "name": "Campbelltown",
+      "lat": -34.067,
+      "lon": 150.815,
+      "lines": "T2 T8"
+    },
+    {
+      "name": "Macarthur",
+      "lat": -34.073,
+      "lon": 150.812,
+      "lines": "T2 T8"
+    },
+    {
+      "name": "Glenfield",
+      "lat": -33.967,
+      "lon": 150.89,
+      "lines": "T2 T5 T8"
+    },
+    {
+      "name": "Leppington",
+      "lat": -33.992,
+      "lon": 150.81,
+      "lines": "T5"
+    },
+    {
+      "name": "Schofields",
+      "lat": -33.704,
+      "lon": 150.866,
+      "lines": "T1"
+    },
+    {
+      "name": "Riverstone",
+      "lat": -33.679,
+      "lon": 150.866,
+      "lines": "T1"
+    },
+    {
+      "name": "St Marys",
+      "lat": -33.768,
+      "lon": 150.783,
+      "lines": "T1"
+    }
+  ],
+  "topSchools": [
+    {
+      "name": "James Ruse Agricultural HS",
+      "lat": -33.793,
+      "lon": 151.04,
+      "type": "selective"
+    },
+    {
+      "name": "North Sydney Boys",
+      "lat": -33.803,
+      "lon": 151.203,
+      "type": "selective"
+    },
+    {
+      "name": "North Sydney Girls",
+      "lat": -33.803,
+      "lon": 151.205,
+      "type": "selective"
+    },
+    {
+      "name": "Sydney Boys HS",
+      "lat": -33.901,
+      "lon": 151.214,
+      "type": "selective"
+    },
+    {
+      "name": "Sydney Girls HS",
+      "lat": -33.9,
+      "lon": 151.214,
+      "type": "selective"
+    },
+    {
+      "name": "Baulkham Hills HS",
+      "lat": -33.762,
+      "lon": 150.992,
+      "type": "selective"
+    },
+    {
+      "name": "Hornsby Girls HS",
+      "lat": -33.706,
+      "lon": 151.1,
+      "type": "selective"
+    },
+    {
+      "name": "Normanhurst Boys HS",
+      "lat": -33.717,
+      "lon": 151.099,
+      "type": "selective"
+    },
+    {
+      "name": "St Aloysius' College",
+      "lat": -33.842,
+      "lon": 151.213,
+      "type": "private"
+    },
+    {
+      "name": "Knox Grammar",
+      "lat": -33.731,
+      "lon": 151.158,
+      "type": "private"
+    },
+    {
+      "name": "Shore School",
+      "lat": -33.836,
+      "lon": 151.205,
+      "type": "private"
+    },
+    {
+      "name": "Sydney Grammar",
+      "lat": -33.875,
+      "lon": 151.215,
+      "type": "private"
+    },
+    {
+      "name": "Kambala",
+      "lat": -33.879,
+      "lon": 151.27,
+      "type": "private"
+    },
+    {
+      "name": "Ascham",
+      "lat": -33.881,
+      "lon": 151.255,
+      "type": "private"
+    },
+    {
+      "name": "SCEGGS Darlinghurst",
+      "lat": -33.88,
+      "lon": 151.218,
+      "type": "private"
+    },
+    {
+      "name": "PLC Sydney",
+      "lat": -33.878,
+      "lon": 151.08,
+      "type": "private"
+    },
+    {
+      "name": "MLC School",
+      "lat": -33.88,
+      "lon": 151.083,
+      "type": "private"
+    },
+    {
+      "name": "Newington College",
+      "lat": -33.88,
+      "lon": 151.171,
+      "type": "private"
+    },
+    {
+      "name": "The King's School",
+      "lat": -33.799,
+      "lon": 151.012,
+      "type": "private"
+    },
+    {
+      "name": "Kincoppal-Rose Bay",
+      "lat": -33.875,
+      "lon": 151.27,
+      "type": "private"
+    }
+  ]
+}

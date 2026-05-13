@@ -1,0 +1,863 @@
+{
+  "1": {
+    "dwellings": 73000,
+    "population": 175000,
+    "jobs": 12500,
+    "travelMins": 23,
+    "propertyUplift": 18,
+    "catchmentSuburbs": [
+      "Parramatta",
+      "Sydney Olympic Park",
+      "North Strathfield",
+      "Burwood North",
+      "Five Dock",
+      "The Bays",
+      "Pyrmont"
+    ],
+    "keyMetric": "9 new stations across 24km",
+    "tfnswForecast": "163,000 daily passengers by 2031"
+  },
+  "2": {
+    "dwellings": 100000,
+    "population": 250000,
+    "jobs": 200000,
+    "travelMins": 45,
+    "propertyUplift": 25,
+    "catchmentSuburbs": [
+      "St Marys",
+      "Orchard Hills",
+      "Luddenham",
+      "Bradfield",
+      "Aerotropolis"
+    ],
+    "keyMetric": "6 new stations · 23km",
+    "tfnswForecast": "Opens with airport mid-2026"
+  },
+  "3": {
+    "dwellings": 0,
+    "population": 0,
+    "jobs": 28000,
+    "travelMins": 0,
+    "propertyUplift": 12,
+    "catchmentSuburbs": [
+      "Badgerys Creek",
+      "Bringelly",
+      "Greendale",
+      "Luddenham"
+    ],
+    "keyMetric": "10M passengers/yr at opening, 80M by 2063",
+    "tfnswForecast": "First flights mid-2026"
+  },
+  "4": {
+    "dwellings": 18000,
+    "population": 42000,
+    "jobs": 1800,
+    "travelMins": 12,
+    "propertyUplift": 15,
+    "catchmentSuburbs": [
+      "Marrickville",
+      "Dulwich Hill",
+      "Canterbury",
+      "Campsie",
+      "Bankstown"
+    ],
+    "keyMetric": "10 stations · open Oct 2026",
+    "tfnswForecast": "Replaces existing T3 with metro reliability"
+  },
+  "5": {
+    "dwellings": 0,
+    "population": 0,
+    "jobs": 1200,
+    "travelMins": 18,
+    "propertyUplift": 8,
+    "catchmentSuburbs": [
+      "Strathfield",
+      "Burwood",
+      "Rozelle",
+      "Lilyfield"
+    ],
+    "keyMetric": "33km motorway · operational",
+    "tfnswForecast": "~75k daily trips on M4-M5 link"
+  },
+  "6": {
+    "dwellings": 0,
+    "population": 0,
+    "jobs": 800,
+    "travelMins": 14,
+    "propertyUplift": 6,
+    "catchmentSuburbs": [
+      "Kogarah",
+      "Kirrawee",
+      "Loftus",
+      "Heathcote"
+    ],
+    "keyMetric": "Stage 2 unfunded · 12km",
+    "tfnswForecast": "Speculative pending federal funding"
+  },
+  "8": {
+    "dwellings": 22000,
+    "population": 52000,
+    "jobs": 1200,
+    "travelMins": 15,
+    "propertyUplift": 12,
+    "catchmentSuburbs": [
+      "Sydney Olympic Park",
+      "Wentworth Point",
+      "Rhodes",
+      "Carter St",
+      "Camellia"
+    ],
+    "keyMetric": "10km · Carlingford to Olympic Park via Sydney Olympic Park",
+    "tfnswForecast": "Funding decision expected 2026 budget"
+  },
+  "9": {
+    "dwellings": 0,
+    "population": 0,
+    "jobs": 250,
+    "travelMins": 5,
+    "propertyUplift": 3,
+    "catchmentSuburbs": [
+      "Sydney CBD",
+      "Pyrmont",
+      "Surry Hills",
+      "Glebe"
+    ],
+    "keyMetric": "55km network · ongoing",
+    "tfnswForecast": "20% bike mode share target by 2030"
+  },
+  "10": {
+    "dwellings": 138000,
+    "population": 320000,
+    "jobs": 18000,
+    "travelMins": 0,
+    "propertyUplift": 22,
+    "catchmentSuburbs": [
+      "Across all transport precincts statewide"
+    ],
+    "keyMetric": "37 station precincts in 800m walk-up zones",
+    "tfnswForecast": "Active rezonings — Crows Nest, Bays West first wave"
+  },
+  "11": {
+    "dwellings": 6800,
+    "population": 17000,
+    "jobs": 2500,
+    "travelMins": 0,
+    "propertyUplift": -2,
+    "catchmentSuburbs": [
+      "Mount Druitt",
+      "Blacktown",
+      "Bidwill",
+      "Whalan"
+    ],
+    "keyMetric": "Renewal of existing estates · staged 2026-2032",
+    "tfnswForecast": "Initial 2,500 homes by 2028"
+  },
+  "12": {
+    "dwellings": 12500,
+    "population": 28000,
+    "jobs": 3200,
+    "travelMins": 0,
+    "propertyUplift": 16,
+    "catchmentSuburbs": [
+      "Meadowbank",
+      "Eastwood",
+      "West Ryde",
+      "Marsfield"
+    ],
+    "keyMetric": "Education + residential precinct",
+    "tfnswForecast": "First stage approved · LEC challenge ongoing"
+  },
+  "13": {
+    "dwellings": 30000,
+    "population": 71000,
+    "jobs": 9500,
+    "travelMins": 0,
+    "propertyUplift": 0,
+    "catchmentSuburbs": [
+      "Statewide NSW"
+    ],
+    "keyMetric": "$5.6B fund · 30k new homes target by 2033",
+    "tfnswForecast": "First 1,500 homes Q4 2025 onwards"
+  },
+  "14": {
+    "dwellings": 0,
+    "population": 0,
+    "jobs": 600,
+    "travelMins": 0,
+    "propertyUplift": 0,
+    "catchmentSuburbs": [
+      "Lake Macquarie"
+    ],
+    "keyMetric": "2.88GW coal · extended to Aug 2027",
+    "tfnswForecast": "Bridge to renewables"
+  },
+  "15": {
+    "dwellings": 0,
+    "population": 0,
+    "jobs": 850,
+    "travelMins": 0,
+    "propertyUplift": 0,
+    "catchmentSuburbs": [
+      "Wollongong",
+      "Port Kembla"
+    ],
+    "keyMetric": "Up to 4.2GW offshore wind zone",
+    "tfnswForecast": "Feasibility licences awarded — FID 2027+"
+  },
+  "16": {
+    "dwellings": 0,
+    "population": 0,
+    "jobs": 1200,
+    "travelMins": 0,
+    "propertyUplift": 0,
+    "catchmentSuburbs": [
+      "Hunter region"
+    ],
+    "keyMetric": "Up to 1GW renewable capacity",
+    "tfnswForecast": "Construction starts 2027"
+  },
+  "17": {
+    "dwellings": 0,
+    "population": 0,
+    "jobs": 4200,
+    "travelMins": 0,
+    "propertyUplift": 0,
+    "catchmentSuburbs": [
+      "Snowy Mountains"
+    ],
+    "keyMetric": "2.2GW pumped hydro · 350GWh storage",
+    "tfnswForecast": "First power 2028 (delayed from 2026)"
+  },
+  "18": {
+    "dwellings": 0,
+    "population": 0,
+    "jobs": 220,
+    "travelMins": 0,
+    "propertyUplift": 0,
+    "catchmentSuburbs": [
+      "Greater Sydney water network"
+    ],
+    "keyMetric": "Doubles capacity to 250 ML/day",
+    "tfnswForecast": "Operational mid-2027"
+  },
+  "19": {
+    "dwellings": 0,
+    "population": 0,
+    "jobs": 800,
+    "travelMins": 0,
+    "propertyUplift": 0,
+    "catchmentSuburbs": [
+      "Greater Sydney"
+    ],
+    "keyMetric": "$34B Sydney Water 10-year plan",
+    "tfnswForecast": "IPART price determination 2025-26"
+  },
+  "20": {
+    "dwellings": 0,
+    "population": 0,
+    "jobs": 2400,
+    "travelMins": 14,
+    "propertyUplift": 7,
+    "catchmentSuburbs": [
+      "Rozelle",
+      "North Sydney",
+      "Cammeray"
+    ],
+    "keyMetric": "6.5km tunnel · 4 lanes each way",
+    "tfnswForecast": "Opens 2028"
+  },
+  "22": {
+    "dwellings": 0,
+    "population": 0,
+    "jobs": 25000,
+    "travelMins": 0,
+    "propertyUplift": 14,
+    "catchmentSuburbs": [
+      "Camperdown",
+      "Eveleigh",
+      "Redfern",
+      "Ultimo"
+    ],
+    "keyMetric": "250,000 sqm tech precinct",
+    "tfnswForecast": "Atlassian HQ topped out 2026"
+  },
+  "23": {
+    "dwellings": 0,
+    "population": 0,
+    "jobs": 1100,
+    "travelMins": 0,
+    "propertyUplift": 0,
+    "catchmentSuburbs": [
+      "Port Botany",
+      "Mascot"
+    ],
+    "keyMetric": "+1.5M TEU/yr capacity",
+    "tfnswForecast": "Phase 1 operational 2027"
+  },
+  "24": {
+    "dwellings": 0,
+    "population": 0,
+    "jobs": 1800,
+    "travelMins": 0,
+    "propertyUplift": 0,
+    "catchmentSuburbs": [
+      "WSA",
+      "Bringelly",
+      "Badgerys Creek"
+    ],
+    "keyMetric": "M12 + Mamre + Northern Rd + Bringelly Rd upgrades",
+    "tfnswForecast": "Opens with airport 2026"
+  },
+  "27": {
+    "dwellings": 0,
+    "population": 0,
+    "jobs": 5000,
+    "travelMins": 25,
+    "propertyUplift": 9,
+    "catchmentSuburbs": [
+      "Box Hill",
+      "Marsden Park",
+      "Cobbitty",
+      "Bringelly"
+    ],
+    "keyMetric": "40km north-south outer orbital · stages",
+    "tfnswForecast": "Stage 1 (M2-M5) FID 2027"
+  },
+  "29": {
+    "dwellings": 7600,
+    "population": 17500,
+    "jobs": 2200,
+    "travelMins": 0,
+    "propertyUplift": 19,
+    "catchmentSuburbs": [
+      "Crows Nest",
+      "St Leonards",
+      "Cammeray"
+    ],
+    "keyMetric": "Around new metro stations",
+    "tfnswForecast": "Crows Nest station open Aug 2024"
+  },
+  "30": {
+    "dwellings": 11200,
+    "population": 26500,
+    "jobs": 1800,
+    "travelMins": 0,
+    "propertyUplift": 13,
+    "catchmentSuburbs": [
+      "Bankstown",
+      "Campsie"
+    ],
+    "keyMetric": "Tied to T3 metro conversion",
+    "tfnswForecast": "Rezonings finalised 2024-25"
+  },
+  "31": {
+    "dwellings": 200000,
+    "population": 470000,
+    "jobs": 200000,
+    "travelMins": 0,
+    "propertyUplift": 28,
+    "catchmentSuburbs": [
+      "Penrith",
+      "Kingswood",
+      "St Marys",
+      "Bradfield",
+      "Luddenham"
+    ],
+    "keyMetric": "Greater Macarthur + Aerotropolis combined",
+    "tfnswForecast": "Built out by 2056"
+  },
+  "32": {
+    "dwellings": 0,
+    "population": 0,
+    "jobs": 1500,
+    "travelMins": 0,
+    "propertyUplift": 0,
+    "catchmentSuburbs": [
+      "Riverina"
+    ],
+    "keyMetric": "900km · 800MW NSW-SA link",
+    "tfnswForecast": "Energised 2026"
+  },
+  "33": {
+    "dwellings": 0,
+    "population": 0,
+    "jobs": 1200,
+    "travelMins": 0,
+    "propertyUplift": 0,
+    "catchmentSuburbs": [
+      "Hawkesbury"
+    ],
+    "keyMetric": "+14m wall · downstream flood protection",
+    "tfnswForecast": "EIS resubmitted 2024 — politically contested"
+  },
+  "34": {
+    "dwellings": 1900,
+    "population": 4500,
+    "jobs": 23000,
+    "travelMins": 0,
+    "propertyUplift": 35,
+    "catchmentSuburbs": [
+      "Barangaroo",
+      "Millers Point"
+    ],
+    "keyMetric": "22ha precinct · IFC + Crown + Cutaway",
+    "tfnswForecast": "~85% complete"
+  },
+  "35": {
+    "dwellings": 16000,
+    "population": 38000,
+    "jobs": 6500,
+    "travelMins": 0,
+    "propertyUplift": 16,
+    "catchmentSuburbs": [
+      "Sydney Olympic Park",
+      "Wentworth Point"
+    ],
+    "keyMetric": "Restart SOP 40k residents target",
+    "tfnswForecast": "Master plan in progress"
+  },
+  "36": {
+    "dwellings": 0,
+    "population": 0,
+    "jobs": 800,
+    "travelMins": 9,
+    "propertyUplift": 5,
+    "catchmentSuburbs": [
+      "Drummoyne",
+      "Five Dock",
+      "Rozelle"
+    ],
+    "keyMetric": "WestConnex Stage 3B",
+    "tfnswForecast": "Under planning review"
+  },
+  "37": {
+    "dwellings": 22000,
+    "population": 52000,
+    "jobs": 2500,
+    "travelMins": 18,
+    "propertyUplift": 17,
+    "catchmentSuburbs": [
+      "Leppington",
+      "Catherine Field",
+      "Oran Park"
+    ],
+    "keyMetric": "Heavy rail extension Leppington→Macarthur",
+    "tfnswForecast": "Federal commitment 2024"
+  },
+  "40": {
+    "dwellings": 800,
+    "population": 1900,
+    "jobs": 18000,
+    "travelMins": 0,
+    "propertyUplift": 20,
+    "catchmentSuburbs": [
+      "Parramatta CBD"
+    ],
+    "keyMetric": "PHIVE + 3 Parramatta Square + State office",
+    "tfnswForecast": "85% complete"
+  },
+  "41": {
+    "dwellings": 9500,
+    "population": 22000,
+    "jobs": 1800,
+    "travelMins": 0,
+    "propertyUplift": 14,
+    "catchmentSuburbs": [
+      "Camellia",
+      "Rosehill",
+      "Rydalmere"
+    ],
+    "keyMetric": "Contamination cleanup + TOD",
+    "tfnswForecast": "Master plan Phase 1 2026"
+  },
+  "42": {
+    "dwellings": 0,
+    "population": 0,
+    "jobs": 4400,
+    "travelMins": 0,
+    "propertyUplift": 6,
+    "catchmentSuburbs": [
+      "Frenchs Forest",
+      "Belrose"
+    ],
+    "keyMetric": "488 beds · operational",
+    "tfnswForecast": "Live since 2018"
+  },
+  "43": {
+    "dwellings": 4500,
+    "population": 11000,
+    "jobs": 8500,
+    "travelMins": 0,
+    "propertyUplift": 18,
+    "catchmentSuburbs": [
+      "Liverpool"
+    ],
+    "keyMetric": "Hospital + UNSW + WSU campus expansion",
+    "tfnswForecast": "$1.3B hospital under construction"
+  },
+  "44": {
+    "dwellings": 5800,
+    "population": 14000,
+    "jobs": 75000,
+    "travelMins": 0,
+    "propertyUplift": 11,
+    "catchmentSuburbs": [
+      "Macquarie Park",
+      "Marsfield",
+      "North Ryde"
+    ],
+    "keyMetric": "Australia's largest non-CBD office market",
+    "tfnswForecast": "Ongoing expansion"
+  },
+  "45": {
+    "dwellings": 18000,
+    "population": 42000,
+    "jobs": 12000,
+    "travelMins": 0,
+    "propertyUplift": 30,
+    "catchmentSuburbs": [
+      "Bradfield",
+      "Aerotropolis"
+    ],
+    "keyMetric": "First city to be planned around Aerotropolis",
+    "tfnswForecast": "First buildings 2026-27"
+  },
+  "46": {
+    "dwellings": 0,
+    "population": 0,
+    "jobs": 350,
+    "travelMins": 0,
+    "propertyUplift": 0,
+    "catchmentSuburbs": [
+      "Prospect"
+    ],
+    "keyMetric": "200 ML/day recycled water",
+    "tfnswForecast": "Feasibility/design phase"
+  },
+  "47": {
+    "dwellings": 0,
+    "population": 0,
+    "jobs": 700,
+    "travelMins": 0,
+    "propertyUplift": 8,
+    "catchmentSuburbs": [
+      "Pyrmont",
+      "Glebe"
+    ],
+    "keyMetric": "Operational since 2024",
+    "tfnswForecast": "6M visitors/yr target"
+  },
+  "48": {
+    "dwellings": 25000,
+    "population": 61000,
+    "jobs": 3500,
+    "travelMins": 0,
+    "propertyUplift": 21,
+    "catchmentSuburbs": [
+      "Green Square",
+      "Zetland",
+      "Beaconsfield"
+    ],
+    "keyMetric": "Australia's densest urban renewal",
+    "tfnswForecast": "85% built by 2030"
+  },
+  "49": {
+    "dwellings": 0,
+    "population": 0,
+    "jobs": 350,
+    "travelMins": 8,
+    "propertyUplift": 4,
+    "catchmentSuburbs": [
+      "Penrith",
+      "Glenmore Park"
+    ],
+    "keyMetric": "M4 to Glenmore Pkwy widening",
+    "tfnswForecast": "Stage 2 underway"
+  },
+  "50": {
+    "dwellings": 4200,
+    "population": 10000,
+    "jobs": 1500,
+    "travelMins": 0,
+    "propertyUplift": 13,
+    "catchmentSuburbs": [
+      "Hornsby"
+    ],
+    "keyMetric": "Town centre revitalisation",
+    "tfnswForecast": "Master plan in finalisation"
+  },
+  "51": {
+    "dwellings": 0,
+    "population": 0,
+    "jobs": 4500,
+    "travelMins": 0,
+    "propertyUplift": 7,
+    "catchmentSuburbs": [
+      "Bankstown",
+      "Liverpool",
+      "Parramatta",
+      "Penrith"
+    ],
+    "keyMetric": "Vertical campuses across Western Sydney",
+    "tfnswForecast": "Bankstown Campus open 2024"
+  },
+  "52": {
+    "dwellings": 35000,
+    "population": 80000,
+    "jobs": 4500,
+    "travelMins": 28,
+    "propertyUplift": 22,
+    "catchmentSuburbs": [
+      "Schofields",
+      "Marsden Park",
+      "Rouse Hill",
+      "St Marys"
+    ],
+    "keyMetric": "20km · 6-7 stations · business case stage",
+    "tfnswForecast": "$40M business case funded 2024-25"
+  },
+  "53": {
+    "dwellings": 75000,
+    "population": 175000,
+    "jobs": 8500,
+    "travelMins": 32,
+    "propertyUplift": 24,
+    "catchmentSuburbs": [
+      "Westmead",
+      "Wetherill Park",
+      "Cecil Park",
+      "Aerotropolis"
+    ],
+    "keyMetric": "37km · 6-8 stations · business case stage",
+    "tfnswForecast": "Highest-impact post-2032 project"
+  },
+  "54": {
+    "dwellings": 28000,
+    "population": 65000,
+    "jobs": 4500,
+    "travelMins": 24,
+    "propertyUplift": 19,
+    "catchmentSuburbs": [
+      "Bankstown",
+      "Liverpool",
+      "Glenfield"
+    ],
+    "keyMetric": "20km · business case stage",
+    "tfnswForecast": "Federal funding TBD"
+  },
+  "55": {
+    "dwellings": 42000,
+    "population": 100000,
+    "jobs": 5500,
+    "travelMins": 18,
+    "propertyUplift": 22,
+    "catchmentSuburbs": [
+      "Glenfield",
+      "Catherine Field",
+      "Aerotropolis"
+    ],
+    "keyMetric": "25km · federal-funded business case",
+    "tfnswForecast": "Higher delivery probability than peers"
+  },
+  "56": {
+    "dwellings": 38000,
+    "population": 90000,
+    "jobs": 4800,
+    "travelMins": 22,
+    "propertyUplift": 20,
+    "catchmentSuburbs": [
+      "Macarthur",
+      "Campbelltown",
+      "Aerotropolis"
+    ],
+    "keyMetric": "23km · 6-7 stations · business case stage",
+    "tfnswForecast": "Federal-funded business case"
+  },
+  "57": {
+    "dwellings": 0,
+    "population": 0,
+    "jobs": 1500,
+    "travelMins": 11,
+    "propertyUplift": 5,
+    "catchmentSuburbs": [
+      "Arncliffe",
+      "Banksia",
+      "Kogarah"
+    ],
+    "keyMetric": "4km twin tunnel · removes 2,000 trucks/day",
+    "tfnswForecast": "Opens 2028"
+  },
+  "58": {
+    "dwellings": 0,
+    "population": 0,
+    "jobs": 1500,
+    "travelMins": 14,
+    "propertyUplift": 8,
+    "catchmentSuburbs": [
+      "Cecil Hills",
+      "Kemps Creek",
+      "Bringelly"
+    ],
+    "keyMetric": "16km · toll-free · airport access",
+    "tfnswForecast": "Opens with WSA 2026"
+  },
+  "59": {
+    "dwellings": 0,
+    "population": 0,
+    "jobs": 600,
+    "travelMins": 6,
+    "propertyUplift": 4,
+    "catchmentSuburbs": [
+      "Erskine Park",
+      "Kemps Creek",
+      "Mamre"
+    ],
+    "keyMetric": "$1B · Australia's fastest-growing logistics hub",
+    "tfnswForecast": "Construction 2026-27"
+  },
+  "60": {
+    "dwellings": 0,
+    "population": 0,
+    "jobs": 400,
+    "travelMins": 8,
+    "propertyUplift": 4,
+    "catchmentSuburbs": [
+      "Wallacia",
+      "Aerotropolis"
+    ],
+    "keyMetric": "$800M · airport access",
+    "tfnswForecast": "Construction 2026-28"
+  },
+  "61": {
+    "dwellings": 0,
+    "population": 0,
+    "jobs": 250,
+    "travelMins": 12,
+    "propertyUplift": 6,
+    "catchmentSuburbs": [
+      "Liverpool",
+      "Bringelly",
+      "Aerotropolis"
+    ],
+    "keyMetric": "BRT corridor · planning stage",
+    "tfnswForecast": "Western Sydney Leadership Dialogue priority"
+  },
+  "62": {
+    "dwellings": 0,
+    "population": 0,
+    "jobs": 300,
+    "travelMins": 5,
+    "propertyUplift": 3,
+    "catchmentSuburbs": [
+      "Padstow",
+      "Bankstown"
+    ],
+    "keyMetric": "$220M · stages 1A & 1B",
+    "tfnswForecast": "Construction 2026-28"
+  },
+  "63": {
+    "dwellings": 0,
+    "population": 0,
+    "jobs": 4200,
+    "travelMins": 0,
+    "propertyUplift": 6,
+    "catchmentSuburbs": [
+      "Bankstown",
+      "Yagoona",
+      "Punchbowl"
+    ],
+    "keyMetric": "~500 beds",
+    "tfnswForecast": "Opens 2027"
+  },
+  "64": {
+    "dwellings": 0,
+    "population": 0,
+    "jobs": 2500,
+    "travelMins": 0,
+    "propertyUplift": 9,
+    "catchmentSuburbs": [
+      "Rouse Hill",
+      "Box Hill",
+      "Marsden Park"
+    ],
+    "keyMetric": "~300 beds · full maternity",
+    "tfnswForecast": "Opens 2027"
+  },
+  "65": {
+    "dwellings": 0,
+    "population": 0,
+    "jobs": 1800,
+    "travelMins": 0,
+    "propertyUplift": 0,
+    "catchmentSuburbs": [
+      "Westmead",
+      "Parramatta"
+    ],
+    "keyMetric": "Paediatric oncology + ICU + hospice",
+    "tfnswForecast": "Opens 2027"
+  },
+  "66": {
+    "dwellings": 0,
+    "population": 0,
+    "jobs": 1200,
+    "travelMins": 0,
+    "propertyUplift": 0,
+    "catchmentSuburbs": [
+      "Aerotropolis",
+      "Bradfield",
+      "Wilton"
+    ],
+    "keyMetric": "Enables 200k Aerotropolis dwellings",
+    "tfnswForecast": "Largest WSyd Sydney Water project"
+  },
+  "67": {
+    "dwellings": 0,
+    "population": 0,
+    "jobs": 600,
+    "travelMins": 0,
+    "propertyUplift": 0,
+    "catchmentSuburbs": [
+      "Aerotropolis"
+    ],
+    "keyMetric": "Flood mitigation + WSUD",
+    "tfnswForecast": "Opens 2027"
+  },
+  "68": {
+    "dwellings": 0,
+    "population": 0,
+    "jobs": 5000,
+    "travelMins": 0,
+    "propertyUplift": 0,
+    "catchmentSuburbs": [
+      "Dubbo",
+      "Wellington",
+      "Mudgee"
+    ],
+    "keyMetric": "4.5GW transmission · powers 2.7M homes",
+    "tfnswForecast": "First connections 2028"
+  },
+  "69": {
+    "dwellings": 0,
+    "population": 0,
+    "jobs": 1100,
+    "travelMins": 0,
+    "propertyUplift": 11,
+    "catchmentSuburbs": [
+      "Parramatta CBD"
+    ],
+    "keyMetric": "First state cultural institution in West Sydney",
+    "tfnswForecast": "Opens late 2026"
+  },
+  "70": {
+    "dwellings": 0,
+    "population": 0,
+    "jobs": 600,
+    "travelMins": 0,
+    "propertyUplift": 5,
+    "catchmentSuburbs": [
+      "Penrith"
+    ],
+    "keyMetric": "~25k capacity · Panthers home ground",
+    "tfnswForecast": "Opens 2027"
+  }
+}
