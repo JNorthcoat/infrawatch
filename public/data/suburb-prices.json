@@ -35,7 +35,7 @@
     "type": "house"
   },
   "ACACIA GARDENS": {
-    "growth12mo": 0.9,
+    "growth12mo": 1.5,
     "median": 1330000,
     "type": "house"
   },
@@ -50,7 +50,7 @@
     "type": "unit"
   },
   "ADAMSTOWN HEIGHTS": {
-    "growth12mo": 13.8,
+    "growth12mo": 14.4,
     "median": 1230000,
     "type": "house"
   },
@@ -70,7 +70,7 @@
     "type": "house"
   },
   "ALBION PARK": {
-    "growth12mo": 3.6,
+    "growth12mo": 3.3,
     "median": 865000,
     "type": "house"
   },
@@ -230,7 +230,7 @@
     "type": "house"
   },
   "ASHCROFT": {
-    "growth12mo": 12.3,
+    "growth12mo": 12.9,
     "median": 1050000,
     "type": "house"
   },
@@ -270,12 +270,12 @@
     "type": "unit"
   },
   "AUSTINMER": {
-    "growth12mo": -2.4,
+    "growth12mo": -3.9,
     "median": 1650000,
     "type": "house"
   },
   "AUSTRAL": {
-    "growth12mo": 20,
+    "growth12mo": 20.7,
     "median": 1050000,
     "type": "house"
   },
@@ -400,7 +400,7 @@
     "type": "house"
   },
   "BANORA POINT": {
-    "growth12mo": 6.9,
+    "growth12mo": 6.6,
     "median": 1048250,
     "type": "house"
   },
@@ -510,7 +510,7 @@
     "type": "unit"
   },
   "BATHURST": {
-    "growth12mo": -0.9,
+    "growth12mo": -0.4,
     "median": 575000,
     "type": "house"
   },
@@ -585,7 +585,7 @@
     "type": "unit"
   },
   "BELLBIRD": {
-    "growth12mo": 28.8,
+    "growth12mo": 29.4,
     "median": 702000,
     "type": "house"
   },
@@ -605,7 +605,7 @@
     "type": "house"
   },
   "BELMONT": {
-    "growth12mo": 5.3,
+    "growth12mo": 4.7,
     "median": 890000,
     "type": "house"
   },
@@ -630,7 +630,7 @@
     "type": "house"
   },
   "BEMBOKA": {
-    "growth12mo": -16.4,
+    "growth12mo": -21.5,
     "median": 549750,
     "type": "house"
   },
@@ -650,7 +650,7 @@
     "type": "house"
   },
   "BERALA": {
-    "growth12mo": 2,
+    "growth12mo": 1.2,
     "median": 1204000,
     "type": "house"
   },
@@ -660,7 +660,7 @@
     "type": "house"
   },
   "BERKELEY": {
-    "growth12mo": 4.5,
+    "growth12mo": 3.8,
     "median": 815087,
     "type": "house"
   },
@@ -690,7 +690,7 @@
     "type": "house"
   },
   "BEROWRA HEIGHTS": {
-    "growth12mo": 2.1,
+    "growth12mo": 1.8,
     "median": 1532000,
     "type": "house"
   },
@@ -765,7 +765,7 @@
     "type": "house"
   },
   "BIDWILL": {
-    "growth12mo": 6.3,
+    "growth12mo": 5.7,
     "median": 840000,
     "type": "house"
   },
@@ -845,7 +845,7 @@
     "type": "house"
   },
   "BLACK HEAD": {
-    "growth12mo": 13.4,
+    "growth12mo": 25.4,
     "median": 890000,
     "type": "house"
   },
@@ -860,7 +860,7 @@
     "type": "house"
   },
   "BLACKETT": {
-    "growth12mo": 6.8,
+    "growth12mo": 6.4,
     "median": 846000,
     "type": "house"
   },
@@ -970,22 +970,22 @@
     "type": "house"
   },
   "BOLTON POINT": {
-    "growth12mo": 6.5,
+    "growth12mo": 6.7,
     "median": 812500,
     "type": "house"
   },
   "BOLWARRA": {
-    "growth12mo": -1.8,
+    "growth12mo": -2.6,
     "median": 935000,
     "type": "house"
   },
   "BOLWARRA HEIGHTS": {
-    "growth12mo": 8.6,
+    "growth12mo": 8,
     "median": 945000,
     "type": "house"
   },
   "BOMADERRY": {
-    "growth12mo": 10.9,
+    "growth12mo": 11.3,
     "median": 740000,
     "type": "house"
   },
@@ -1010,7 +1010,7 @@
     "type": "unit"
   },
   "BONDI JUNCTION": {
-    "growth12mo": 7.7,
+    "growth12mo": 7.5,
     "median": 1687500,
     "type": "unit"
   },
@@ -1100,7 +1100,7 @@
     "type": "house"
   },
   "BOURKELANDS": {
-    "growth12mo": -4.7,
+    "growth12mo": -4.9,
     "median": 685000,
     "type": "house"
   },
@@ -1115,7 +1115,7 @@
     "type": "house"
   },
   "BOWENFELS": {
-    "growth12mo": -14.4,
+    "growth12mo": -18.8,
     "median": 462500,
     "type": "house"
   },
@@ -1125,7 +1125,7 @@
     "type": "house"
   },
   "BOWRAL": {
-    "growth12mo": -3.4,
+    "growth12mo": -2.1,
     "median": 1400000,
     "type": "house"
   },
@@ -1145,7 +1145,7 @@
     "type": "house"
   },
   "BRADBURY": {
-    "growth12mo": 5.9,
+    "growth12mo": 5.7,
     "median": 920000,
     "type": "house"
   },
@@ -1165,7 +1165,7 @@
     "type": "house"
   },
   "BRANXTON": {
-    "growth12mo": -3.7,
+    "growth12mo": -2.5,
     "median": 780000,
     "type": "house"
   },
@@ -1250,7 +1250,7 @@
     "type": "house"
   },
   "BROOKVALE": {
-    "growth12mo": 8,
+    "growth12mo": 7.5,
     "median": 1080000,
     "type": "unit"
   },
@@ -1380,7 +1380,7 @@
     "type": "house"
   },
   "BURRILL LAKE": {
-    "growth12mo": 5.2,
+    "growth12mo": 5.8,
     "median": 825000,
     "type": "house"
   },
@@ -1400,12 +1400,12 @@
     "type": "unit"
   },
   "BURWOOD HEIGHTS": {
-    "growth12mo": -52,
+    "growth12mo": -60.7,
     "median": 726500,
     "type": "unit"
   },
   "BUSBY": {
-    "growth12mo": 12.5,
+    "growth12mo": 11.5,
     "median": 990000,
     "type": "house"
   },
@@ -1420,7 +1420,7 @@
     "type": "house"
   },
   "BYRON BAY": {
-    "growth12mo": -6.3,
+    "growth12mo": -7,
     "median": 1570000,
     "type": "unit"
   },
@@ -1460,7 +1460,7 @@
     "type": "house"
   },
   "CALDERWOOD": {
-    "growth12mo": 12.3,
+    "growth12mo": 12.6,
     "median": 980000,
     "type": "house"
   },
@@ -1485,7 +1485,7 @@
     "type": "house"
   },
   "CAMBRIDGE PARK": {
-    "growth12mo": 11.4,
+    "growth12mo": 11,
     "median": 1005000,
     "type": "house"
   },
@@ -1515,7 +1515,7 @@
     "type": "house"
   },
   "CAMMERAY": {
-    "growth12mo": -8.5,
+    "growth12mo": -8.8,
     "median": 1450000,
     "type": "unit"
   },
@@ -1525,7 +1525,7 @@
     "type": "unit"
   },
   "CAMPERDOWN": {
-    "growth12mo": 1.9,
+    "growth12mo": 2.2,
     "median": 973000,
     "type": "unit"
   },
@@ -1560,7 +1560,7 @@
     "type": "house"
   },
   "CANLEY VALE": {
-    "growth12mo": -2.3,
+    "growth12mo": -2.6,
     "median": 970000,
     "type": "house"
   },
@@ -1605,7 +1605,7 @@
     "type": "house"
   },
   "CARDIFF SOUTH": {
-    "growth12mo": -0.1,
+    "growth12mo": 0.1,
     "median": 850000,
     "type": "house"
   },
@@ -1635,7 +1635,7 @@
     "type": "unit"
   },
   "CARLTON": {
-    "growth12mo": 4.7,
+    "growth12mo": 5.6,
     "median": 924000,
     "type": "unit"
   },
@@ -1675,7 +1675,7 @@
     "type": "house"
   },
   "CASTLE COVE": {
-    "growth12mo": 1.1,
+    "growth12mo": 0.8,
     "median": 4000000,
     "type": "house"
   },
@@ -1705,7 +1705,7 @@
     "type": "house"
   },
   "CATALINA": {
-    "growth12mo": 1.7,
+    "growth12mo": 1.4,
     "median": 702000,
     "type": "house"
   },
@@ -1815,7 +1815,7 @@
     "type": "house"
   },
   "CHIPPENDALE": {
-    "growth12mo": -5,
+    "growth12mo": -4.7,
     "median": 760000,
     "type": "unit"
   },
@@ -1825,7 +1825,7 @@
     "type": "house"
   },
   "CHISHOLM": {
-    "growth12mo": 4.2,
+    "growth12mo": 3.7,
     "median": 950000,
     "type": "house"
   },
@@ -1835,7 +1835,7 @@
     "type": "unit"
   },
   "CHITTAWAY BAY": {
-    "growth12mo": 0.3,
+    "growth12mo": -0.6,
     "median": 890000,
     "type": "house"
   },
@@ -1880,7 +1880,7 @@
     "type": "house"
   },
   "CLAYMORE": {
-    "growth12mo": 72.3,
+    "growth12mo": 73.8,
     "median": 1008000,
     "type": "house"
   },
@@ -1960,7 +1960,7 @@
     "type": "house"
   },
   "COLEBEE": {
-    "growth12mo": -1.5,
+    "growth12mo": -1.3,
     "median": 1308000,
     "type": "house"
   },
@@ -1975,7 +1975,7 @@
     "type": "unit"
   },
   "COLLAROY PLATEAU": {
-    "growth12mo": -2.6,
+    "growth12mo": -3,
     "median": 2800000,
     "type": "house"
   },
@@ -2040,7 +2040,7 @@
     "type": "house"
   },
   "COOGEE": {
-    "growth12mo": -13.2,
+    "growth12mo": -13.5,
     "median": 1510000,
     "type": "unit"
   },
@@ -2070,7 +2070,7 @@
     "type": "house"
   },
   "COOMA": {
-    "growth12mo": 2.4,
+    "growth12mo": 1.9,
     "median": 563000,
     "type": "house"
   },
@@ -2140,7 +2140,7 @@
     "type": "house"
   },
   "CORLETTE": {
-    "growth12mo": 10.1,
+    "growth12mo": 9.1,
     "median": 1200000,
     "type": "house"
   },
@@ -2185,7 +2185,7 @@
     "type": "unit"
   },
   "CRANEBROOK": {
-    "growth12mo": 7.5,
+    "growth12mo": 7.6,
     "median": 1014000,
     "type": "house"
   },
@@ -2300,7 +2300,7 @@
     "type": "house"
   },
   "CUNDLETOWN": {
-    "growth12mo": -3,
+    "growth12mo": -2.6,
     "median": 565000,
     "type": "house"
   },
@@ -2365,7 +2365,7 @@
     "type": "house"
   },
   "DARETON": {
-    "growth12mo": 26.3,
+    "growth12mo": 21.5,
     "median": 240000,
     "type": "house"
   },
@@ -2375,7 +2375,7 @@
     "type": "unit"
   },
   "DARLINGHURST": {
-    "growth12mo": -4.1,
+    "growth12mo": -3.4,
     "median": 1191000,
     "type": "unit"
   },
@@ -2410,7 +2410,7 @@
     "type": "unit"
   },
   "DEAN PARK": {
-    "growth12mo": 9.4,
+    "growth12mo": 9.1,
     "median": 1050000,
     "type": "house"
   },
@@ -2455,7 +2455,7 @@
     "type": "house"
   },
   "DENISTONE EAST": {
-    "growth12mo": -13.3,
+    "growth12mo": -13.4,
     "median": 2100000,
     "type": "house"
   },
@@ -2465,7 +2465,7 @@
     "type": "house"
   },
   "DENMAN": {
-    "growth12mo": 6.5,
+    "growth12mo": 7,
     "median": 570000,
     "type": "house"
   },
@@ -2570,7 +2570,7 @@
     "type": "house"
   },
   "DUNDAS": {
-    "growth12mo": -25.8,
+    "growth12mo": -23.1,
     "median": 999944,
     "type": "unit"
   },
@@ -2595,7 +2595,7 @@
     "type": "house"
   },
   "DUNOON": {
-    "growth12mo": 21.7,
+    "growth12mo": 18.7,
     "median": 874500,
     "type": "house"
   },
@@ -2615,7 +2615,7 @@
     "type": "house"
   },
   "EAST ALBURY": {
-    "growth12mo": -15.7,
+    "growth12mo": -16,
     "median": 590000,
     "type": "house"
   },
@@ -2720,7 +2720,7 @@
     "type": "unit"
   },
   "EASTLAKES": {
-    "growth12mo": -0.9,
+    "growth12mo": -1.5,
     "median": 788250,
     "type": "unit"
   },
@@ -2740,12 +2740,12 @@
     "type": "house"
   },
   "EDENSOR PARK": {
-    "growth12mo": 8.6,
+    "growth12mo": 7.4,
     "median": 1460000,
     "type": "house"
   },
   "EDGECLIFF": {
-    "growth12mo": 13.1,
+    "growth12mo": 11.8,
     "median": 1549000,
     "type": "unit"
   },
@@ -2755,7 +2755,7 @@
     "type": "house"
   },
   "EDMONDSON PARK": {
-    "growth12mo": 5.2,
+    "growth12mo": 5.1,
     "median": 1043000,
     "type": "house"
   },
@@ -2770,7 +2770,7 @@
     "type": "house"
   },
   "ELDERSLIE": {
-    "growth12mo": 10.2,
+    "growth12mo": 9.9,
     "median": 1135000,
     "type": "house"
   },
@@ -2840,7 +2840,7 @@
     "type": "house"
   },
   "EMU PLAINS": {
-    "growth12mo": 3.5,
+    "growth12mo": 3,
     "median": 1055278,
     "type": "house"
   },
@@ -2895,7 +2895,7 @@
     "type": "house"
   },
   "ERSKINEVILLE": {
-    "growth12mo": 0,
+    "growth12mo": -0.4,
     "median": 1200000,
     "type": "unit"
   },
@@ -3055,12 +3055,12 @@
     "type": "house"
   },
   "FISHING POINT": {
-    "growth12mo": -13,
+    "growth12mo": -11.1,
     "median": 1000000,
     "type": "house"
   },
   "FIVE DOCK": {
-    "growth12mo": 2.5,
+    "growth12mo": 1.6,
     "median": 1610000,
     "type": "unit"
   },
@@ -3090,12 +3090,12 @@
     "type": "house"
   },
   "FOREST HILL": {
-    "growth12mo": 5.7,
+    "growth12mo": 3.5,
     "median": 557000,
     "type": "house"
   },
   "FOREST LODGE": {
-    "growth12mo": -3.2,
+    "growth12mo": -3.3,
     "median": 1450000,
     "type": "unit"
   },
@@ -3135,7 +3135,7 @@
     "type": "house"
   },
   "FRESHWATER": {
-    "growth12mo": -9.7,
+    "growth12mo": -11.3,
     "median": 1420000,
     "type": "unit"
   },
@@ -3210,12 +3210,12 @@
     "type": "house"
   },
   "GILGANDRA": {
-    "growth12mo": 19.7,
+    "growth12mo": 21.7,
     "median": 365000,
     "type": "house"
   },
   "GILLIESTON HEIGHTS": {
-    "growth12mo": 12.3,
+    "growth12mo": 12.6,
     "median": 816252,
     "type": "house"
   },
@@ -3230,7 +3230,7 @@
     "type": "unit"
   },
   "GLADESVILLE": {
-    "growth12mo": -13.6,
+    "growth12mo": -14.5,
     "median": 982000,
     "type": "unit"
   },
@@ -3245,7 +3245,7 @@
     "type": "house"
   },
   "GLEN ALPINE": {
-    "growth12mo": 7.3,
+    "growth12mo": 7.8,
     "median": 1390000,
     "type": "house"
   },
@@ -3270,7 +3270,7 @@
     "type": "house"
   },
   "GLENFIELD": {
-    "growth12mo": 2.2,
+    "growth12mo": 1.9,
     "median": 943500,
     "type": "house"
   },
@@ -3280,7 +3280,7 @@
     "type": "house"
   },
   "GLENHAVEN": {
-    "growth12mo": 2.3,
+    "growth12mo": 2.4,
     "median": 2700000,
     "type": "house"
   },
@@ -3330,7 +3330,7 @@
     "type": "house"
   },
   "GOBBAGOMBALIN": {
-    "growth12mo": -0.6,
+    "growth12mo": 0.8,
     "median": 755750,
     "type": "house"
   },
@@ -3355,7 +3355,7 @@
     "type": "house"
   },
   "GOONELLABAH": {
-    "growth12mo": 14.2,
+    "growth12mo": 14.4,
     "median": 743500,
     "type": "house"
   },
@@ -3425,7 +3425,7 @@
     "type": "house"
   },
   "GREEN POINT": {
-    "growth12mo": -5.5,
+    "growth12mo": -4.5,
     "median": 1115000,
     "type": "house"
   },
@@ -3475,12 +3475,12 @@
     "type": "house"
   },
   "GREENWELL POINT": {
-    "growth12mo": -11.6,
+    "growth12mo": -11.3,
     "median": 736250,
     "type": "house"
   },
   "GREENWICH": {
-    "growth12mo": 0.6,
+    "growth12mo": -2.9,
     "median": 1172000,
     "type": "unit"
   },
@@ -3490,7 +3490,7 @@
     "type": "house"
   },
   "GRENFELL": {
-    "growth12mo": 7.2,
+    "growth12mo": 8.8,
     "median": 370000,
     "type": "house"
   },
@@ -3520,12 +3520,12 @@
     "type": "house"
   },
   "GUILDFORD": {
-    "growth12mo": 8.4,
+    "growth12mo": 7.6,
     "median": 900000,
     "type": "unit"
   },
   "GUILDFORD WEST": {
-    "growth12mo": 8.8,
+    "growth12mo": 8.4,
     "median": 1262500,
     "type": "house"
   },
@@ -3570,7 +3570,7 @@
     "type": "house"
   },
   "GUYRA": {
-    "growth12mo": -13.9,
+    "growth12mo": -15,
     "median": 340000,
     "type": "house"
   },
@@ -3580,7 +3580,7 @@
     "type": "house"
   },
   "GWYNNEVILLE": {
-    "growth12mo": 13.9,
+    "growth12mo": 16.2,
     "median": 1185000,
     "type": "house"
   },
@@ -3680,7 +3680,7 @@
     "type": "house"
   },
   "HARRIS PARK": {
-    "growth12mo": 3.4,
+    "growth12mo": 4.1,
     "median": 550000,
     "type": "unit"
   },
@@ -3730,7 +3730,7 @@
     "type": "house"
   },
   "HEATHCOTE": {
-    "growth12mo": 2.6,
+    "growth12mo": 2.9,
     "median": 1379500,
     "type": "house"
   },
@@ -3875,7 +3875,7 @@
     "type": "house"
   },
   "HORSLEY": {
-    "growth12mo": 0.7,
+    "growth12mo": 1.2,
     "median": 892500,
     "type": "house"
   },
@@ -3930,7 +3930,7 @@
     "type": "house"
   },
   "HURSTVILLE": {
-    "growth12mo": 3.1,
+    "growth12mo": 3.3,
     "median": 820000,
     "type": "unit"
   },
@@ -3975,7 +3975,7 @@
     "type": "house"
   },
   "INVERGOWRIE": {
-    "growth12mo": 16.3,
+    "growth12mo": 11.9,
     "median": 822500,
     "type": "house"
   },
@@ -4000,12 +4000,12 @@
     "type": "unit"
   },
   "JANNALI": {
-    "growth12mo": -23.1,
+    "growth12mo": -22.8,
     "median": 930000,
     "type": "unit"
   },
   "JERILDERIE": {
-    "growth12mo": 10,
+    "growth12mo": 19.6,
     "median": 275000,
     "type": "house"
   },
@@ -4060,7 +4060,7 @@
     "type": "house"
   },
   "JUNEE": {
-    "growth12mo": 5.6,
+    "growth12mo": 5.5,
     "median": 452500,
     "type": "house"
   },
@@ -4185,7 +4185,7 @@
     "type": "unit"
   },
   "KENTHURST": {
-    "growth12mo": -12.9,
+    "growth12mo": -13.5,
     "median": 2987500,
     "type": "house"
   },
@@ -4285,7 +4285,7 @@
     "type": "house"
   },
   "KINGSCLIFF": {
-    "growth12mo": -8.1,
+    "growth12mo": -8.6,
     "median": 1337500,
     "type": "unit"
   },
@@ -4330,7 +4330,7 @@
     "type": "house"
   },
   "KOGARAH": {
-    "growth12mo": -1.5,
+    "growth12mo": -1.3,
     "median": 735000,
     "type": "unit"
   },
@@ -4365,7 +4365,7 @@
     "type": "house"
   },
   "KORORA": {
-    "growth12mo": -5.5,
+    "growth12mo": -6.4,
     "median": 1030000,
     "type": "house"
   },
@@ -4425,7 +4425,7 @@
     "type": "house"
   },
   "KURRI KURRI": {
-    "growth12mo": 4.4,
+    "growth12mo": 4.1,
     "median": 628500,
     "type": "house"
   },
@@ -4510,7 +4510,7 @@
     "type": "house"
   },
   "LAKEMBA": {
-    "growth12mo": 4.4,
+    "growth12mo": 4.3,
     "median": 538500,
     "type": "unit"
   },
@@ -4525,7 +4525,7 @@
     "type": "house"
   },
   "LAMBTON": {
-    "growth12mo": 16.3,
+    "growth12mo": 17,
     "median": 1151000,
     "type": "house"
   },
@@ -4610,7 +4610,7 @@
     "type": "house"
   },
   "LEMON TREE PASSAGE": {
-    "growth12mo": 3.5,
+    "growth12mo": 4.2,
     "median": 740000,
     "type": "house"
   },
@@ -4630,7 +4630,7 @@
     "type": "house"
   },
   "LEPPINGTON": {
-    "growth12mo": -12,
+    "growth12mo": -11.5,
     "median": 920000,
     "type": "house"
   },
@@ -4640,7 +4640,7 @@
     "type": "house"
   },
   "LEUMEAH": {
-    "growth12mo": 6.3,
+    "growth12mo": 6.4,
     "median": 930000,
     "type": "house"
   },
@@ -4660,7 +4660,7 @@
     "type": "unit"
   },
   "LIDCOMBE": {
-    "growth12mo": -5.2,
+    "growth12mo": -5.1,
     "median": 821000,
     "type": "unit"
   },
@@ -4670,7 +4670,7 @@
     "type": "house"
   },
   "LILLI PILLI": {
-    "growth12mo": -12.5,
+    "growth12mo": -13.3,
     "median": 1990000,
     "type": "house"
   },
@@ -4745,12 +4745,12 @@
     "type": "house"
   },
   "LIVERPOOL": {
-    "growth12mo": 0,
+    "growth12mo": -0.2,
     "median": 527706,
     "type": "unit"
   },
   "LLANARTH": {
-    "growth12mo": -6.3,
+    "growth12mo": -6.4,
     "median": 820000,
     "type": "house"
   },
@@ -4795,7 +4795,7 @@
     "type": "house"
   },
   "LONG BEACH": {
-    "growth12mo": -5.4,
+    "growth12mo": -5.7,
     "median": 870000,
     "type": "house"
   },
@@ -4810,7 +4810,7 @@
     "type": "house"
   },
   "LONGUEVILLE": {
-    "growth12mo": -9.1,
+    "growth12mo": -9.3,
     "median": 5140000,
     "type": "house"
   },
@@ -4860,7 +4860,7 @@
     "type": "house"
   },
   "MACKSVILLE": {
-    "growth12mo": 11.9,
+    "growth12mo": 12.4,
     "median": 668500,
     "type": "house"
   },
@@ -4875,7 +4875,7 @@
     "type": "house"
   },
   "MACQUARIE FIELDS": {
-    "growth12mo": 5.2,
+    "growth12mo": 4.9,
     "median": 852500,
     "type": "house"
   },
@@ -4945,7 +4945,7 @@
     "type": "house"
   },
   "MANGERTON": {
-    "growth12mo": -3.5,
+    "growth12mo": -3.4,
     "median": 1041500,
     "type": "house"
   },
@@ -4970,7 +4970,7 @@
     "type": "unit"
   },
   "MANLY VALE": {
-    "growth12mo": 12.8,
+    "growth12mo": 12,
     "median": 1280000,
     "type": "unit"
   },
@@ -5060,7 +5060,7 @@
     "type": "house"
   },
   "MARYVILLE": {
-    "growth12mo": 7.1,
+    "growth12mo": 9.5,
     "median": 1205000,
     "type": "house"
   },
@@ -5130,7 +5130,7 @@
     "type": "house"
   },
   "MEADOWBANK": {
-    "growth12mo": -1.5,
+    "growth12mo": -1.3,
     "median": 670000,
     "type": "unit"
   },
@@ -5145,12 +5145,12 @@
     "type": "house"
   },
   "MELONBA": {
-    "growth12mo": 1.3,
+    "growth12mo": 1.2,
     "median": 1271000,
     "type": "house"
   },
   "MELROSE PARK": {
-    "growth12mo": 1.3,
+    "growth12mo": 1,
     "median": 820800,
     "type": "unit"
   },
@@ -5205,7 +5205,7 @@
     "type": "house"
   },
   "MERRYLANDS": {
-    "growth12mo": 5.5,
+    "growth12mo": 5.8,
     "median": 680000,
     "type": "unit"
   },
@@ -5320,7 +5320,7 @@
     "type": "house"
   },
   "MITTAGONG": {
-    "growth12mo": 1.9,
+    "growth12mo": 1.3,
     "median": 1000000,
     "type": "house"
   },
@@ -5460,12 +5460,12 @@
     "type": "house"
   },
   "MOSMAN": {
-    "growth12mo": -29,
+    "growth12mo": -29.6,
     "median": 1675000,
     "type": "unit"
   },
   "MOSS VALE": {
-    "growth12mo": 3.1,
+    "growth12mo": 3.5,
     "median": 950000,
     "type": "house"
   },
@@ -5490,7 +5490,7 @@
     "type": "house"
   },
   "MOUNT COLAH": {
-    "growth12mo": 3.5,
+    "growth12mo": 2.4,
     "median": 1572500,
     "type": "house"
   },
@@ -5540,7 +5540,7 @@
     "type": "house"
   },
   "MOUNT PLEASANT": {
-    "growth12mo": 21.1,
+    "growth12mo": 22,
     "median": 1537500,
     "type": "house"
   },
@@ -5645,7 +5645,7 @@
     "type": "house"
   },
   "MURWILLUMBAH": {
-    "growth12mo": 6.6,
+    "growth12mo": 6.9,
     "median": 930000,
     "type": "house"
   },
@@ -5705,7 +5705,7 @@
     "type": "unit"
   },
   "NAROOMA": {
-    "growth12mo": 15.3,
+    "growth12mo": 15,
     "median": 755000,
     "type": "house"
   },
@@ -5720,7 +5720,7 @@
     "type": "house"
   },
   "NARRANDERA": {
-    "growth12mo": 21.9,
+    "growth12mo": 21.6,
     "median": 400000,
     "type": "house"
   },
@@ -5735,7 +5735,7 @@
     "type": "house"
   },
   "NARROMINE": {
-    "growth12mo": 3.8,
+    "growth12mo": 5.1,
     "median": 410000,
     "type": "house"
   },
@@ -5775,7 +5775,7 @@
     "type": "house"
   },
   "NEUTRAL BAY": {
-    "growth12mo": -8.1,
+    "growth12mo": -7.7,
     "median": 1305000,
     "type": "unit"
   },
@@ -5810,12 +5810,12 @@
     "type": "house"
   },
   "NEWBRIDGE": {
-    "growth12mo": -16.7,
+    "growth12mo": -70,
     "median": 300000,
     "type": "house"
   },
   "NEWCASTLE": {
-    "growth12mo": 8.9,
+    "growth12mo": 8.7,
     "median": 1010000,
     "type": "unit"
   },
@@ -5845,7 +5845,7 @@
     "type": "unit"
   },
   "NEWTOWN": {
-    "growth12mo": 8.7,
+    "growth12mo": 8.9,
     "median": 1475000,
     "type": "house"
   },
@@ -5905,7 +5905,7 @@
     "type": "house"
   },
   "NORTH BALGOWLAH": {
-    "growth12mo": 10.7,
+    "growth12mo": 11.4,
     "median": 3410000,
     "type": "house"
   },
@@ -5955,7 +5955,7 @@
     "type": "house"
   },
   "NORTH KELLYVILLE": {
-    "growth12mo": 12.1,
+    "growth12mo": 12,
     "median": 1600000,
     "type": "house"
   },
@@ -5965,7 +5965,7 @@
     "type": "house"
   },
   "NORTH LISMORE": {
-    "growth12mo": -3.7,
+    "growth12mo": 0,
     "median": 390000,
     "type": "house"
   },
@@ -5995,7 +5995,7 @@
     "type": "house"
   },
   "NORTH PARRAMATTA": {
-    "growth12mo": 7.9,
+    "growth12mo": 8.1,
     "median": 738000,
     "type": "unit"
   },
@@ -6015,7 +6015,7 @@
     "type": "house"
   },
   "NORTH RYDE": {
-    "growth12mo": -0.5,
+    "growth12mo": -0.6,
     "median": 2090000,
     "type": "house"
   },
@@ -6035,7 +6035,7 @@
     "type": "unit"
   },
   "NORTH SYDNEY": {
-    "growth12mo": -6.9,
+    "growth12mo": -6.8,
     "median": 1282000,
     "type": "unit"
   },
@@ -6060,7 +6060,7 @@
     "type": "house"
   },
   "NORTH WILLOUGHBY": {
-    "growth12mo": -8.7,
+    "growth12mo": -8.6,
     "median": 2925000,
     "type": "house"
   },
@@ -6085,7 +6085,7 @@
     "type": "house"
   },
   "NORWEST": {
-    "growth12mo": 3.1,
+    "growth12mo": 2.7,
     "median": 1025000,
     "type": "unit"
   },
@@ -6095,7 +6095,7 @@
     "type": "house"
   },
   "NOWRA HILL": {
-    "growth12mo": 8.1,
+    "growth12mo": 6.7,
     "median": 1475000,
     "type": "house"
   },
@@ -6125,7 +6125,7 @@
     "type": "house"
   },
   "OAK FLATS": {
-    "growth12mo": 6,
+    "growth12mo": 5.7,
     "median": 885000,
     "type": "house"
   },
@@ -6140,7 +6140,7 @@
     "type": "house"
   },
   "OAKVILLE": {
-    "growth12mo": -29.9,
+    "growth12mo": -30.2,
     "median": 895000,
     "type": "house"
   },
@@ -6235,12 +6235,12 @@
     "type": "house"
   },
   "PADDINGTON": {
-    "growth12mo": -3.7,
+    "growth12mo": -4,
     "median": 2890000,
     "type": "house"
   },
   "PADSTOW": {
-    "growth12mo": -3.1,
+    "growth12mo": -2.5,
     "median": 1482000,
     "type": "house"
   },
@@ -6275,7 +6275,7 @@
     "type": "house"
   },
   "PARKES": {
-    "growth12mo": 1.1,
+    "growth12mo": 0,
     "median": 455000,
     "type": "house"
   },
@@ -6310,7 +6310,7 @@
     "type": "house"
   },
   "PEAKHURST": {
-    "growth12mo": 8.3,
+    "growth12mo": 8.1,
     "median": 1500000,
     "type": "house"
   },
@@ -6350,7 +6350,7 @@
     "type": "unit"
   },
   "PENNANT HILLS": {
-    "growth12mo": -5.6,
+    "growth12mo": -5.8,
     "median": 1779000,
     "type": "house"
   },
@@ -6360,7 +6360,7 @@
     "type": "unit"
   },
   "PENSHURST": {
-    "growth12mo": -2.1,
+    "growth12mo": -2.6,
     "median": 747500,
     "type": "unit"
   },
@@ -6415,7 +6415,7 @@
     "type": "house"
   },
   "PITT TOWN": {
-    "growth12mo": -13.7,
+    "growth12mo": -14.2,
     "median": 1727000,
     "type": "house"
   },
@@ -6455,7 +6455,7 @@
     "type": "unit"
   },
   "POKOLBIN": {
-    "growth12mo": -17.9,
+    "growth12mo": -6,
     "median": 395000,
     "type": "unit"
   },
@@ -6495,7 +6495,7 @@
     "type": "unit"
   },
   "POTTS POINT": {
-    "growth12mo": -1.1,
+    "growth12mo": -0.8,
     "median": 900000,
     "type": "unit"
   },
@@ -6565,7 +6565,7 @@
     "type": "house"
   },
   "QUAKERS HILL": {
-    "growth12mo": 8.4,
+    "growth12mo": 8.3,
     "median": 1215000,
     "type": "house"
   },
@@ -6575,12 +6575,12 @@
     "type": "house"
   },
   "QUEANBEYAN": {
-    "growth12mo": 3.8,
+    "growth12mo": 5.4,
     "median": 637500,
     "type": "unit"
   },
   "QUEANBEYAN EAST": {
-    "growth12mo": -12,
+    "growth12mo": -12.7,
     "median": 490000,
     "type": "unit"
   },
@@ -6615,7 +6615,7 @@
     "type": "house"
   },
   "RABY": {
-    "growth12mo": 3.7,
+    "growth12mo": 4.2,
     "median": 990000,
     "type": "house"
   },
@@ -6645,7 +6645,7 @@
     "type": "unit"
   },
   "RANDWICK": {
-    "growth12mo": 3.7,
+    "growth12mo": 3.8,
     "median": 1412500,
     "type": "unit"
   },
@@ -6720,7 +6720,7 @@
     "type": "house"
   },
   "REVESBY": {
-    "growth12mo": 0.3,
+    "growth12mo": -1,
     "median": 1470000,
     "type": "house"
   },
@@ -6730,12 +6730,12 @@
     "type": "house"
   },
   "RHODES": {
-    "growth12mo": -0.4,
+    "growth12mo": -0.3,
     "median": 996500,
     "type": "unit"
   },
   "RICHMOND": {
-    "growth12mo": 2.4,
+    "growth12mo": 1.8,
     "median": 860000,
     "type": "house"
   },
@@ -6795,7 +6795,7 @@
     "type": "house"
   },
   "ROOTY HILL": {
-    "growth12mo": 0.1,
+    "growth12mo": 0.9,
     "median": 890000,
     "type": "house"
   },
@@ -6805,7 +6805,7 @@
     "type": "house"
   },
   "ROSE BAY": {
-    "growth12mo": -37.8,
+    "growth12mo": -37.3,
     "median": 1850000,
     "type": "unit"
   },
@@ -6840,7 +6840,7 @@
     "type": "house"
   },
   "ROSEVILLE": {
-    "growth12mo": -31.7,
+    "growth12mo": -31,
     "median": 1797500,
     "type": "unit"
   },
@@ -6855,7 +6855,7 @@
     "type": "house"
   },
   "ROTHBURY": {
-    "growth12mo": 20,
+    "growth12mo": 24.4,
     "median": 1620000,
     "type": "house"
   },
@@ -6890,7 +6890,7 @@
     "type": "unit"
   },
   "RUSSELL LEA": {
-    "growth12mo": 17.4,
+    "growth12mo": 17.2,
     "median": 3100000,
     "type": "house"
   },
@@ -6900,7 +6900,7 @@
     "type": "house"
   },
   "RUTHERFORD": {
-    "growth12mo": 11.5,
+    "growth12mo": 11.3,
     "median": 750000,
     "type": "house"
   },
@@ -6980,12 +6980,12 @@
     "type": "house"
   },
   "SANS SOUCI": {
-    "growth12mo": 3.9,
+    "growth12mo": 4.3,
     "median": 1450000,
     "type": "unit"
   },
   "SAPPHIRE BEACH": {
-    "growth12mo": 0.9,
+    "growth12mo": 1.6,
     "median": 1125000,
     "type": "house"
   },
@@ -7020,7 +7020,7 @@
     "type": "unit"
   },
   "SCONE": {
-    "growth12mo": -4.2,
+    "growth12mo": -3.5,
     "median": 579000,
     "type": "house"
   },
@@ -7060,7 +7060,7 @@
     "type": "house"
   },
   "SEVEN HILLS": {
-    "growth12mo": 6.7,
+    "growth12mo": 6.4,
     "median": 1200000,
     "type": "house"
   },
@@ -7110,22 +7110,22 @@
     "type": "house"
   },
   "SHORTLAND": {
-    "growth12mo": 8,
+    "growth12mo": 7.8,
     "median": 745050,
     "type": "house"
   },
   "SILVERDALE": {
-    "growth12mo": 0.2,
+    "growth12mo": 0.3,
     "median": 1259500,
     "type": "house"
   },
   "SILVERWATER": {
-    "growth12mo": 10.3,
+    "growth12mo": 11,
     "median": 860000,
     "type": "unit"
   },
   "SINGLETON": {
-    "growth12mo": 5.3,
+    "growth12mo": 4.8,
     "median": 650000,
     "type": "house"
   },
@@ -7195,7 +7195,7 @@
     "type": "house"
   },
   "SOUTH GOLDEN BEACH": {
-    "growth12mo": 7.6,
+    "growth12mo": 6.7,
     "median": 1387500,
     "type": "house"
   },
@@ -7205,7 +7205,7 @@
     "type": "house"
   },
   "SOUTH GRANVILLE": {
-    "growth12mo": 3.6,
+    "growth12mo": 5.6,
     "median": 1250000,
     "type": "house"
   },
@@ -7225,7 +7225,7 @@
     "type": "house"
   },
   "SOUTH LISMORE": {
-    "growth12mo": 10.3,
+    "growth12mo": 11.1,
     "median": 400000,
     "type": "house"
   },
@@ -7250,7 +7250,7 @@
     "type": "house"
   },
   "SOUTH PAMBULA": {
-    "growth12mo": -3.8,
+    "growth12mo": -1.9,
     "median": 717000,
     "type": "house"
   },
@@ -7355,7 +7355,7 @@
     "type": "house"
   },
   "ST IVES": {
-    "growth12mo": -4.8,
+    "growth12mo": -4.2,
     "median": 2390000,
     "type": "house"
   },
@@ -7370,7 +7370,7 @@
     "type": "house"
   },
   "ST LEONARDS": {
-    "growth12mo": -10.3,
+    "growth12mo": -10.2,
     "median": 1040000,
     "type": "unit"
   },
@@ -7395,7 +7395,7 @@
     "type": "house"
   },
   "STANMORE": {
-    "growth12mo": 21.6,
+    "growth12mo": 21.9,
     "median": 2182500,
     "type": "house"
   },
@@ -7495,7 +7495,7 @@
     "type": "house"
   },
   "SUTHERLAND": {
-    "growth12mo": 6.9,
+    "growth12mo": 6.7,
     "median": 880000,
     "type": "unit"
   },
@@ -7540,7 +7540,7 @@
     "type": "unit"
   },
   "SYLVANIA": {
-    "growth12mo": 3.1,
+    "growth12mo": 2.8,
     "median": 1727000,
     "type": "house"
   },
@@ -7590,7 +7590,7 @@
     "type": "house"
   },
   "TAMARAMA": {
-    "growth12mo": -14,
+    "growth12mo": -6.2,
     "median": 2837500,
     "type": "unit"
   },
@@ -7625,7 +7625,7 @@
     "type": "house"
   },
   "TAREN POINT": {
-    "growth12mo": 2.7,
+    "growth12mo": 2,
     "median": 1880000,
     "type": "unit"
   },
@@ -7680,7 +7680,7 @@
     "type": "house"
   },
   "TEMORA": {
-    "growth12mo": 9,
+    "growth12mo": 8,
     "median": 445500,
     "type": "house"
   },
@@ -7710,7 +7710,7 @@
     "type": "house"
   },
   "TERALBA": {
-    "growth12mo": 10.6,
+    "growth12mo": 10.5,
     "median": 994500,
     "type": "house"
   },
@@ -7815,7 +7815,7 @@
     "type": "house"
   },
   "THRUMSTER": {
-    "growth12mo": 0.4,
+    "growth12mo": 0.1,
     "median": 850000,
     "type": "house"
   },
@@ -7875,7 +7875,7 @@
     "type": "unit"
   },
   "TOORMINA": {
-    "growth12mo": 0.5,
+    "growth12mo": 0.9,
     "median": 698750,
     "type": "house"
   },
@@ -7895,7 +7895,7 @@
     "type": "house"
   },
   "TOUKLEY": {
-    "growth12mo": 1.3,
+    "growth12mo": 0.4,
     "median": 793500,
     "type": "house"
   },
@@ -7910,7 +7910,7 @@
     "type": "house"
   },
   "TRALEE": {
-    "growth12mo": 1.5,
+    "growth12mo": 0.6,
     "median": 840000,
     "type": "house"
   },
@@ -7920,7 +7920,7 @@
     "type": "house"
   },
   "TREGEAR": {
-    "growth12mo": 7.7,
+    "growth12mo": 7.4,
     "median": 830000,
     "type": "house"
   },
@@ -7965,7 +7965,7 @@
     "type": "house"
   },
   "TUMUT": {
-    "growth12mo": 2.2,
+    "growth12mo": 1.7,
     "median": 501000,
     "type": "house"
   },
@@ -8040,12 +8040,12 @@
     "type": "unit"
   },
   "UMINA BEACH": {
-    "growth12mo": 9.6,
+    "growth12mo": 9.8,
     "median": 1195000,
     "type": "house"
   },
   "UNANDERRA": {
-    "growth12mo": -2.8,
+    "growth12mo": -1.7,
     "median": 831000,
     "type": "house"
   },
@@ -8085,7 +8085,7 @@
     "type": "house"
   },
   "URUNGA": {
-    "growth12mo": 3.2,
+    "growth12mo": 2.6,
     "median": 800000,
     "type": "house"
   },
@@ -8125,7 +8125,7 @@
     "type": "house"
   },
   "VAUCLUSE": {
-    "growth12mo": -21.3,
+    "growth12mo": -19.6,
     "median": 2250000,
     "type": "unit"
   },
@@ -8140,7 +8140,7 @@
     "type": "house"
   },
   "VINEYARD": {
-    "growth12mo": 21.7,
+    "growth12mo": 20.8,
     "median": 1210000,
     "type": "house"
   },
@@ -8155,7 +8155,7 @@
     "type": "house"
   },
   "WAGGA WAGGA": {
-    "growth12mo": 7.1,
+    "growth12mo": 6.3,
     "median": 690000,
     "type": "house"
   },
@@ -8175,7 +8175,7 @@
     "type": "unit"
   },
   "WAKELEY": {
-    "growth12mo": 8.1,
+    "growth12mo": 6.4,
     "median": 1330000,
     "type": "house"
   },
@@ -8225,7 +8225,7 @@
     "type": "house"
   },
   "WALLERAWANG": {
-    "growth12mo": -14.2,
+    "growth12mo": -16.4,
     "median": 485000,
     "type": "house"
   },
@@ -8235,7 +8235,7 @@
     "type": "house"
   },
   "WAMBERAL": {
-    "growth12mo": 1.3,
+    "growth12mo": 0.6,
     "median": 1550000,
     "type": "house"
   },
@@ -8305,7 +8305,7 @@
     "type": "house"
   },
   "WARRAWEE": {
-    "growth12mo": -54.5,
+    "growth12mo": -53.4,
     "median": 1300000,
     "type": "unit"
   },
@@ -8365,7 +8365,7 @@
     "type": "house"
   },
   "WATTLE GROVE": {
-    "growth12mo": 14.5,
+    "growth12mo": 14.7,
     "median": 1382500,
     "type": "house"
   },
@@ -8380,7 +8380,7 @@
     "type": "house"
   },
   "WAVERLEY": {
-    "growth12mo": -16,
+    "growth12mo": -14.3,
     "median": 1500000,
     "type": "unit"
   },
@@ -8510,7 +8510,7 @@
     "type": "house"
   },
   "WEST PYMBLE": {
-    "growth12mo": -7.7,
+    "growth12mo": -7.9,
     "median": 2625000,
     "type": "house"
   },
@@ -8530,7 +8530,7 @@
     "type": "house"
   },
   "WEST WOLLONGONG": {
-    "growth12mo": 3.6,
+    "growth12mo": 4.4,
     "median": 1017500,
     "type": "unit"
   },
@@ -8610,7 +8610,7 @@
     "type": "unit"
   },
   "WILLMOT": {
-    "growth12mo": 3.2,
+    "growth12mo": 2.8,
     "median": 817500,
     "type": "house"
   },
@@ -8640,7 +8640,7 @@
     "type": "house"
   },
   "WINDALE": {
-    "growth12mo": 30.2,
+    "growth12mo": 29.2,
     "median": 781000,
     "type": "house"
   },
@@ -8695,7 +8695,7 @@
     "type": "house"
   },
   "WINMALEE": {
-    "growth12mo": 6.3,
+    "growth12mo": 6,
     "median": 1025500,
     "type": "house"
   },
@@ -8715,7 +8715,7 @@
     "type": "unit"
   },
   "WOLLONGBAR": {
-    "growth12mo": -10.1,
+    "growth12mo": -10.6,
     "median": 760000,
     "type": "house"
   },
@@ -8840,7 +8840,7 @@
     "type": "house"
   },
   "WOOLOOWARE": {
-    "growth12mo": -1.1,
+    "growth12mo": -0.5,
     "median": 1080000,
     "type": "unit"
   },
@@ -8890,7 +8890,7 @@
     "type": "house"
   },
   "WOY WOY": {
-    "growth12mo": 3.4,
+    "growth12mo": 4.3,
     "median": 900000,
     "type": "house"
   },
@@ -8945,12 +8945,12 @@
     "type": "house"
   },
   "YAGOONA": {
-    "growth12mo": 16.3,
+    "growth12mo": 16.6,
     "median": 1250000,
     "type": "house"
   },
   "YAMBA": {
-    "growth12mo": 7.9,
+    "growth12mo": 8.2,
     "median": 887500,
     "type": "house"
   },
@@ -8980,7 +8980,7 @@
     "type": "house"
   },
   "YASS": {
-    "growth12mo": -2.8,
+    "growth12mo": -2.7,
     "median": 700000,
     "type": "house"
   },
@@ -9025,7 +9025,7 @@
     "type": "house"
   },
   "YOWIE BAY": {
-    "growth12mo": -1.3,
+    "growth12mo": -0.5,
     "median": 2350000,
     "type": "house"
   },
