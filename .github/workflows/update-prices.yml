@@ -1,0 +1,60 @@
+name: Update suburb prices
+
+on:
+  schedule:
+    # Quarterly: first Monday of Jan, Apr, Jul, Oct at 02:00 UTC
+    - cron: '0 2 1-7 1,4,7,10 1'
+  workflow_dispatch:
+    inputs:
+      force:
+        description: 'Re-download ZIPs even if cached'
+        required: false
+        default: 'false'
+        type: boolean
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Cache VG data ZIPs
+        uses: actions/cache@v4
+        with:
+          path: tmp/vg-cache
+          key: vg-zips-${{ github.run_id }}
+          restore-keys: |
+            vg-zips-
+
+      - name: Download & process NSW VG data
+        run: |
+          if [ "${{ inputs.force }}" = "true" ]; then
+            npm run update-prices:force
+          else
+            npm run update-prices
+          fi
+
+      - name: Commit updated prices
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add public/data/suburb-prices.json
+          if git diff --cached --quiet; then
+            echo "No changes to suburb-prices.json"
+          else
+            git commit -m "data: update suburb prices ($(date -u +%Y-%m-%d))"
+            git push
+          fi
