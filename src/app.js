@@ -2646,14 +2646,17 @@ function openSuburbReport(rawName) {
     { label: '🔀 Project Diversity',    score: sf.diversity.score,    hint: 'Mix of project types: transport, housing, energy, water, other.',                  detail: sf.diversity.detail },
   ];
 
-  const locked = `<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:var(--panel)d0;font-size:9px;color:var(--dim);gap:3px;border-radius:3px">🔒 Full access</div>`;
-
   const projCards = allProjs.slice(0, 8).map(({ project: p, inCatchment }) => {
     const catInfo  = CAT[p.cat] || {};
     const probLbl  = _probLabel(p);
     const politLbl = _politicalLabel(p.politicalRisk);
     const valStr   = (p.val || 0) >= 1000 ? `$${((p.val||0)/1000).toFixed(1)}B` : `$${p.val||0}M`;
     const locStr   = inCatchment ? 'In catchment' : 'Within 5km';
+    const riskReason = p.overrun
+      ? `Cost overrun already recorded (+${p.overrunPct||'?'}%). ${p.analogue ? p.analogue.split('.')[0]+'.' : ''}`
+      : (p.risk === 'High' || (p.budgetRisk||0) > 60)
+        ? 'High budget or delivery risk — monitor closely for schedule changes.'
+        : 'No major overruns recorded. Standard delivery and political risk apply.';
     return `<div style="background:var(--panel2);border:1px solid var(--border2);border-radius:5px;padding:10px 12px;margin-bottom:8px">
       <div style="display:flex;align-items:flex-start;gap:8px;margin-bottom:8px">
         <div style="flex:1;min-width:0">
@@ -2670,22 +2673,22 @@ function openSuburbReport(rawName) {
         </div>
       </div>
       <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:5px">
-        <div style="background:var(--panel);border-radius:3px;padding:5px 7px;position:relative;overflow:hidden">
+        <div style="background:var(--panel);border-radius:3px;padding:5px 7px">
           <div style="color:var(--dim);font-size:7.5px;letter-spacing:.05em;text-transform:uppercase;margin-bottom:2px">Completion Prob</div>
-          <div style="color:var(--dim);font-weight:600;font-size:10px;filter:blur(3.5px);user-select:none">${probLbl.text}</div>${locked}
+          <div style="font-weight:700;font-size:10px;color:${probLbl.color}">${probLbl.text}</div>
         </div>
-        <div style="background:var(--panel);border-radius:3px;padding:5px 7px;position:relative;overflow:hidden">
+        <div style="background:var(--panel);border-radius:3px;padding:5px 7px">
           <div style="color:var(--dim);font-size:7.5px;letter-spacing:.05em;text-transform:uppercase;margin-bottom:2px">Political Risk</div>
-          <div style="color:var(--dim);font-weight:600;font-size:10px;filter:blur(3.5px);user-select:none">${politLbl.text}</div>${locked}
+          <div style="font-weight:700;font-size:10px;color:${politLbl.color}">${politLbl.text}</div>
         </div>
-        <div style="background:var(--panel);border-radius:3px;padding:5px 7px;position:relative;overflow:hidden">
+        <div style="background:var(--panel);border-radius:3px;padding:5px 7px">
           <div style="color:var(--dim);font-size:7.5px;letter-spacing:.05em;text-transform:uppercase;margin-bottom:2px">Est. Completion</div>
-          <div style="color:var(--dim);font-weight:600;font-size:10px;filter:blur(3.5px);user-select:none">${p.year||'—'}</div>${locked}
+          <div style="font-weight:700;font-size:10px;color:var(--text)">${p.year||'—'}</div>
         </div>
       </div>
-      <div style="margin-top:5px;background:var(--panel);border-radius:3px;padding:5px 7px;position:relative;overflow:hidden">
+      <div style="margin-top:5px;background:var(--panel);border-radius:3px;padding:5px 7px">
         <div style="color:var(--dim);font-size:7.5px;letter-spacing:.05em;text-transform:uppercase;margin-bottom:2px">Key Risk Factor</div>
-        <div style="color:var(--muted);font-size:10px;filter:blur(3.5px);user-select:none">Cost and timeline exposure from supply chain and labour market pressure</div>${locked}
+        <div style="color:var(--muted);font-size:10px;line-height:1.4">${riskReason}</div>
       </div>
     </div>`;
   }).join('');
@@ -2741,7 +2744,7 @@ function openSuburbReport(rawName) {
       </div>
       <div style="margin-bottom:18px;padding:11px 14px;background:var(--panel2);border-radius:5px;border:1px solid var(--border2);border-left:3px solid var(--blue)">
         <div style="font-size:10px;font-weight:700;color:var(--text);margin-bottom:5px">📈 Infrastructure-Driven Uplift Estimate</div>
-        <div style="font-size:10px;color:var(--muted);line-height:1.6">Infrastructure-driven uplift estimate for <strong>${display}</strong>: available with full access. Projections are modelled using comparable Sydney project outcomes, presented as ranges — not point estimates. Reference projects will be listed alongside key assumptions.</div>
+        <div style="font-size:10px;color:var(--muted);line-height:1.6">Infrastructure-driven uplift estimate for <strong>${display}</strong>: see the 📈 Price Projection tool in the map toolbar for projected uplift ranges based on comparable Sydney project outcomes. Estimates are presented as ranges, not point estimates, with key assumptions listed.</div>
       </div>
       <div style="margin-bottom:18px">
         <div style="font-size:9px;font-weight:700;color:var(--dim);letter-spacing:.1em;text-transform:uppercase;margin-bottom:10px">Recent News</div>
