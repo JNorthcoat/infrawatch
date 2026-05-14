@@ -58,34 +58,32 @@
   </div>
 
   <div class="ss">
-    <span class="sl">Electoral Map</span>
-    <button class="sb" id="btn-el" style="--ac:#E53E3E" onclick="toggleF('showElec','btn-el','chk-el')">
-      <div class="chk" id="chk-el" style="--ac:#E53E3E"></div>Federal Seats (2025)
+    <span class="sl">🏘 Property Price Layer</span>
+    <button class="sb" id="btn-prices" style="--ac:#10D97A" onclick="toggleF('showPrices','btn-prices','chk-prices')">
+      <div class="chk" id="chk-prices" style="--ac:#10D97A"></div>Suburb price growth
     </button>
-    <button class="sb" id="btn-st" style="--ac:#3182CE" onclick="toggleF('showState','btn-st','chk-st')">
-      <div class="chk" id="chk-st" style="--ac:#3182CE"></div>NSW State Seats (2023)
+    <div style="display:flex;gap:3px;margin-top:4px">
+      <button class="pill on" id="pmode-growth" onclick="setPriceMode('growth',this)">12mo Growth</button>
+      <button class="pill" id="pmode-projected" onclick="setPriceMode('projected',this)">Projected</button>
+    </div>
+    <button class="sb" id="btn-tt" style="--ac:#56C596;margin-top:6px" onclick="toggleF('showTravelTime','btn-tt','chk-tt')">
+      <div class="chk" id="chk-tt" style="--ac:#56C596"></div>Travel time to CBD
     </button>
-    <button class="sb" id="btn-coun" style="--ac:#FFB020" onclick="toggleF('showCouncils','btn-coun','chk-coun')">
-      <div class="chk" id="chk-coun" style="--ac:#FFB020"></div>Local Council Areas
-    </button>
-    <button class="sb" id="btn-iz" style="--ac:#3DDB8E" onclick="toggleF('showImpactZones','btn-iz','chk-iz')">
-      <div class="chk" id="chk-iz" style="--ac:#3DDB8E"></div>Project Impact Zones
-    </button>
-    <button class="sb" id="btn-m" style="--ac:#9B6DFF" onclick="toggleF('marginal','btn-m','chk-m')">
-      <div class="chk" id="chk-m" style="--ac:#9B6DFF"></div>Federal Marginals
-    </button>
-    <button class="sb" id="btn-ms" style="--ac:#FF5FA0" onclick="toggleF('marginalState','btn-ms','chk-ms')">
-      <div class="chk" id="chk-ms" style="--ac:#FF5FA0"></div>State Marginals
-    </button>
-    <button class="sb" id="btn-bt" style="--ac:#FF5FA0" onclick="toggleF('showBooths','btn-bt','chk-bt')">
-      <div class="chk" id="chk-bt" style="--ac:#FF5FA0"></div>Voting Patterns
-    </button>
-    <div style="font-size:9px;color:var(--dim);padding:3px 6px 0;line-height:1.4">Margin intensity: light = marginal, dark = very safe (Centre for Western Sydney scheme).<br>Federal Marginals (purple) and State Marginals (pink) toggle independently — both can be active at once.</div>
+    <div style="font-size:9px;color:var(--dim);padding:3px 6px 0;line-height:1.4">Green = strong growth. Projected mode uses timeline slider as target year and adds infrastructure-driven uplift.</div>
   </div>
 
   <div class="ss">
-    <span class="sl">Map Layers</span>
-    <div id="layer-toggles"></div>
+    <span class="sl">📅 Completion Timeline</span>
+    <div style="display:flex;align-items:center;gap:6px;margin-bottom:4px">
+      <span id="timeline-label" style="font-size:9px;color:var(--muted);font-weight:700">All years</span>
+    </div>
+    <input type="range" id="timeline-slider" min="2025" max="2040" value="2040" step="1"
+      oninput="onTimelineChange(this.value)"
+      style="width:100%;cursor:pointer">
+    <div style="display:flex;justify-content:space-between;font-size:9px;color:var(--dim);margin-top:2px">
+      <span>2025</span><span>2030</span><span>2035</span><span>2040+</span>
+    </div>
+    <div style="font-size:9px;color:var(--dim);margin-top:3px;line-height:1.3">Show projects opening by selected year</div>
   </div>
 
   <div class="ss">
@@ -109,96 +107,109 @@
     </div>
   </div>
 
-  <div class="ss">
-    <span class="sl">📅 Completion Timeline</span>
-    <div style="display:flex;align-items:center;gap:6px;margin-bottom:4px">
-      <span id="timeline-label" style="font-size:9px;color:var(--muted);font-weight:700">All years</span>
-    </div>
-    <input type="range" id="timeline-slider" min="2025" max="2040" value="2040" step="1"
-      oninput="onTimelineChange(this.value)"
-      style="width:100%;cursor:pointer">
-    <div style="display:flex;justify-content:space-between;font-size:9px;color:var(--dim);margin-top:2px">
-      <span>2025</span><span>2030</span><span>2035</span><span>2040+</span>
-    </div>
-    <div style="font-size:9px;color:var(--dim);margin-top:3px;line-height:1.3">Show projects opening by selected year</div>
+  <!-- Advanced collapsible -->
+  <div class="ss" style="border:none;padding:6px 0 0">
+    <button onclick="toggleAdvanced()" style="width:100%;background:var(--panel2);border:1px solid var(--border2);border-radius:4px;padding:6px 10px;cursor:pointer;font-family:var(--font);font-size:9px;font-weight:700;color:var(--dim);display:flex;justify-content:space-between;align-items:center;letter-spacing:.05em">
+      <span>⚙ Advanced</span><span id="adv-arrow">▼</span>
+    </button>
   </div>
 
-  <div class="ss">
-    <span class="sl">📊 Project Density Heatmap</span>
-    <button class="sb" id="btn-heat" style="--ac:#FF8B45" onclick="toggleF('showHeatmap','btn-heat','chk-heat')">
-      <div class="chk" id="chk-heat" style="--ac:#FF8B45"></div>Show density clusters
-    </button>
-    <div style="font-size:9px;color:var(--dim);padding:3px 6px 0;line-height:1.4">Highlights project hotspots — Aerotropolis, Bays, Parramatta, etc.</div>
-  </div>
+  <div id="adv-body" style="display:none">
 
-  <div class="ss">
-    <span class="sl">🏥 Amenity Layers</span>
-    <button class="sb" id="btn-hosp" style="--ac:#FF6677" onclick="toggleAmenity('showHospitals','btn-hosp','chk-hosp')">
-      <div class="chk" id="chk-hosp" style="--ac:#FF6677"></div>Hospitals
-    </button>
-    <button class="sb" id="btn-uni" style="--ac:#5DE0FF" onclick="toggleAmenity('showUnis','btn-uni','chk-uni')">
-      <div class="chk" id="chk-uni" style="--ac:#5DE0FF"></div>Universities
-    </button>
-    <button class="sb" id="btn-sch" style="--ac:#FFC444" onclick="toggleAmenity('showSchools','btn-sch','chk-sch')">
-      <div class="chk" id="chk-sch" style="--ac:#FFC444"></div>Top Schools (selective + grammar)
-    </button>
-    <button class="sb" id="btn-stn" style="--ac:#3DDB8E" onclick="toggleAmenity('showStations','btn-stn','chk-stn')">
-      <div class="chk" id="chk-stn" style="--ac:#3DDB8E"></div>Train Interchanges (existing)
-    </button>
-    <div style="font-size:9px;color:var(--dim);padding:3px 6px 0;line-height:1.4">Cross-reference amenity locations against project corridors and price growth.</div>
-  </div>
+    <div class="ss">
+      <span class="sl">Electoral Map</span>
+      <button class="sb" id="btn-el" style="--ac:#E53E3E" onclick="toggleF('showElec','btn-el','chk-el')">
+        <div class="chk" id="chk-el" style="--ac:#E53E3E"></div>Federal Seats (2025)
+      </button>
+      <button class="sb" id="btn-st" style="--ac:#3182CE" onclick="toggleF('showState','btn-st','chk-st')">
+        <div class="chk" id="chk-st" style="--ac:#3182CE"></div>NSW State Seats (2023)
+      </button>
+      <button class="sb" id="btn-coun" style="--ac:#FFB020" onclick="toggleF('showCouncils','btn-coun','chk-coun')">
+        <div class="chk" id="chk-coun" style="--ac:#FFB020"></div>Local Council Areas
+      </button>
+      <button class="sb" id="btn-iz" style="--ac:#3DDB8E" onclick="toggleF('showImpactZones','btn-iz','chk-iz')">
+        <div class="chk" id="chk-iz" style="--ac:#3DDB8E"></div>Project Impact Zones
+      </button>
+      <button class="sb" id="btn-m" style="--ac:#9B6DFF" onclick="toggleF('marginal','btn-m','chk-m')">
+        <div class="chk" id="chk-m" style="--ac:#9B6DFF"></div>Federal Marginals
+      </button>
+      <button class="sb" id="btn-ms" style="--ac:#FF5FA0" onclick="toggleF('marginalState','btn-ms','chk-ms')">
+        <div class="chk" id="chk-ms" style="--ac:#FF5FA0"></div>State Marginals
+      </button>
+      <button class="sb" id="btn-bt" style="--ac:#FF5FA0" onclick="toggleF('showBooths','btn-bt','chk-bt')">
+        <div class="chk" id="chk-bt" style="--ac:#FF5FA0"></div>Voting Patterns
+      </button>
+      <div style="font-size:9px;color:var(--dim);padding:3px 6px 0;line-height:1.4">Margin intensity: light = marginal, dark = very safe (Centre for Western Sydney scheme).<br>Federal Marginals (purple) and State Marginals (pink) toggle independently — both can be active at once.</div>
+    </div>
 
-  <div class="ss">
-    <span class="sl">🏘 Property Price Layer</span>
-    <button class="sb" id="btn-prices" style="--ac:#10D97A" onclick="toggleF('showPrices','btn-prices','chk-prices')">
-      <div class="chk" id="chk-prices" style="--ac:#10D97A"></div>Suburb price growth
-    </button>
-    <div style="display:flex;gap:3px;margin-top:4px">
-      <button class="pill on" id="pmode-growth" onclick="setPriceMode('growth',this)">12mo Growth</button>
-      <button class="pill" id="pmode-projected" onclick="setPriceMode('projected',this)">Projected</button>
+    <div class="ss">
+      <span class="sl">Map Layers</span>
+      <div id="layer-toggles"></div>
     </div>
-    <button class="sb" id="btn-tt" style="--ac:#56C596;margin-top:6px" onclick="toggleF('showTravelTime','btn-tt','chk-tt')">
-      <div class="chk" id="chk-tt" style="--ac:#56C596"></div>Travel time to CBD
-    </button>
-    <div style="font-size:9px;color:var(--dim);padding:3px 6px 0;line-height:1.4">Green = strong growth. Projected mode uses timeline slider as target year and adds infrastructure-driven uplift.</div>
-  </div>
 
-  <div class="ss">
-    <span class="sl">Risk Classification <button onclick="toggleRiskLegend()" style="background:none;border:1px solid var(--border2);color:var(--dim);cursor:pointer;border-radius:2px;padding:0 4px;font-family:var(--font);font-size:8px;margin-left:3px">?</button></span>
-    <div style="margin-bottom:3px;display:flex;align-items:center;gap:5px"><div style="width:7px;height:7px;border-radius:50%;background:var(--green);flex-shrink:0"></div><div><div style="font-size:9px;color:var(--muted)">Low</div><div style="font-size:9px;color:var(--dim)">Score 0–30 · On track</div></div></div>
-    <div style="margin-bottom:3px;display:flex;align-items:center;gap:5px"><div style="width:7px;height:7px;border-radius:50%;background:var(--amber);flex-shrink:0"></div><div><div style="font-size:9px;color:var(--muted)">Medium</div><div style="font-size:9px;color:var(--dim)">Score 31–55</div></div></div>
-    <div style="margin-bottom:3px;display:flex;align-items:center;gap:5px"><div style="width:7px;height:7px;border-radius:50%;background:var(--red);flex-shrink:0"></div><div><div style="font-size:9px;color:var(--muted)">High</div><div style="font-size:9px;color:var(--dim)">Score 56–75</div></div></div>
-    <div style="display:flex;align-items:center;gap:5px"><div style="width:7px;height:7px;border-radius:50%;background:#CC0022;flex-shrink:0"></div><div><div style="font-size:9px;color:var(--muted)">Very High</div><div style="font-size:9px;color:var(--dim)">Score 76–100</div></div></div>
-  </div>
+    <div class="ss">
+      <span class="sl">📊 Project Density Heatmap</span>
+      <button class="sb" id="btn-heat" style="--ac:#FF8B45" onclick="toggleF('showHeatmap','btn-heat','chk-heat')">
+        <div class="chk" id="chk-heat" style="--ac:#FF8B45"></div>Show density clusters
+      </button>
+      <div style="font-size:9px;color:var(--dim);padding:3px 6px 0;line-height:1.4">Highlights project hotspots — Aerotropolis, Bays, Parramatta, etc.</div>
+    </div>
 
-  <div class="ss">
-    <span class="sl">Line Style Legend</span>
-    <div style="margin-bottom:4px;display:flex;align-items:center;gap:7px">
-      <svg width="36" height="6"><line x1="0" y1="3" x2="36" y2="3" stroke="#7A9AB8" stroke-width="3" stroke-linecap="round"/></svg>
-      <div style="font-size:9px;color:var(--muted)">Under construction / opening soon</div>
+    <div class="ss">
+      <span class="sl">🏥 Amenity Layers</span>
+      <button class="sb" id="btn-hosp" style="--ac:#FF6677" onclick="toggleAmenity('showHospitals','btn-hosp','chk-hosp')">
+        <div class="chk" id="chk-hosp" style="--ac:#FF6677"></div>Hospitals
+      </button>
+      <button class="sb" id="btn-uni" style="--ac:#5DE0FF" onclick="toggleAmenity('showUnis','btn-uni','chk-uni')">
+        <div class="chk" id="chk-uni" style="--ac:#5DE0FF"></div>Universities
+      </button>
+      <button class="sb" id="btn-sch" style="--ac:#FFC444" onclick="toggleAmenity('showSchools','btn-sch','chk-sch')">
+        <div class="chk" id="chk-sch" style="--ac:#FFC444"></div>Top Schools (selective + grammar)
+      </button>
+      <button class="sb" id="btn-stn" style="--ac:#3DDB8E" onclick="toggleAmenity('showStations','btn-stn','chk-stn')">
+        <div class="chk" id="chk-stn" style="--ac:#3DDB8E"></div>Train Interchanges (existing)
+      </button>
+      <div style="font-size:9px;color:var(--dim);padding:3px 6px 0;line-height:1.4">Cross-reference amenity locations against project corridors and price growth.</div>
     </div>
-    <div style="margin-bottom:4px;display:flex;align-items:center;gap:7px">
-      <svg width="36" height="6"><line x1="0" y1="3" x2="36" y2="3" stroke="#7A9AB8" stroke-width="3" stroke-linecap="round" stroke-dasharray="8,5"/></svg>
-      <div style="font-size:9px;color:var(--muted)">Funded — not yet started</div>
-    </div>
-    <div style="margin-bottom:4px;display:flex;align-items:center;gap:7px">
-      <svg width="36" height="6"><line x1="0" y1="3" x2="36" y2="3" stroke="#7A9AB8" stroke-width="3" stroke-linecap="round" stroke-dasharray="12,7"/></svg>
-      <div style="font-size:9px;color:var(--muted)">Proposed / unfunded</div>
-    </div>
-    <div style="display:flex;align-items:center;gap:7px">
-      <svg width="36" height="6"><line x1="0" y1="3" x2="36" y2="3" stroke="#3A5060" stroke-width="2.5" stroke-linecap="round"/></svg>
-      <div style="font-size:9px;color:var(--dim)">Operational (context)</div>
-    </div>
-  </div>
 
-  <div class="ss" style="border:none">
-    <span class="sl">Bubble = Project Value</span>
-    <div style="display:flex;align-items:flex-end;gap:12px;padding-top:4px">
-      <div style="display:flex;flex-direction:column;align-items:center;gap:3px"><div style="width:10px;height:10px;border-radius:50%;border:1.5px solid var(--dimmer);opacity:.7"></div><span style="font-size:9px;color:var(--dim)">$1B</span></div>
-      <div style="display:flex;flex-direction:column;align-items:center;gap:3px"><div style="width:20px;height:20px;border-radius:50%;border:1.5px solid var(--dimmer);opacity:.7"></div><span style="font-size:9px;color:var(--dim)">$10B</span></div>
-      <div style="display:flex;flex-direction:column;align-items:center;gap:3px"><div style="width:36px;height:36px;border-radius:50%;border:1.5px solid var(--dimmer);opacity:.7"></div><span style="font-size:9px;color:var(--dim)">$100B</span></div>
+    <div class="ss">
+      <span class="sl">Risk Classification <button onclick="toggleRiskLegend()" style="background:none;border:1px solid var(--border2);color:var(--dim);cursor:pointer;border-radius:2px;padding:0 4px;font-family:var(--font);font-size:8px;margin-left:3px">?</button></span>
+      <div style="margin-bottom:3px;display:flex;align-items:center;gap:5px"><div style="width:7px;height:7px;border-radius:50%;background:var(--green);flex-shrink:0"></div><div><div style="font-size:9px;color:var(--muted)">Low</div><div style="font-size:9px;color:var(--dim)">Score 0–30 · On track</div></div></div>
+      <div style="margin-bottom:3px;display:flex;align-items:center;gap:5px"><div style="width:7px;height:7px;border-radius:50%;background:var(--amber);flex-shrink:0"></div><div><div style="font-size:9px;color:var(--muted)">Medium</div><div style="font-size:9px;color:var(--dim)">Score 31–55</div></div></div>
+      <div style="margin-bottom:3px;display:flex;align-items:center;gap:5px"><div style="width:7px;height:7px;border-radius:50%;background:var(--red);flex-shrink:0"></div><div><div style="font-size:9px;color:var(--muted)">High</div><div style="font-size:9px;color:var(--dim)">Score 56–75</div></div></div>
+      <div style="display:flex;align-items:center;gap:5px"><div style="width:7px;height:7px;border-radius:50%;background:#CC0022;flex-shrink:0"></div><div><div style="font-size:9px;color:var(--muted)">Very High</div><div style="font-size:9px;color:var(--dim)">Score 76–100</div></div></div>
     </div>
-  </div>
+
+    <div class="ss">
+      <span class="sl">Line Style Legend</span>
+      <div style="margin-bottom:4px;display:flex;align-items:center;gap:7px">
+        <svg width="36" height="6"><line x1="0" y1="3" x2="36" y2="3" stroke="#7A9AB8" stroke-width="3" stroke-linecap="round"/></svg>
+        <div style="font-size:9px;color:var(--muted)">Under construction / opening soon</div>
+      </div>
+      <div style="margin-bottom:4px;display:flex;align-items:center;gap:7px">
+        <svg width="36" height="6"><line x1="0" y1="3" x2="36" y2="3" stroke="#7A9AB8" stroke-width="3" stroke-linecap="round" stroke-dasharray="8,5"/></svg>
+        <div style="font-size:9px;color:var(--muted)">Funded — not yet started</div>
+      </div>
+      <div style="margin-bottom:4px;display:flex;align-items:center;gap:7px">
+        <svg width="36" height="6"><line x1="0" y1="3" x2="36" y2="3" stroke="#7A9AB8" stroke-width="3" stroke-linecap="round" stroke-dasharray="12,7"/></svg>
+        <div style="font-size:9px;color:var(--muted)">Proposed / unfunded</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:7px">
+        <svg width="36" height="6"><line x1="0" y1="3" x2="36" y2="3" stroke="#3A5060" stroke-width="2.5" stroke-linecap="round"/></svg>
+        <div style="font-size:9px;color:var(--dim)">Operational (context)</div>
+      </div>
+    </div>
+
+    <div class="ss" style="border:none">
+      <span class="sl">Bubble = Project Value</span>
+      <div style="display:flex;align-items:flex-end;gap:12px;padding-top:4px">
+        <div style="display:flex;flex-direction:column;align-items:center;gap:3px"><div style="width:10px;height:10px;border-radius:50%;border:1.5px solid var(--dimmer);opacity:.7"></div><span style="font-size:9px;color:var(--dim)">$1B</span></div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:3px"><div style="width:20px;height:20px;border-radius:50%;border:1.5px solid var(--dimmer);opacity:.7"></div><span style="font-size:9px;color:var(--dim)">$10B</span></div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:3px"><div style="width:36px;height:36px;border-radius:50%;border:1.5px solid var(--dimmer);opacity:.7"></div><span style="font-size:9px;color:var(--dim)">$100B</span></div>
+      </div>
+    </div>
+
+  </div><!-- /adv-body -->
 
 </div>
 </div>
@@ -387,6 +398,15 @@
 
 </div><!-- /body -->
 </div><!-- /app -->
+<script>
+function toggleAdvanced() {
+  var b = document.getElementById('adv-body');
+  var a = document.getElementById('adv-arrow');
+  var open = b.style.display === 'none';
+  b.style.display = open ? 'block' : 'none';
+  a.textContent = open ? '▲' : '▼';
+}
+</script>
 <script type="module" src="/src/main.js"></script>
 
 </body>
