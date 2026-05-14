@@ -697,6 +697,12 @@ function onSearch(){
       hits.push({type:"🏘 Council", name:name+" Council", sub:`${m.party||"?"} · ${m.mayor||"—"}`, action:`flyToCouncil('${name.replace(/'/g,"\\'")}')`});
     }
   });
+  Object.keys(SUBURB_PRICES||{}).forEach(name => {
+    if(name.toLowerCase().includes(ql)){
+      const d = SUBURB_PRICES[name];
+      hits.push({type:"📍 Suburb", name:_sfTitleCase(name), sub:`Median $${(d.median/1000).toFixed(0)}k · ${d.growth12mo>=0?'+':''}${d.growth12mo}% growth · click for report`, action:`openSuburbReport('${name.replace(/'/g,"\\'")}')`});
+    }
+  });
   // Limit to first 25 hits
   const limited = hits.slice(0, 25);
   if(resBox){
@@ -1499,6 +1505,7 @@ function renderPriceLayer(){
         ${projectedHtml}
       </div>`;
       layer.bindTooltip(tip, {className:"stn-tooltip", sticky:true});
+      layer.on('click', () => openSuburbReport(name));
     }
   }).addTo(map);
   _priceLayer = layer;
@@ -2511,8 +2518,242 @@ function sfHandleKey(event){
   }
 }
 
+// ── SUBURB REPORT ─────────────────────────────────────────────────────────────
 
+function _infraLabel(composite) {
+  if (composite >= 3.5) return { text: 'Strong',   color: '#10D97A' };
+  if (composite >= 2.5) return { text: 'Moderate', color: '#FFC444' };
+  return                       { text: 'Limited',  color: '#FF6B6B' };
+}
 
+function _probLabel(p) {
+  const status = (p.status || '').toLowerCase();
+  const prob   = p.prob || 50;
+  if (status.includes('operational') || status.includes('under construction') || prob >= 75)
+    return { text: 'Confirmed', color: '#10D97A' };
+  if (prob >= 45)
+    return { text: 'Likely',    color: '#FFC444' };
+  return   { text: 'At risk',   color: '#FF4455' };
+}
+
+function _politicalLabel(politicalRisk) {
+  const r = politicalRisk != null ? politicalRisk : 50;
+  if (r >= 65) return { text: 'High',   color: '#FF4455' };
+  if (r >= 35) return { text: 'Medium', color: '#FFC444' };
+  return        { text: 'Low',    color: '#10D97A' };
+}
+
+function _renderRadar6(axes6) {
+  const cx = 180, cy = 165, rMax = 110, levels = 5, n = 6;
+  const polar = (r, i) => {
+    const deg = -90 + i * 60;
+    const rad = deg * Math.PI / 180;
+    return [cx + r * Math.cos(rad), cy + r * Math.sin(rad)];
+  };
+  let bg = '';
+  for (let lvl = 1; lvl <= levels; lvl++) {
+    const r = (lvl / levels) * rMax;
+    const pts = Array.from({length: n}, (_, i) => polar(r, i).map(v => v.toFixed(1)).join(',')).join(' ');
+    bg += `<polygon points="${pts}" fill="none" stroke="#4a5a6e" stroke-width="0.5" opacity="${(0.18 + 0.06 * lvl).toFixed(2)}"/>`;
+  }
+  let spokes = '';
+  for (let i = 0; i < n; i++) {
+    const [x, y] = polar(rMax, i);
+    spokes += `<line x1="${cx}" y1="${cy}" x2="${x.toFixed(1)}" y2="${y.toFixed(1)}" stroke="#4a5a6e" stroke-width="0.5" opacity="0.45"/>`;
+  }
+  const pts = axes6.map((a, i) => {
+    const r = (Math.max(1, Math.min(5, a.score)) / levels) * rMax;
+    return polar(r, i).map(v => v.toFixed(1)).join(',');
+  }).join(' ');
+  const poly = `<polygon points="${pts}" fill="#FFC444" fill-opacity="0.22" stroke="#FFC444" stroke-width="2" stroke-linejoin="round"/>`;
+  let dotsLabels = '';
+  axes6.forEach((a, i) => {
+    const score = Math.max(1, Math.min(5, a.score));
+    const r = (score / levels) * rMax;
+    const [dx, dy] = polar(r, i);
+    const col = a.color || '#FFC444';
+    dotsLabels += `<circle cx="${dx.toFixed(1)}" cy="${dy.toFixed(1)}" r="4" fill="${col}" stroke="#1A2535" stroke-width="1.5"/>`;
+    dotsLabels += `<text x="${dx.toFixed(1)}" y="${(dy - 7).toFixed(1)}" text-anchor="middle" fill="${col}" font-family="Inter,sans-serif" font-size="8" font-weight="700">${score}</text>`;
+    const [lx, ly] = polar(rMax + 22, i);
+    const deg = -90 + i * 60;
+    const cos = Math.cos(deg * Math.PI / 180);
+    const sin = Math.sin(deg * Math.PI / 180);
+    const anchor = cos > 0.25 ? 'start' : cos < -0.25 ? 'end' : 'middle';
+    const labelY = ly + (sin > 0.15 ? 11 : sin < -0.15 ? -1 : 4);
+    dotsLabels += `<text x="${lx.toFixed(1)}" y="${labelY.toFixed(1)}" text-anchor="${anchor}" fill="#aab8c8" font-family="Inter,sans-serif" font-size="9" font-weight="700" letter-spacing="0.4">${a.label}</text>`;
+  });
+  return `<svg viewBox="0 0 360 330" width="100%" style="max-width:320px;display:block;margin:0 auto"><g>${bg}</g><g>${spokes}</g>${poly}<g>${dotsLabels}</g></svg>`;
+}
+
+function openSuburbReport(rawName) {
+  const upper   = (rawName || '').toUpperCase();
+  const display = _sfTitleCase(upper);
+
+  const sf        = computeSnowflake(upper);
+  const composite = (sf.political.score + sf.budget.score + sf.spend.score + sf.momentum.score + sf.diversity.score) / 5;
+  const infra     = _infraLabel(composite);
+
+  let lga = '';
+  const c = _suburbCentroid(upper);
+  if (c && typeof COUNCILS_GEOJSON !== 'undefined')
+    lga = _findContainingElec([c[1], c[0]], COUNCILS_GEOJSON, ['councilName']) || '';
+
+  let catchProjs = [];
+  try { catchProjs = projectsAffectingSuburb(upper) || []; } catch(e) {}
+
+  const nearbyExtra = [];
+  if (c) {
+    (P || []).forEach(p => {
+      if (catchProjs.some(x => x.project.id === p.id)) return;
+      if (p.lat && p.lon && _haversineKm(c[0], c[1], p.lat, p.lon) <= 5)
+        nearbyExtra.push(p);
+    });
+    nearbyExtra.sort((a, b) => _haversineKm(c[0], c[1], a.lat, a.lon) - _haversineKm(c[0], c[1], b.lat, b.lon));
+  }
+  const allProjs = [
+    ...catchProjs.map(x => ({ project: x.project, inCatchment: true  })),
+    ...nearbyExtra.map(p  => ({ project: p,         inCatchment: false })),
+  ];
+  allProjs.sort((a, b) => (b.project.val || 0) - (a.project.val || 0));
+
+  const projIds  = new Set(allProjs.map(x => x.project.id));
+  const newsItems = (_newsCache && _newsCache.articles ? _newsCache.articles : (ARTICLES || []))
+    .filter(a => (a.pids || []).some(id => projIds.has(id)))
+    .slice(0, 3);
+
+  const confirmedCount = allProjs.filter(x => _probLabel(x.project).text === 'Confirmed').length;
+  const headline = allProjs.length === 0
+    ? 'No confirmed infrastructure projects found in this suburb\'s catchment area.'
+    : confirmedCount > 0
+      ? `${confirmedCount} confirmed project${confirmedCount !== 1 ? 's' : ''} within catchment — ${infra.text.toLowerCase()} infrastructure outlook.`
+      : `${allProjs.length} project${allProjs.length !== 1 ? 's' : ''} nearby — further confirmation required before uplift is likely.`;
+
+  const radar6 = [
+    { label: 'INFRA',     score: Math.round(composite), color: infra.color  },
+    { label: 'POLITICAL', score: sf.political.score,    color: '#9B6DFF'    },
+    { label: 'BUDGET',    score: sf.budget.score,       color: '#FFC444'    },
+    { label: 'SPEND',     score: sf.spend.score,        color: '#2A8EFF'    },
+    { label: 'MOMENTUM',  score: sf.momentum.score,     color: '#10D97A'    },
+    { label: 'DIVERSITY', score: sf.diversity.score,    color: '#FF8B45'    },
+  ];
+
+  const axisRows = [
+    { label: '🏗 Infrastructure Score', score: Math.round(composite), hint: 'Overall infrastructure exposure — composite of the 5 axes below.',               detail: `${confirmedCount} confirmed, ${allProjs.length} total nearby projects.` },
+    { label: '🗳 Political Risk',        score: sf.political.score,    hint: 'Higher = lower political risk (safe seats, funded and committed projects).',      detail: sf.political.detail },
+    { label: '💰 Budget Commitment',    score: sf.budget.score,       hint: 'How firmly funded and committed are nearby projects.',                             detail: sf.budget.detail   },
+    { label: '💵 Spend Concentration',  score: sf.spend.score,        hint: 'Infrastructure dollars attributable to this suburb specifically.',                 detail: sf.spend.detail    },
+    { label: '🚧 Pipeline Momentum',    score: sf.momentum.score,     hint: 'Active, near-term delivery progress — rewards under-construction projects.',       detail: sf.momentum.detail },
+    { label: '🔀 Project Diversity',    score: sf.diversity.score,    hint: 'Mix of project types: transport, housing, energy, water, other.',                  detail: sf.diversity.detail },
+  ];
+
+  const locked = `<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:var(--panel)d0;font-size:9px;color:var(--dim);gap:3px;border-radius:3px">🔒 Full access</div>`;
+
+  const projCards = allProjs.slice(0, 8).map(({ project: p, inCatchment }) => {
+    const catInfo  = CAT[p.cat] || {};
+    const probLbl  = _probLabel(p);
+    const politLbl = _politicalLabel(p.politicalRisk);
+    const valStr   = (p.val || 0) >= 1000 ? `$${((p.val||0)/1000).toFixed(1)}B` : `$${p.val||0}M`;
+    const locStr   = inCatchment ? 'In catchment' : 'Within 5km';
+    return `<div style="background:var(--panel2);border:1px solid var(--border2);border-radius:5px;padding:10px 12px;margin-bottom:8px">
+      <div style="display:flex;align-items:flex-start;gap:8px;margin-bottom:8px">
+        <div style="flex:1;min-width:0">
+          <div style="font-size:11px;font-weight:700;color:var(--text);margin-bottom:3px;line-height:1.35">${p.name}</div>
+          <div style="display:flex;gap:4px;flex-wrap:wrap;align-items:center">
+            <span style="font-size:8px;padding:2px 5px;border-radius:2px;background:${catInfo.color||'#888'}18;color:${catInfo.color||'#888'};border:1px solid ${catInfo.color||'#888'}30;font-weight:700">${catInfo.icon||''} ${(p.cat||'other').toUpperCase()}</span>
+            <span style="font-size:9px;color:var(--dim)">${locStr}</span>
+            <span style="font-size:9px;font-weight:700;color:${probLbl.color}">${probLbl.text}</span>
+          </div>
+        </div>
+        <div style="text-align:right;flex-shrink:0">
+          <div style="font-size:11px;font-weight:700;color:var(--text)">${valStr}</div>
+          <div style="font-size:8.5px;color:var(--dim)">Total value</div>
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:5px">
+        <div style="background:var(--panel);border-radius:3px;padding:5px 7px;position:relative;overflow:hidden">
+          <div style="color:var(--dim);font-size:7.5px;letter-spacing:.05em;text-transform:uppercase;margin-bottom:2px">Completion Prob</div>
+          <div style="color:var(--dim);font-weight:600;font-size:10px;filter:blur(3.5px);user-select:none">${probLbl.text}</div>${locked}
+        </div>
+        <div style="background:var(--panel);border-radius:3px;padding:5px 7px;position:relative;overflow:hidden">
+          <div style="color:var(--dim);font-size:7.5px;letter-spacing:.05em;text-transform:uppercase;margin-bottom:2px">Political Risk</div>
+          <div style="color:var(--dim);font-weight:600;font-size:10px;filter:blur(3.5px);user-select:none">${politLbl.text}</div>${locked}
+        </div>
+        <div style="background:var(--panel);border-radius:3px;padding:5px 7px;position:relative;overflow:hidden">
+          <div style="color:var(--dim);font-size:7.5px;letter-spacing:.05em;text-transform:uppercase;margin-bottom:2px">Est. Completion</div>
+          <div style="color:var(--dim);font-weight:600;font-size:10px;filter:blur(3.5px);user-select:none">${p.year||'—'}</div>${locked}
+        </div>
+      </div>
+      <div style="margin-top:5px;background:var(--panel);border-radius:3px;padding:5px 7px;position:relative;overflow:hidden">
+        <div style="color:var(--dim);font-size:7.5px;letter-spacing:.05em;text-transform:uppercase;margin-bottom:2px">Key Risk Factor</div>
+        <div style="color:var(--muted);font-size:10px;filter:blur(3.5px);user-select:none">Cost and timeline exposure from supply chain and labour market pressure</div>${locked}
+      </div>
+    </div>`;
+  }).join('');
+
+  const newsHtml = newsItems.length === 0
+    ? `<div style="font-size:10px;color:var(--dim);padding:10px 12px;text-align:center">No recent news linked to nearby projects.</div>`
+    : newsItems.map(a => {
+        const d = a.date instanceof Date ? a.date : new Date(a.date);
+        const dateStr = isNaN(d.getTime()) ? '' : d.toLocaleDateString('en-AU', {day:'numeric', month:'short'});
+        return `<a href="${a.url}" target="_blank" rel="noopener" style="display:block;padding:9px 12px;border-bottom:1px solid var(--border);text-decoration:none" onmouseover="this.style.background='var(--panel2)'" onmouseout="this.style.background='transparent'">
+          <div style="font-size:10px;color:var(--text);margin-bottom:2px;line-height:1.4">${a.title}</div>
+          <div style="font-size:9px;color:var(--dim)">${a.src}${dateStr ? ` · ${dateStr}` : ''}</div>
+        </a>`;
+      }).join('');
+
+  const html = `
+    <div style="padding:14px 18px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;background:var(--panel);flex-shrink:0">
+      <div>
+        <div style="font-size:16px;font-weight:700;color:var(--text)">${display}</div>
+        <div style="font-size:11px;color:var(--dim);margin-top:2px">${lga || 'Sydney Metropolitan'} · Suburb Report</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:12px">
+        <div style="text-align:right">
+          <div style="font-size:14px;font-weight:700;color:${infra.color};letter-spacing:.5px">${infra.text}</div>
+          <div style="font-size:8.5px;color:var(--dim);letter-spacing:.08em;text-transform:uppercase">Infra Outlook</div>
+        </div>
+        <button onclick="closeModal()" style="background:none;border:1px solid var(--border2);color:var(--dim);padding:4px 10px;cursor:pointer;border-radius:3px;font-size:12px">✕</button>
+      </div>
+    </div>
+    <div style="padding:10px 18px;background:#0F1A26;border-bottom:1px solid var(--border)">
+      <div style="font-size:11px;color:var(--muted);line-height:1.5">${headline}</div>
+    </div>
+    <div style="padding:14px 18px;max-height:72vh;overflow-y:auto">
+      <div style="margin-bottom:18px">
+        <div style="font-size:9px;font-weight:700;color:var(--dim);letter-spacing:.1em;text-transform:uppercase;margin-bottom:10px">Suburb Profile</div>
+        ${_renderRadar6(radar6)}
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:12px">
+          ${axisRows.map(a => `<div style="background:var(--panel2);border-radius:4px;padding:8px 10px;border:1px solid var(--border2)">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:3px">
+              <div style="font-size:10px;font-weight:700;color:var(--text)">${a.label}</div>
+              <div style="font-size:11px;font-weight:700;color:#FFC444;font-family:var(--mono)">${a.score}<span style="color:var(--dim);font-weight:400;font-size:9px">/5</span></div>
+            </div>
+            <div style="font-size:9px;color:var(--dim);line-height:1.3;margin-bottom:3px">${a.hint}</div>
+            <div style="font-size:9px;color:var(--muted);line-height:1.3;border-top:1px solid var(--border);padding-top:3px">${a.detail}</div>
+          </div>`).join('')}
+        </div>
+      </div>
+      <div style="margin-bottom:18px">
+        <div style="font-size:9px;font-weight:700;color:var(--dim);letter-spacing:.1em;text-transform:uppercase;margin-bottom:10px">Projects Affecting This Suburb</div>
+        ${allProjs.length === 0
+          ? `<div style="font-size:10px;color:var(--dim);padding:14px;background:var(--panel2);border-radius:5px;text-align:center;border:1px solid var(--border2)">No projects found in catchment or within 5km radius.</div>`
+          : projCards}
+      </div>
+      <div style="margin-bottom:18px;padding:11px 14px;background:var(--panel2);border-radius:5px;border:1px solid var(--border2);border-left:3px solid var(--blue)">
+        <div style="font-size:10px;font-weight:700;color:var(--text);margin-bottom:5px">📈 Infrastructure-Driven Uplift Estimate</div>
+        <div style="font-size:10px;color:var(--muted);line-height:1.6">Infrastructure-driven uplift estimate for <strong>${display}</strong>: available with full access. Projections are modelled using comparable Sydney project outcomes, presented as ranges — not point estimates. Reference projects will be listed alongside key assumptions.</div>
+      </div>
+      <div style="margin-bottom:18px">
+        <div style="font-size:9px;font-weight:700;color:var(--dim);letter-spacing:.1em;text-transform:uppercase;margin-bottom:10px">Recent News</div>
+        <div style="background:var(--panel2);border-radius:5px;border:1px solid var(--border2);overflow:hidden">${newsHtml}</div>
+      </div>
+      <div style="padding:10px 12px;background:#FF445508;border:1px solid #FF445520;border-radius:5px;font-size:9px;color:var(--dim);line-height:1.55">
+        <strong style="color:var(--muted)">Financial Disclaimer:</strong> This report is not financial advice and not a recommendation to buy or sell property. All data is indicative only. Infrastructure project timelines, probabilities, and uplift estimates are modelled projections — not guaranteed outcomes. Users should seek independent financial and property advice before making investment decisions. Suburb data sourced from Cotality/Domain (Sep 2025). Infrastructure data from publicly available project registers.
+      </div>
+    </div>`;
+
+  openModal(html);
+}
 
 function setPriceMode(mode, btn){
   ST.priceMode = mode;
@@ -4084,6 +4325,7 @@ export async function _boot() {
     selElectorateByName, selFromList, setElecFilter,
     sfFilterDropdown, sfHandleKey, sfSelectSuburb, sfHideDropdown,
     toggleCat, toggleLayer, updateComparePanel, refreshLiveNews,
+    openSuburbReport,
   };
   Object.assign(window, _globals);
 }
