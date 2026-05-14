@@ -8,5 +8,12 @@ export default defineConfig({
   },
   server: {
     open: true,
+    proxy: {
+      '/api/news': {
+        target: 'http://localhost:8787',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api\/news/, ''),
+      },
+    },
   },
 });

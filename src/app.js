@@ -5,6 +5,26 @@ import { loadAll as _loadAll } from './state.js';
 // Data vars — populated by _boot() via the state module
 let P, PROJECT_IMPACT, ELECTORATES, CBD_STATIONS, BOOTH_DATA, AMENITIES, SUBURB_PRICES, POLICY_IMPACT, ARTICLES, SUBURBS_GEOJSON, FED_BOUNDARIES_GEOJSON, STATE_BOUNDARIES_GEOJSON, COUNCILS_GEOJSON;
 
+// Live news cache — populated by refreshLiveNews(), falls back to baked ARTICLES
+let _newsCache = null;
+
+const _NEWS_API = import.meta.env.VITE_NEWS_API_URL || '/api/news';
+
+async function refreshLiveNews(force = false) {
+  try {
+    const res = await fetch(force ? `${_NEWS_API}?refresh` : _NEWS_API);
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const data = await res.json();
+    if (data.articles) {
+      data.articles = data.articles.map(a => ({ ...a, date: new Date(a.date) }));
+    }
+    _newsCache = data;
+  } catch {
+    _newsCache = null;
+  }
+  buildNews();
+}
+
 // Expose key scoring functions for tests
 
 
@@ -1136,14 +1156,21 @@ function showCompareModal(){
 // 5) NEWS FEED MODAL
 // ════════════════════════════════════════════════════════════════
 function openNewsFeed(){
-  const arts = (typeof ARTICLES !== "undefined" ? ARTICLES : []).slice().sort((a,b) => new Date(b.date) - new Date(a.date));
+  const _allArts = (_newsCache?.articles?.length ? _newsCache.articles : ARTICLES) || [];
+  const arts = _allArts.slice().sort((a,b) => new Date(b.date) - new Date(a.date));
+  const updatedStr = _newsCache?._updated
+    ? `live · updated ${relTime(new Date(_newsCache._updated))}`
+    : `${arts.length} baked articles`;
   const html = `
-    <div style="padding:14px 18px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between">
+    <div style="padding:14px 18px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:flex-start">
       <div>
         <div style="font-size:13px;font-weight:700;color:var(--text)">📰 Project News Feed</div>
-        <div style="font-size:9px;color:var(--dim);margin-top:2px">${arts.length} articles · click to filter map to mentioned projects</div>
+        <div style="font-size:9px;color:var(--dim);margin-top:2px">${arts.length} articles · <span id="news-updated" style="color:var(--green)">${updatedStr}</span></div>
       </div>
-      <button onclick="closeModal()" style="background:none;border:1px solid var(--border2);color:var(--dim);padding:3px 8px;cursor:pointer;border-radius:3px;font-size:11px">✕</button>
+      <div style="display:flex;gap:6px;align-items:center">
+        <button onclick="refreshLiveNews(true).then(()=>closeModal()).then(openNewsFeed)" style="background:none;border:1px solid var(--border2);color:var(--cyan);padding:3px 8px;cursor:pointer;border-radius:3px;font-size:10px">↻ Refresh</button>
+        <button onclick="closeModal()" style="background:none;border:1px solid var(--border2);color:var(--dim);padding:3px 8px;cursor:pointer;border-radius:3px;font-size:11px">✕</button>
+      </div>
     </div>
     <div style="padding:8px 0;max-height:75vh;overflow-y:auto">
       ${arts.map(a => {
@@ -3810,7 +3837,14 @@ function filterNews(){
 function buildNews(){
   const list = document.getElementById("news-list");
   if(!list) return;
-  let arts = ARTICLES.filter(a => {
+  const _allArts = (_newsCache?.articles?.length ? _newsCache.articles : ARTICLES) || [];
+  // Update "last updated" indicator if present
+  const updEl = document.getElementById("news-updated");
+  if(updEl){
+    const ts = _newsCache?._updated ? new Date(_newsCache._updated) : null;
+    updEl.textContent = ts ? `updated ${relTime(ts)}` : `${_allArts.length} articles`;
+  }
+  let arts = _allArts.filter(a => {
     if(newsTagFilter && !a.cats.includes(newsTagFilter)) return false;
     if(newsSearchFilter && !a.title.toLowerCase().includes(newsSearchFilter)) return false;
     return true;
@@ -3850,7 +3884,8 @@ function buildNews(){
 }
 
 async function analyseNewsItem(id, btn){
-  const a = ARTICLES.find(x=>x.id===id);
+  const _allArts = (_newsCache?.articles?.length ? _newsCache.articles : ARTICLES) || [];
+  const a = _allArts.find(x=>x.id===id);
   if(!a) return;
   const box = document.getElementById(`ni-ai-${id}`);
   if(!box) return;
@@ -4022,17 +4057,18 @@ export async function _boot() {
   // ══════════════════════════════════════════════════════════════
   buildCatBtns();
   buildLayerToggles();
-  buildNews();
-  
+  buildNews(); // render baked articles immediately
+  refreshLiveNews(); // fetch live in background; calls buildNews() again when done
+
   // Add ntag-btn CSS dynamically
   const style = document.createElement("style");
   style.textContent=`.ntag-btn{font-size:8px;padding:2px 6px;border-radius:3px;cursor:pointer;font-family:var(--font);background:none;border:1px solid var(--border2);color:var(--dim);transition:all .12s;margin:1px}.ntag-btn.on{background:#0F1A26;border-color:var(--blue);color:var(--blue)}`;
   document.head.appendChild(style);
-  
+
   initMap();
   updateStats();
-  
-  setInterval(()=>buildNews(), 300000);
+
+  setInterval(()=>refreshLiveNews(), 300000); // refresh live news every 30 min
 
   // Expose module-scoped functions to window so HTML onclick= attributes resolve correctly.
   const _globals = {
@@ -4047,7 +4083,7 @@ export async function _boot() {
     deletePreset, filterByPolicy, flyToSpot, saveCurrentPreset,
     selElectorateByName, selFromList, setElecFilter,
     sfFilterDropdown, sfHandleKey, sfSelectSuburb, sfHideDropdown,
-    toggleCat, toggleLayer, updateComparePanel,
+    toggleCat, toggleLayer, updateComparePanel, refreshLiveNews,
   };
   Object.assign(window, _globals);
 }
