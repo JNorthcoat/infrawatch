@@ -22,19 +22,19 @@ const CORS = {
 
 const FEEDS = [
   {
-    url: 'https://www.nsw.gov.au/news/feed',
-    src: 'NSW Gov',
-    cats: ['policy', 'government'],
+    url: 'https://infrastructure.org.au/feed/',
+    src: 'Infrastructure Australia',
+    cats: ['infrastructure', 'policy'],
   },
   {
-    url: 'https://www.infrastructure.nsw.gov.au/news/news/feed/',
-    src: 'Infrastructure NSW',
-    cats: ['infrastructure', 'construction'],
+    url: 'https://www.governmentnews.com.au/feed/',
+    src: 'Government News',
+    cats: ['government', 'infrastructure'],
   },
   {
-    url: 'https://www.sydneymetro.info/article/feed',
-    src: 'Sydney Metro',
-    cats: ['transport', 'metro'],
+    url: 'https://www.railway-technology.com/feed/',
+    src: 'Railway Technology',
+    cats: ['transport', 'rail'],
   },
   {
     url: 'https://reneweconomy.com.au/feed/',
@@ -45,16 +45,6 @@ const FEEDS = [
     url: 'https://australianaviation.com.au/feed/',
     src: 'Australian Aviation',
     cats: ['transport', 'aviation'],
-  },
-  {
-    url: 'https://www.timeout.com/sydney/news/rss',
-    src: 'Time Out Sydney',
-    cats: ['development', 'liveability'],
-  },
-  {
-    url: 'https://www.theurbanlist.com/sydney/rss',
-    src: 'The Urban List',
-    cats: ['development', 'liveability'],
   },
 ];
 
