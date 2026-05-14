@@ -712,7 +712,7 @@ function onSearch(){
       resBox.innerHTML = limited.map(h => `
         <div onclick='${h.action};document.getElementById("search-input").value="";document.getElementById("search-results").style.display="none";ST.searchQuery="";renderMarkers();buildProjList();'
              style="padding:5px 8px;border-bottom:1px solid var(--border);cursor:pointer;font-size:9px"
-             onmouseover="this.style.background='#0F1A28'" onmouseout="this.style.background='transparent'">
+             onmouseover="this.style.background='#F5F7FA'" onmouseout="this.style.background='transparent'">
           <div style="display:flex;justify-content:space-between;gap:6px"><span style="color:var(--text);font-weight:700">${h.name}</span><span style="font-size:9px;color:var(--dim)">${h.type}</span></div>
           <div style="font-size:10px;color:var(--muted);margin-top:1px">${h.sub}</div>
         </div>`).join("");
@@ -2718,7 +2718,7 @@ function openSuburbReport(rawName) {
         <button onclick="closeModal()" style="background:none;border:1px solid var(--border2);color:var(--dim);padding:4px 10px;cursor:pointer;border-radius:3px;font-size:12px">✕</button>
       </div>
     </div>
-    <div style="padding:10px 18px;background:#0F1A26;border-bottom:1px solid var(--border)">
+    <div style="padding:10px 18px;background:var(--panel2);border-bottom:1px solid var(--border)">
       <div style="font-size:11px;color:var(--muted);line-height:1.5">${headline}</div>
     </div>
     <div style="padding:14px 18px;max-height:72vh;overflow-y:auto">
@@ -3999,7 +3999,7 @@ function buildPoliticsPanel(){
   </div>`;
 
   // Policy Impact Matrix — THE key deliverable for investors
-  html += `<div style="padding:10px 12px;border-bottom:1px solid var(--border);background:#080E18">
+  html += `<div style="padding:10px 12px;border-bottom:1px solid var(--border);background:var(--panel2)">
     <div style="font-size:10px;font-weight:700;color:var(--text);margin-bottom:2px">⚠ Policy → Project Risk Matrix</div>
     <div style="font-size:10px;color:var(--muted);line-height:1.5">How each party's current stated position affects specific Sydney projects. Click any policy to filter map to affected projects.</div>
   </div>`;
@@ -4304,10 +4304,6 @@ export async function _boot() {
   buildNews(); // render baked articles immediately
   refreshLiveNews(); // fetch live in background; calls buildNews() again when done
 
-  // Add ntag-btn CSS dynamically
-  const style = document.createElement("style");
-  style.textContent=`.ntag-btn{font-size:8px;padding:2px 6px;border-radius:3px;cursor:pointer;font-family:var(--font);background:none;border:1px solid var(--border2);color:var(--dim);transition:all .12s;margin:1px}.ntag-btn.on{background:#0F1A26;border-color:var(--blue);color:var(--blue)}`;
-  document.head.appendChild(style);
 
   initMap();
   updateStats();

@@ -29,9 +29,9 @@
   <div class="vdiv"></div>
   <div style="display:flex;gap:3px;align-items:center">
     <span style="font-size:10px;color:var(--dim);letter-spacing:.1em">VIEW</span>
-    <button class="hdr-mode-pill on" onclick="setMode('cat',this)">Cat</button>
+    <button class="hdr-mode-pill on" onclick="setMode('cat',this)">Type</button>
     <button class="hdr-mode-pill" onclick="setMode('risk',this)">Risk</button>
-    <button class="hdr-mode-pill" onclick="setMode('prob',this)">Prob</button>
+    <button class="hdr-mode-pill" onclick="setMode('prob',this)">Status</button>
     <button class="hdr-mode-pill" onclick="setMode('budget',this)">Budget</button>
   </div>
   <div class="vdiv"></div>
@@ -58,7 +58,7 @@
   </div>
 
   <div class="ss">
-    <span class="sl">Political Layers</span>
+    <span class="sl">Electoral Map</span>
     <button class="sb" id="btn-el" style="--ac:#E53E3E" onclick="toggleF('showElec','btn-el','chk-el')">
       <div class="chk" id="chk-el" style="--ac:#E53E3E"></div>Federal Seats (2025)
     </button>
@@ -78,7 +78,7 @@
       <div class="chk" id="chk-ms" style="--ac:#FF5FA0"></div>State Marginals
     </button>
     <button class="sb" id="btn-bt" style="--ac:#FF5FA0" onclick="toggleF('showBooths','btn-bt','chk-bt')">
-      <div class="chk" id="chk-bt" style="--ac:#FF5FA0"></div>Booth 2PP Heatmap
+      <div class="chk" id="chk-bt" style="--ac:#FF5FA0"></div>Voting Patterns
     </button>
     <div style="font-size:9px;color:var(--dim);padding:3px 6px 0;line-height:1.4">Margin intensity: light = marginal, dark = very safe (Centre for Western Sydney scheme).<br>Federal Marginals (purple) and State Marginals (pink) toggle independently — both can be active at once.</div>
   </div>
@@ -100,12 +100,12 @@
   </div>
 
   <div class="ss">
-    <span class="sl">Probability Filter</span>
+    <span class="sl">Project Likelihood</span>
     <div style="display:flex;flex-wrap:wrap">
       <button class="pill on" id="prob-all" onclick="setProbFilter('all',this)">All</button>
-      <button class="pill" onclick="setProbFilter('high',this)">High ≥70%</button>
-      <button class="pill" onclick="setProbFilter('med',this)">Med 40–70%</button>
-      <button class="pill" onclick="setProbFilter('low',this)">Low &lt;40%</button>
+      <button class="pill" onclick="setProbFilter('high',this)">High chance</button>
+      <button class="pill" onclick="setProbFilter('med',this)">Moderate</button>
+      <button class="pill" onclick="setProbFilter('low',this)">Lower chance</button>
     </div>
   </div>
 
@@ -312,11 +312,11 @@
     <div style="font-size:11px;font-weight:700;color:var(--text);margin-bottom:10px">📊 Risk & Probability Model</div>
     <div style="font-size:9px;color:var(--muted);line-height:1.6;margin-bottom:10px">Composite risk scored 0–100. Probability-to-proceed modelled on Australian project track record for similar stage/type/political context.</div>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;font-size:9px">
-      <div style="background:#080E18;padding:7px;border-radius:4px;border-left:2px solid var(--amber)"><div style="color:var(--amber);font-weight:700;margin-bottom:3px">Budget Risk (35%)</div><div style="color:var(--dim)">Cost overruns, estimate revisions, contract disputes</div></div>
-      <div style="background:#080E18;padding:7px;border-radius:4px;border-left:2px solid var(--purple)"><div style="color:var(--purple);font-weight:700;margin-bottom:3px">Political Risk (25%)</div><div style="color:var(--dim)">Marginal seats, election cycles, Canberra-Sydney tensions</div></div>
-      <div style="background:#080E18;padding:7px;border-radius:4px;border-left:2px solid var(--blue)"><div style="color:var(--blue);font-weight:700;margin-bottom:3px">Delivery Risk (20%)</div><div style="color:var(--dim)">Construction complexity, contractor capacity, supply chain</div></div>
-      <div style="background:#080E18;padding:7px;border-radius:4px;border-left:2px solid var(--cyan)"><div style="color:var(--cyan);font-weight:700;margin-bottom:3px">Planning Risk (12%)</div><div style="color:var(--dim)">Environmental approvals, heritage, community opposition</div></div>
-      <div style="background:#080E18;padding:7px;border-radius:4px;border-left:2px solid var(--teal);grid-column:span 2"><div style="color:var(--teal);font-weight:700;margin-bottom:3px">Market Risk (8%)</div><div style="color:var(--dim)">Demand forecasts, revenue assumptions, patronage models</div></div>
+      <div style="background:var(--panel2);padding:7px;border-radius:4px;border-left:2px solid var(--amber)"><div style="color:var(--amber);font-weight:700;margin-bottom:3px">Budget Risk (35%)</div><div style="color:var(--dim)">Cost overruns, estimate revisions, contract disputes</div></div>
+      <div style="background:var(--panel2);padding:7px;border-radius:4px;border-left:2px solid var(--purple)"><div style="color:var(--purple);font-weight:700;margin-bottom:3px">Political Risk (25%)</div><div style="color:var(--dim)">Marginal seats, election cycles, Canberra-Sydney tensions</div></div>
+      <div style="background:var(--panel2);padding:7px;border-radius:4px;border-left:2px solid var(--blue)"><div style="color:var(--blue);font-weight:700;margin-bottom:3px">Delivery Risk (20%)</div><div style="color:var(--dim)">Construction complexity, contractor capacity, supply chain</div></div>
+      <div style="background:var(--panel2);padding:7px;border-radius:4px;border-left:2px solid var(--cyan)"><div style="color:var(--cyan);font-weight:700;margin-bottom:3px">Planning Risk (12%)</div><div style="color:var(--dim)">Environmental approvals, heritage, community opposition</div></div>
+      <div style="background:var(--panel2);padding:7px;border-radius:4px;border-left:2px solid var(--teal);grid-column:span 2"><div style="color:var(--teal);font-weight:700;margin-bottom:3px">Market Risk (8%)</div><div style="color:var(--dim)">Demand forecasts, revenue assumptions, patronage models</div></div>
     </div>
     <div style="margin-top:10px;padding-top:8px;border-top:1px solid var(--border2);font-size:10px;color:var(--dim);line-height:1.5">Historic project data: Deloitte Access Economics Investment Monitor (Dec 2025). Probability-to-proceed modelled on Australian track record 2010–2024.</div>
     <button onclick="toggleRiskLegend()" style="margin-top:8px;width:100%;padding:5px;background:var(--border2);border:none;border-radius:4px;color:var(--muted);cursor:pointer;font-family:var(--font);font-size:10px">Close</button>
