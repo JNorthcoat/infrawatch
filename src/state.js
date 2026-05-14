@@ -1,20 +1,22 @@
 // Data loading module — fetches all JSON data files in parallel.
 // All paths are relative to Vite's public/ root.
 
+const BASE = import.meta.env.BASE_URL;
+
 const FILES = {
-  P:                      '/data/projects.json',
-  PROJECT_IMPACT:         '/data/project-impact.json',
-  ELECTORATES:            '/data/electorates.json',
-  CBD_STATIONS:           '/data/cbd-stations.json',
-  BOOTH_DATA:             '/data/booths.json',
-  AMENITIES:              '/data/amenities.json',
-  SUBURB_PRICES:          '/data/suburb-prices.json',
-  POLICY_IMPACT:          '/data/policy.json',
-  ARTICLES:               '/data/articles.json',
-  SUBURBS_GEOJSON:        '/data/suburbs.geojson',
-  FED_BOUNDARIES_GEOJSON: '/data/fed-boundaries.geojson',
-  STATE_BOUNDARIES_GEOJSON: '/data/state-boundaries.geojson',
-  COUNCILS_GEOJSON:       '/data/council-boundaries.geojson',
+  P:                      `${BASE}data/projects.json`,
+  PROJECT_IMPACT:         `${BASE}data/project-impact.json`,
+  ELECTORATES:            `${BASE}data/electorates.json`,
+  CBD_STATIONS:           `${BASE}data/cbd-stations.json`,
+  BOOTH_DATA:             `${BASE}data/booths.json`,
+  AMENITIES:              `${BASE}data/amenities.json`,
+  SUBURB_PRICES:          `${BASE}data/suburb-prices.json`,
+  POLICY_IMPACT:          `${BASE}data/policy.json`,
+  ARTICLES:               `${BASE}data/articles.json`,
+  SUBURBS_GEOJSON:        `${BASE}data/suburbs.geojson`,
+  FED_BOUNDARIES_GEOJSON: `${BASE}data/fed-boundaries.geojson`,
+  STATE_BOUNDARIES_GEOJSON: `${BASE}data/state-boundaries.geojson`,
+  COUNCILS_GEOJSON:       `${BASE}data/council-boundaries.geojson`,
 };
 
 let _cache = null;
