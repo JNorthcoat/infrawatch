@@ -1006,7 +1006,7 @@ function exportCSV(){
   setTimeout(() => URL.revokeObjectURL(url), 1000);
   // Toast
   const t = document.createElement("div");
-  t.style.cssText = "position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:var(--green);color:#000;padding:8px 16px;border-radius:4px;font-family:var(--mono);font-size:11px;font-weight:700;z-index:10001;box-shadow:0 4px 12px #0006";
+  t.style.cssText = "position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:var(--green);color:#fff;padding:8px 16px;border-radius:8px;font-family:var(--mono);font-size:11px;font-weight:700;z-index:10001;box-shadow:0 4px 12px rgba(15,23,42,0.15)";
   t.textContent = `\u2713 Exported ${projects.length} projects with full impact metrics`;
   document.body.appendChild(t);
   setTimeout(() => t.remove(), 2500);
@@ -1020,7 +1020,7 @@ async function exportPNG(){
   if(!mapEl) return;
   // Show progress toast
   const toast = document.createElement("div");
-  toast.style.cssText = "position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:var(--blue);color:#000;padding:10px 18px;border-radius:4px;font-family:var(--mono);font-size:11px;font-weight:700;z-index:10001;box-shadow:0 4px 12px #0006";
+  toast.style.cssText = "position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:var(--blue);color:#fff;padding:10px 18px;border-radius:8px;font-family:var(--mono);font-size:11px;font-weight:700;z-index:10001;box-shadow:0 4px 12px rgba(15,23,42,0.15)";
   toast.textContent = "\ud83d\udcf8 Capturing map (loading library)...";
   document.body.appendChild(toast);
   if(typeof html2canvas === "undefined"){
@@ -1261,7 +1261,7 @@ function showSimulationBanner(scenario, dropped, boosted, changes){
   document.getElementById("sim-banner")?.remove();
   const el = document.createElement("div");
   el.id = "sim-banner";
-  el.style.cssText = "position:absolute;top:54px;left:10px;z-index:850;background:linear-gradient(135deg,#B58FFF,#7E5DD8);color:#fff;padding:8px 12px;font-size:11px;font-family:var(--mono);font-weight:700;border-radius:5px;box-shadow:0 2px 12px #0008;display:flex;flex-direction:column;gap:5px;max-width:340px";
+  el.style.cssText = "position:absolute;top:54px;left:10px;z-index:850;background:linear-gradient(135deg,#B58FFF,#7E5DD8);color:#fff;padding:8px 12px;font-size:11px;font-family:var(--mono);font-weight:700;border-radius:8px;box-shadow:0 4px 12px rgba(15,23,42,0.15);display:flex;flex-direction:column;gap:5px;max-width:340px";
   const labels = {
     alp_2027: "🗳 ALP retains NSW 2027",
     lnp_2027: "🗳 LNP wins NSW 2027",
@@ -2439,7 +2439,7 @@ function openSnowflakeModal(initialSuburb){
             oninput="sfFilterDropdown()" onfocus="sfFilterDropdown()" onkeydown="sfHandleKey(event)" onblur="setTimeout(sfHideDropdown, 180)"
             style="width:100%;box-sizing:border-box;background:var(--panel);border:1px solid var(--border2);color:var(--text);padding:7px 10px;border-radius:3px;font-family:var(--font);font-size:12px;outline:none"
             onkeyup="this.style.borderColor='#FFC444'" onmouseout="this.style.borderColor='var(--border2)'">
-          <div id="sf-dropdown" style="display:none;position:absolute;top:100%;left:0;right:0;margin-top:2px;background:var(--panel);border:1px solid var(--border2);border-radius:3px;max-height:240px;overflow-y:auto;z-index:99999;box-shadow:0 4px 12px rgba(0,0,0,0.4)"></div>
+          <div id="sf-dropdown" style="display:none;position:absolute;top:100%;left:0;right:0;margin-top:2px;background:var(--panel);border:1px solid var(--border2);border-radius:3px;max-height:240px;overflow-y:auto;z-index:99999;box-shadow:0 4px 12px rgba(15,23,42,0.12)"></div>
         </div>
       </div>
     </div>
