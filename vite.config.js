@@ -11,7 +11,7 @@ export default defineConfig({
     open: true,
     proxy: {
       '/api/news': {
-        target: 'http://localhost:8787',
+        target: 'https://infrawatch-news.jessenorthcoat123.workers.dev',
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api\/news/, ''),
       },

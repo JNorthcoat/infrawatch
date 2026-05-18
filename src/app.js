@@ -3759,7 +3759,7 @@ function isLayerOn(id){ const l=LAYERS.find(x=>x.id===id); return l ? l.on : fal
 
 function buildCatBtns(){
   document.getElementById("cat-btns").innerHTML = Object.entries(CAT).map(([k,v])=>`
-    <button class="sb on" id="cat-${k}" style="--ac:${v.color}" onclick="toggleCat('${k}',this)">
+    <button class="sb on cat-btn" id="cat-${k}" data-cat="${k}" style="--ac:${v.color}" onclick="toggleCat('${k}',this)">
       <div class="chk on" id="cchk-${k}" style="--ac:${v.color}"></div>${v.icon} ${v.label}
     </button>`).join("");
 }
