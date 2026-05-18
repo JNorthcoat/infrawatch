@@ -1,0 +1,167 @@
+[
+  {
+    "policy": "TOD Rezoning (overriding councils via SEPP)",
+    "stance": {
+      "alp": "Strongly support — core Minns housing policy",
+      "lnp": "Oppose — would return planning powers to councils",
+      "grn": "Conditional — want more social housing requirements"
+    },
+    "affects": [
+      10,
+      12,
+      29,
+      30,
+      31
+    ],
+    "risk": "HIGH if LNP wins 2027 — could reverse rezoning. Core policy uncertainty for Meadowbank, Crows Nest, Bankstown TODs.",
+    "confidence": "High"
+  },
+  {
+    "policy": "Metro West cost overrun response",
+    "stance": {
+      "alp": "Committed — will fund cost overruns",
+      "lnp": "Ambiguous — would audit/review scope",
+      "grn": "Support but want more stations"
+    },
+    "affects": [
+      1
+    ],
+    "risk": "LOW — too far advanced to cancel, TBMs past midpoint. Political risk is to PLR Stage 2 funding priority.",
+    "confidence": "High"
+  },
+  {
+    "policy": "WSA Metro Stage 2 (Airport→Leppington)",
+    "stance": {
+      "alp": "Fed ALP: deferred but supportive",
+      "lnp": "Fed LNP: claim will prioritise",
+      "grn": "Strongly support"
+    },
+    "affects": [
+      2
+    ],
+    "risk": "VERY HIGH — primary swing driver for Sydney investment thesis. Lindsay federal seat (2.5% ALP) key.",
+    "confidence": "Medium"
+  },
+  {
+    "policy": "F6 Extension / Northern Beaches Tunnel",
+    "stance": {
+      "alp": "Fed: unfunded; NSW: lukewarm",
+      "lnp": "NSW: would revive both",
+      "grn": "Strongly oppose — mode shift focus"
+    },
+    "affects": [
+      6,
+      7
+    ],
+    "risk": "HIGH if LNP wins 2027 state — F6 back on table. Low if ALP retains — both stay deferred.",
+    "confidence": "High"
+  },
+  {
+    "policy": "Eraring coal extension to 2029",
+    "stance": {
+      "alp": "NSW: extend via support deed; Fed: supportive",
+      "lnp": "Both: strongly support extension",
+      "grn": "Strongly oppose — accelerate closure"
+    },
+    "affects": [
+      14
+    ],
+    "risk": "LOW — bipartisan acceptance of transition period. Small risk if Greens force hand in minority govt.",
+    "confidence": "High"
+  },
+  {
+    "policy": "Offshore wind — Illawarra zone",
+    "stance": {
+      "alp": "Fed: declared zone, support FID",
+      "lnp": "Fed: historically opposed; now ambiguous",
+      "grn": "Strongly support"
+    },
+    "affects": [
+      15
+    ],
+    "risk": "MEDIUM — Fed ALP win 2028 essential for approvals. Coalition return kills it for 5+ years.",
+    "confidence": "High"
+  },
+  {
+    "policy": "Snowy 2.0 continuation",
+    "stance": {
+      "alp": "Continue — too committed to cancel",
+      "lnp": "Continue — originated under LNP",
+      "grn": "Oppose — want renewables instead"
+    },
+    "affects": [
+      17
+    ],
+    "risk": "VERY LOW — bipartisan, $6B+ sunk cost.",
+    "confidence": "Very High"
+  },
+  {
+    "policy": "Warragamba Dam wall raising",
+    "stance": {
+      "alp": "NSW: resubmitted EIS 2024",
+      "lnp": "NSW: originally proposed — support",
+      "grn": "Strongly oppose — Blue Mtns World Heritage"
+    },
+    "affects": [
+      33
+    ],
+    "risk": "HIGH — depends on Macquarie federal seat + Greens Senate. Either LNP win or Greens kingmaker kills it.",
+    "confidence": "Medium"
+  },
+  {
+    "policy": "Western Harbour Tunnel / Beaches Link",
+    "stance": {
+      "alp": "NSW: WHT proceeds; Beaches Link deferred",
+      "lnp": "NSW: would accelerate Beaches Link",
+      "grn": "Strongly oppose all road tunnels"
+    },
+    "affects": [
+      20
+    ],
+    "risk": "LOW for WHT (under construction), HIGH for Beaches Link (unfunded).",
+    "confidence": "High"
+  },
+  {
+    "policy": "Social housing fund scale",
+    "stance": {
+      "alp": "$5.6B NSW + $10B Fed Housing Australia Future Fund",
+      "lnp": "Cut scale, return to market incentives",
+      "grn": "Increase 3x — public housing not private"
+    },
+    "affects": [
+      11,
+      13
+    ],
+    "risk": "MEDIUM — delivery pipeline exists but scale of public funding vulnerable to govt change.",
+    "confidence": "High"
+  },
+  {
+    "policy": "PLR Stage 2 funding",
+    "stance": {
+      "alp": "NSW: support in principle, not in forward estimates",
+      "lnp": "Opposed priority — would fund Parramatta-Epping heavy rail instead",
+      "grn": "Support with social housing conditions"
+    },
+    "affects": [
+      8
+    ],
+    "risk": "HIGH — funding decision expected 2026 budget. Policy ambiguity is the biggest risk.",
+    "confidence": "Medium"
+  },
+  {
+    "policy": "Aerotropolis development scale",
+    "stance": {
+      "alp": "Full speed — 100k dwellings target",
+      "lnp": "Scale back residential, more industrial",
+      "grn": "Question environmental impacts"
+    },
+    "affects": [
+      31,
+      3,
+      2,
+      45
+    ],
+    "risk": "MEDIUM — delivery timeline vulnerable to scope changes post-2027 state election.",
+    "confidence": "Medium"
+  }
+]

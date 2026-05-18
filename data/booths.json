@@ -1,0 +1,1338 @@
+[
+  {
+    "suburb": "Parramatta CBD",
+    "postcode": "2150",
+    "electorate": "Parramatta",
+    "parent2pp": {
+      "ALP": 53.2,
+      "LNP": 46.8
+    },
+    "coords": [
+      [
+        -33.808,
+        150.995
+      ],
+      [
+        -33.808,
+        151.012
+      ],
+      [
+        -33.823,
+        151.012
+      ],
+      [
+        -33.823,
+        150.995
+      ]
+    ],
+    "vote": {
+      "ALP": 56.1,
+      "LNP": 43.9,
+      "Greens": 11.2,
+      "primary": "ALP"
+    },
+    "swing": -2.4,
+    "booth": "Parramatta Town Hall + PPVC"
+  },
+  {
+    "suburb": "Harris Park",
+    "postcode": "2150",
+    "electorate": "Parramatta",
+    "parent2pp": {
+      "ALP": 53.2,
+      "LNP": 46.8
+    },
+    "coords": [
+      [
+        -33.82,
+        151.006
+      ],
+      [
+        -33.82,
+        151.02
+      ],
+      [
+        -33.83,
+        151.02
+      ],
+      [
+        -33.83,
+        151.006
+      ]
+    ],
+    "vote": {
+      "ALP": 59.8,
+      "LNP": 40.2,
+      "Greens": 8.1,
+      "primary": "ALP"
+    },
+    "swing": 0.4,
+    "booth": "Harris Park Public"
+  },
+  {
+    "suburb": "Westmead",
+    "postcode": "2145",
+    "electorate": "Parramatta",
+    "parent2pp": {
+      "ALP": 53.2,
+      "LNP": 46.8
+    },
+    "coords": [
+      [
+        -33.8,
+        150.985
+      ],
+      [
+        -33.8,
+        151
+      ],
+      [
+        -33.815,
+        151
+      ],
+      [
+        -33.815,
+        150.985
+      ]
+    ],
+    "vote": {
+      "ALP": 51.3,
+      "LNP": 48.7,
+      "Greens": 6.8,
+      "primary": "ALP"
+    },
+    "swing": -3.1,
+    "booth": "Westmead Hospital"
+  },
+  {
+    "suburb": "Merrylands",
+    "postcode": "2160",
+    "electorate": "Parramatta",
+    "parent2pp": {
+      "ALP": 53.2,
+      "LNP": 46.8
+    },
+    "coords": [
+      [
+        -33.83,
+        150.99
+      ],
+      [
+        -33.83,
+        151.005
+      ],
+      [
+        -33.845,
+        151.005
+      ],
+      [
+        -33.845,
+        150.99
+      ]
+    ],
+    "vote": {
+      "ALP": 52.7,
+      "LNP": 47.3,
+      "Greens": 5.9,
+      "primary": "ALP"
+    },
+    "swing": -1.8,
+    "booth": "Merrylands Public"
+  },
+  {
+    "suburb": "Strathfield",
+    "postcode": "2135",
+    "electorate": "Reid",
+    "parent2pp": {
+      "ALP": 54.1,
+      "LNP": 45.9
+    },
+    "coords": [
+      [
+        -33.864,
+        151.076
+      ],
+      [
+        -33.864,
+        151.096
+      ],
+      [
+        -33.88,
+        151.096
+      ],
+      [
+        -33.88,
+        151.076
+      ]
+    ],
+    "vote": {
+      "ALP": 50.1,
+      "LNP": 49.9,
+      "Greens": 7.2,
+      "primary": "LNP"
+    },
+    "swing": 0.8,
+    "booth": "Strathfield Primary"
+  },
+  {
+    "suburb": "Burwood",
+    "postcode": "2134",
+    "electorate": "Reid",
+    "parent2pp": {
+      "ALP": 54.1,
+      "LNP": 45.9
+    },
+    "coords": [
+      [
+        -33.874,
+        151.096
+      ],
+      [
+        -33.874,
+        151.112
+      ],
+      [
+        -33.888,
+        151.112
+      ],
+      [
+        -33.888,
+        151.096
+      ]
+    ],
+    "vote": {
+      "ALP": 52.4,
+      "LNP": 47.6,
+      "Greens": 8.4,
+      "primary": "ALP"
+    },
+    "swing": 1.2,
+    "booth": "Burwood Girls High"
+  },
+  {
+    "suburb": "Rhodes/Concord",
+    "postcode": "2138",
+    "electorate": "Reid",
+    "parent2pp": {
+      "ALP": 54.1,
+      "LNP": 45.9
+    },
+    "coords": [
+      [
+        -33.82,
+        151.08
+      ],
+      [
+        -33.82,
+        151.1
+      ],
+      [
+        -33.84,
+        151.1
+      ],
+      [
+        -33.84,
+        151.08
+      ]
+    ],
+    "vote": {
+      "ALP": 55.8,
+      "LNP": 44.2,
+      "Greens": 11.5,
+      "primary": "ALP"
+    },
+    "swing": 1.9,
+    "booth": "Rhodes Recreation"
+  },
+  {
+    "suburb": "Five Dock/Drummoyne",
+    "postcode": "2046",
+    "electorate": "Reid",
+    "parent2pp": {
+      "ALP": 54.1,
+      "LNP": 45.9
+    },
+    "coords": [
+      [
+        -33.86,
+        151.118
+      ],
+      [
+        -33.86,
+        151.14
+      ],
+      [
+        -33.876,
+        151.14
+      ],
+      [
+        -33.876,
+        151.118
+      ]
+    ],
+    "vote": {
+      "ALP": 57.2,
+      "LNP": 42.8,
+      "Greens": 13.1,
+      "primary": "ALP"
+    },
+    "swing": -0.3,
+    "booth": "Five Dock Public"
+  },
+  {
+    "suburb": "Blue Mountains",
+    "postcode": "2780",
+    "electorate": "Macquarie",
+    "parent2pp": {
+      "ALP": 52.8,
+      "LNP": 47.2
+    },
+    "coords": [
+      [
+        -33.72,
+        150.3
+      ],
+      [
+        -33.72,
+        150.6
+      ],
+      [
+        -33.8,
+        150.6
+      ],
+      [
+        -33.8,
+        150.3
+      ]
+    ],
+    "vote": {
+      "ALP": 58.7,
+      "LNP": 41.3,
+      "Greens": 16.8,
+      "primary": "ALP"
+    },
+    "swing": 2.1,
+    "booth": "Katoomba PPVC"
+  },
+  {
+    "suburb": "Hawkesbury/Richmond",
+    "postcode": "2753",
+    "electorate": "Macquarie",
+    "parent2pp": {
+      "ALP": 52.8,
+      "LNP": 47.2
+    },
+    "coords": [
+      [
+        -33.58,
+        150.7
+      ],
+      [
+        -33.58,
+        150.85
+      ],
+      [
+        -33.68,
+        150.85
+      ],
+      [
+        -33.68,
+        150.7
+      ]
+    ],
+    "vote": {
+      "ALP": 44.2,
+      "LNP": 55.8,
+      "Greens": 7.1,
+      "primary": "LNP"
+    },
+    "swing": -3.8,
+    "booth": "Richmond RAAF"
+  },
+  {
+    "suburb": "Penrith Valley",
+    "postcode": "2750",
+    "electorate": "Macquarie",
+    "parent2pp": {
+      "ALP": 52.8,
+      "LNP": 47.2
+    },
+    "coords": [
+      [
+        -33.73,
+        150.66
+      ],
+      [
+        -33.73,
+        150.73
+      ],
+      [
+        -33.8,
+        150.73
+      ],
+      [
+        -33.8,
+        150.66
+      ]
+    ],
+    "vote": {
+      "ALP": 53.4,
+      "LNP": 46.6,
+      "Greens": 8.9,
+      "primary": "ALP"
+    },
+    "swing": -2.4,
+    "booth": "Penrith Panthers"
+  },
+  {
+    "suburb": "Fairfield",
+    "postcode": "2165",
+    "electorate": "McMahon",
+    "parent2pp": {
+      "ALP": 55.5,
+      "LNP": 44.5
+    },
+    "coords": [
+      [
+        -33.86,
+        150.955
+      ],
+      [
+        -33.86,
+        150.985
+      ],
+      [
+        -33.88,
+        150.985
+      ],
+      [
+        -33.88,
+        150.955
+      ]
+    ],
+    "vote": {
+      "ALP": 62.1,
+      "LNP": 37.9,
+      "Greens": 5.4,
+      "primary": "ALP"
+    },
+    "swing": 0.6,
+    "booth": "Fairfield Town Hall"
+  },
+  {
+    "suburb": "Greystanes",
+    "postcode": "2145",
+    "electorate": "McMahon",
+    "parent2pp": {
+      "ALP": 55.5,
+      "LNP": 44.5
+    },
+    "coords": [
+      [
+        -33.83,
+        150.93
+      ],
+      [
+        -33.83,
+        150.96
+      ],
+      [
+        -33.855,
+        150.96
+      ],
+      [
+        -33.855,
+        150.93
+      ]
+    ],
+    "vote": {
+      "ALP": 52.7,
+      "LNP": 47.3,
+      "Greens": 6.3,
+      "primary": "ALP"
+    },
+    "swing": 1.4,
+    "booth": "Greystanes Public"
+  },
+  {
+    "suburb": "St Clair",
+    "postcode": "2759",
+    "electorate": "McMahon",
+    "parent2pp": {
+      "ALP": 55.5,
+      "LNP": 44.5
+    },
+    "coords": [
+      [
+        -33.79,
+        150.78
+      ],
+      [
+        -33.79,
+        150.81
+      ],
+      [
+        -33.81,
+        150.81
+      ],
+      [
+        -33.81,
+        150.78
+      ]
+    ],
+    "vote": {
+      "ALP": 54.3,
+      "LNP": 45.7,
+      "Greens": 5.7,
+      "primary": "ALP"
+    },
+    "swing": 2.2,
+    "booth": "St Clair Public"
+  },
+  {
+    "suburb": "Cronulla",
+    "postcode": "2230",
+    "electorate": "Cook",
+    "parent2pp": {
+      "ALP": 41.8,
+      "LNP": 58.2
+    },
+    "coords": [
+      [
+        -34.05,
+        151.14
+      ],
+      [
+        -34.05,
+        151.17
+      ],
+      [
+        -34.08,
+        151.17
+      ],
+      [
+        -34.08,
+        151.14
+      ]
+    ],
+    "vote": {
+      "ALP": 38.1,
+      "LNP": 61.9,
+      "Greens": 8.2,
+      "primary": "LNP"
+    },
+    "swing": 2.3,
+    "booth": "Cronulla Central PPVC"
+  },
+  {
+    "suburb": "Caringbah",
+    "postcode": "2229",
+    "electorate": "Cook",
+    "parent2pp": {
+      "ALP": 41.8,
+      "LNP": 58.2
+    },
+    "coords": [
+      [
+        -34.03,
+        151.11
+      ],
+      [
+        -34.03,
+        151.14
+      ],
+      [
+        -34.06,
+        151.14
+      ],
+      [
+        -34.06,
+        151.11
+      ]
+    ],
+    "vote": {
+      "ALP": 40.7,
+      "LNP": 59.3,
+      "Greens": 7.1,
+      "primary": "LNP"
+    },
+    "swing": 2.8,
+    "booth": "Caringbah Public"
+  },
+  {
+    "suburb": "Miranda",
+    "postcode": "2228",
+    "electorate": "Cook",
+    "parent2pp": {
+      "ALP": 41.8,
+      "LNP": 58.2
+    },
+    "coords": [
+      [
+        -34,
+        151.09
+      ],
+      [
+        -34,
+        151.12
+      ],
+      [
+        -34.03,
+        151.12
+      ],
+      [
+        -34.03,
+        151.09
+      ]
+    ],
+    "vote": {
+      "ALP": 45.2,
+      "LNP": 54.8,
+      "Greens": 9.4,
+      "primary": "LNP"
+    },
+    "swing": 1.8,
+    "booth": "Miranda PPVC"
+  },
+  {
+    "suburb": "Manly",
+    "postcode": "2095",
+    "electorate": "Warringah",
+    "parent2pp": {
+      "ALP": 48.5,
+      "LNP": 51.5
+    },
+    "coords": [
+      [
+        -33.79,
+        151.27
+      ],
+      [
+        -33.79,
+        151.3
+      ],
+      [
+        -33.805,
+        151.3
+      ],
+      [
+        -33.805,
+        151.27
+      ]
+    ],
+    "vote": {
+      "IND": 49.8,
+      "LNP": 32.4,
+      "ALP": 12.8,
+      "Greens": 18.1,
+      "primary": "IND"
+    },
+    "swing": -1.2,
+    "booth": "Manly West PPVC"
+  },
+  {
+    "suburb": "Mosman",
+    "postcode": "2088",
+    "electorate": "Warringah",
+    "parent2pp": {
+      "ALP": 48.5,
+      "LNP": 51.5
+    },
+    "coords": [
+      [
+        -33.81,
+        151.235
+      ],
+      [
+        -33.81,
+        151.26
+      ],
+      [
+        -33.835,
+        151.26
+      ],
+      [
+        -33.835,
+        151.235
+      ]
+    ],
+    "vote": {
+      "IND": 52.1,
+      "LNP": 34.8,
+      "ALP": 9.4,
+      "Greens": 14.7,
+      "primary": "IND"
+    },
+    "swing": 0.8,
+    "booth": "Mosman Public"
+  },
+  {
+    "suburb": "Dee Why/Brookvale",
+    "postcode": "2099",
+    "electorate": "Warringah",
+    "parent2pp": {
+      "ALP": 48.5,
+      "LNP": 51.5
+    },
+    "coords": [
+      [
+        -33.725,
+        151.27
+      ],
+      [
+        -33.725,
+        151.298
+      ],
+      [
+        -33.76,
+        151.298
+      ],
+      [
+        -33.76,
+        151.27
+      ]
+    ],
+    "vote": {
+      "IND": 44.6,
+      "LNP": 35.1,
+      "ALP": 17.2,
+      "Greens": 12.5,
+      "primary": "IND"
+    },
+    "swing": -0.6,
+    "booth": "Dee Why RSL PPVC"
+  },
+  {
+    "suburb": "Blacktown",
+    "postcode": "2148",
+    "electorate": "Greenway",
+    "parent2pp": {
+      "ALP": 51.9,
+      "LNP": 48.1
+    },
+    "coords": [
+      [
+        -33.76,
+        150.9
+      ],
+      [
+        -33.76,
+        150.93
+      ],
+      [
+        -33.79,
+        150.93
+      ],
+      [
+        -33.79,
+        150.9
+      ]
+    ],
+    "vote": {
+      "ALP": 54.3,
+      "LNP": 45.7,
+      "Greens": 6.8,
+      "primary": "ALP"
+    },
+    "swing": -2.8,
+    "booth": "Blacktown PPVC"
+  },
+  {
+    "suburb": "Seven Hills",
+    "postcode": "2147",
+    "electorate": "Greenway",
+    "parent2pp": {
+      "ALP": 51.9,
+      "LNP": 48.1
+    },
+    "coords": [
+      [
+        -33.77,
+        150.93
+      ],
+      [
+        -33.77,
+        150.96
+      ],
+      [
+        -33.79,
+        150.96
+      ],
+      [
+        -33.79,
+        150.93
+      ]
+    ],
+    "vote": {
+      "ALP": 48.7,
+      "LNP": 51.3,
+      "Greens": 5.4,
+      "primary": "LNP"
+    },
+    "swing": -4.2,
+    "booth": "Seven Hills Primary"
+  },
+  {
+    "suburb": "Kings Langley",
+    "postcode": "2147",
+    "electorate": "Greenway",
+    "parent2pp": {
+      "ALP": 51.9,
+      "LNP": 48.1
+    },
+    "coords": [
+      [
+        -33.73,
+        150.9
+      ],
+      [
+        -33.73,
+        150.93
+      ],
+      [
+        -33.76,
+        150.93
+      ],
+      [
+        -33.76,
+        150.9
+      ]
+    ],
+    "vote": {
+      "ALP": 52.8,
+      "LNP": 47.2,
+      "Greens": 6.1,
+      "primary": "ALP"
+    },
+    "swing": -3.5,
+    "booth": "Kings Langley Public"
+  },
+  {
+    "suburb": "Sydney CBD",
+    "postcode": "2000",
+    "electorate": "Sydney",
+    "parent2pp": {
+      "ALP": 64.5,
+      "LNP": 35.5
+    },
+    "coords": [
+      [
+        -33.858,
+        151.2
+      ],
+      [
+        -33.858,
+        151.22
+      ],
+      [
+        -33.878,
+        151.22
+      ],
+      [
+        -33.878,
+        151.2
+      ]
+    ],
+    "vote": {
+      "ALP": 59.2,
+      "LNP": 22.1,
+      "Greens": 28.4,
+      "primary": "ALP"
+    },
+    "swing": 1.2,
+    "booth": "Sydney Town Hall PPVC"
+  },
+  {
+    "suburb": "Surry Hills",
+    "postcode": "2010",
+    "electorate": "Sydney",
+    "parent2pp": {
+      "ALP": 64.5,
+      "LNP": 35.5
+    },
+    "coords": [
+      [
+        -33.88,
+        151.205
+      ],
+      [
+        -33.88,
+        151.225
+      ],
+      [
+        -33.9,
+        151.225
+      ],
+      [
+        -33.9,
+        151.205
+      ]
+    ],
+    "vote": {
+      "ALP": 56.8,
+      "LNP": 16.2,
+      "Greens": 41.7,
+      "primary": "Greens"
+    },
+    "swing": 3.2,
+    "booth": "Surry Hills Public"
+  },
+  {
+    "suburb": "Redfern/Alexandria",
+    "postcode": "2015",
+    "electorate": "Sydney",
+    "parent2pp": {
+      "ALP": 64.5,
+      "LNP": 35.5
+    },
+    "coords": [
+      [
+        -33.895,
+        151.175
+      ],
+      [
+        -33.895,
+        151.2
+      ],
+      [
+        -33.92,
+        151.2
+      ],
+      [
+        -33.92,
+        151.175
+      ]
+    ],
+    "vote": {
+      "ALP": 61.3,
+      "LNP": 18.9,
+      "Greens": 35.4,
+      "primary": "ALP"
+    },
+    "swing": 0.4,
+    "booth": "Alexandria Park"
+  },
+  {
+    "suburb": "North Sydney CBD",
+    "postcode": "2060",
+    "electorate": "North Sydney",
+    "parent2pp": {
+      "ALP": 52.4,
+      "LNP": 47.6
+    },
+    "coords": [
+      [
+        -33.82,
+        151.195
+      ],
+      [
+        -33.82,
+        151.215
+      ],
+      [
+        -33.84,
+        151.215
+      ],
+      [
+        -33.84,
+        151.195
+      ]
+    ],
+    "vote": {
+      "IND": 47.8,
+      "LNP": 28.2,
+      "ALP": 15.4,
+      "Greens": 20.8,
+      "primary": "IND"
+    },
+    "swing": -1.1,
+    "booth": "North Sydney PPVC"
+  },
+  {
+    "suburb": "Neutral Bay",
+    "postcode": "2089",
+    "electorate": "North Sydney",
+    "parent2pp": {
+      "ALP": 52.4,
+      "LNP": 47.6
+    },
+    "coords": [
+      [
+        -33.83,
+        151.215
+      ],
+      [
+        -33.83,
+        151.235
+      ],
+      [
+        -33.845,
+        151.235
+      ],
+      [
+        -33.845,
+        151.215
+      ]
+    ],
+    "vote": {
+      "IND": 51.2,
+      "LNP": 30.5,
+      "ALP": 12.4,
+      "Greens": 17.6,
+      "primary": "IND"
+    },
+    "swing": 0.6,
+    "booth": "Neutral Bay Public"
+  },
+  {
+    "suburb": "Crows Nest",
+    "postcode": "2065",
+    "electorate": "North Sydney",
+    "parent2pp": {
+      "ALP": 52.4,
+      "LNP": 47.6
+    },
+    "coords": [
+      [
+        -33.818,
+        151.185
+      ],
+      [
+        -33.818,
+        151.202
+      ],
+      [
+        -33.834,
+        151.202
+      ],
+      [
+        -33.834,
+        151.185
+      ]
+    ],
+    "vote": {
+      "IND": 44.3,
+      "LNP": 31.7,
+      "ALP": 18.2,
+      "Greens": 22.3,
+      "primary": "IND"
+    },
+    "swing": 0.9,
+    "booth": "Crows Nest Community"
+  },
+  {
+    "suburb": "Eastwood",
+    "postcode": "2122",
+    "electorate": "Bennelong",
+    "parent2pp": {
+      "ALP": 53.8,
+      "LNP": 46.2
+    },
+    "coords": [
+      [
+        -33.78,
+        151.075
+      ],
+      [
+        -33.78,
+        151.095
+      ],
+      [
+        -33.8,
+        151.095
+      ],
+      [
+        -33.8,
+        151.075
+      ]
+    ],
+    "vote": {
+      "ALP": 51.7,
+      "LNP": 48.3,
+      "Greens": 7.4,
+      "primary": "ALP"
+    },
+    "swing": 0.3,
+    "booth": "Eastwood Public"
+  },
+  {
+    "suburb": "Ryde",
+    "postcode": "2112",
+    "electorate": "Bennelong",
+    "parent2pp": {
+      "ALP": 53.8,
+      "LNP": 46.2
+    },
+    "coords": [
+      [
+        -33.805,
+        151.1
+      ],
+      [
+        -33.805,
+        151.122
+      ],
+      [
+        -33.825,
+        151.122
+      ],
+      [
+        -33.825,
+        151.1
+      ]
+    ],
+    "vote": {
+      "ALP": 54.2,
+      "LNP": 45.8,
+      "Greens": 10.1,
+      "primary": "ALP"
+    },
+    "swing": -1.8,
+    "booth": "Ryde PPVC"
+  },
+  {
+    "suburb": "Epping",
+    "postcode": "2121",
+    "electorate": "Bennelong",
+    "parent2pp": {
+      "ALP": 53.8,
+      "LNP": 46.2
+    },
+    "coords": [
+      [
+        -33.755,
+        151.075
+      ],
+      [
+        -33.755,
+        151.095
+      ],
+      [
+        -33.775,
+        151.095
+      ],
+      [
+        -33.775,
+        151.075
+      ]
+    ],
+    "vote": {
+      "ALP": 55.9,
+      "LNP": 44.1,
+      "Greens": 9.2,
+      "primary": "ALP"
+    },
+    "swing": -1.4,
+    "booth": "Epping Boys PPVC"
+  },
+  {
+    "suburb": "Penrith",
+    "postcode": "2750",
+    "electorate": "Lindsay",
+    "parent2pp": {
+      "ALP": 52.1,
+      "LNP": 47.9
+    },
+    "coords": [
+      [
+        -33.745,
+        150.685
+      ],
+      [
+        -33.745,
+        150.705
+      ],
+      [
+        -33.765,
+        150.705
+      ],
+      [
+        -33.765,
+        150.685
+      ]
+    ],
+    "vote": {
+      "ALP": 53.8,
+      "LNP": 46.2,
+      "Greens": 7.3,
+      "primary": "ALP"
+    },
+    "swing": -3.2,
+    "booth": "Penrith Panthers PPVC"
+  },
+  {
+    "suburb": "Kingswood",
+    "postcode": "2747",
+    "electorate": "Lindsay",
+    "parent2pp": {
+      "ALP": 52.1,
+      "LNP": 47.9
+    },
+    "coords": [
+      [
+        -33.75,
+        150.72
+      ],
+      [
+        -33.75,
+        150.74
+      ],
+      [
+        -33.77,
+        150.74
+      ],
+      [
+        -33.77,
+        150.72
+      ]
+    ],
+    "vote": {
+      "ALP": 51.2,
+      "LNP": 48.8,
+      "Greens": 6.4,
+      "primary": "ALP"
+    },
+    "swing": -2.8,
+    "booth": "Kingswood Public"
+  },
+  {
+    "suburb": "St Marys",
+    "postcode": "2760",
+    "electorate": "Lindsay",
+    "parent2pp": {
+      "ALP": 52.1,
+      "LNP": 47.9
+    },
+    "coords": [
+      [
+        -33.76,
+        150.77
+      ],
+      [
+        -33.76,
+        150.79
+      ],
+      [
+        -33.78,
+        150.79
+      ],
+      [
+        -33.78,
+        150.77
+      ]
+    ],
+    "vote": {
+      "ALP": 55.6,
+      "LNP": 44.4,
+      "Greens": 5.8,
+      "primary": "ALP"
+    },
+    "swing": -2.1,
+    "booth": "St Marys PPVC"
+  },
+  {
+    "suburb": "Campbelltown",
+    "postcode": "2560",
+    "electorate": "Macarthur",
+    "parent2pp": {
+      "ALP": 53.4,
+      "LNP": 46.6
+    },
+    "coords": [
+      [
+        -34.06,
+        150.8
+      ],
+      [
+        -34.06,
+        150.83
+      ],
+      [
+        -34.085,
+        150.83
+      ],
+      [
+        -34.085,
+        150.8
+      ]
+    ],
+    "vote": {
+      "ALP": 55.8,
+      "LNP": 44.2,
+      "Greens": 7.2,
+      "primary": "ALP"
+    },
+    "swing": -1.4,
+    "booth": "Campbelltown PPVC"
+  },
+  {
+    "suburb": "Oran Park",
+    "postcode": "2570",
+    "electorate": "Macarthur",
+    "parent2pp": {
+      "ALP": 53.4,
+      "LNP": 46.6
+    },
+    "coords": [
+      [
+        -34.02,
+        150.735
+      ],
+      [
+        -34.02,
+        150.76
+      ],
+      [
+        -34.045,
+        150.76
+      ],
+      [
+        -34.045,
+        150.735
+      ]
+    ],
+    "vote": {
+      "ALP": 48.2,
+      "LNP": 51.8,
+      "Greens": 5.1,
+      "primary": "LNP"
+    },
+    "swing": -2.8,
+    "booth": "Oran Park Public"
+  },
+  {
+    "suburb": "Narellan",
+    "postcode": "2567",
+    "electorate": "Macarthur",
+    "parent2pp": {
+      "ALP": 53.4,
+      "LNP": 46.6
+    },
+    "coords": [
+      [
+        -34.04,
+        150.74
+      ],
+      [
+        -34.04,
+        150.765
+      ],
+      [
+        -34.06,
+        150.765
+      ],
+      [
+        -34.06,
+        150.74
+      ]
+    ],
+    "vote": {
+      "ALP": 51.3,
+      "LNP": 48.7,
+      "Greens": 5.9,
+      "primary": "LNP"
+    },
+    "swing": -2.2,
+    "booth": "Narellan Public"
+  }
+]

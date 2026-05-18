@@ -1,0 +1,277 @@
+[
+  {
+    "id": "e1",
+    "name": "Parramatta",
+    "level": "Federal",
+    "party": "ALP",
+    "margin": 3.2,
+    "swing": -1.1,
+    "marginal": true,
+    "color": "#E53E3E",
+    "pids": [
+      1,
+      8,
+      10
+    ],
+    "nextElec": "May 2025",
+    "incumbent": "Andrew Charlton",
+    "key": "Metro West (3 stations), PLR Stage 2, TOD rezoning"
+  },
+  {
+    "id": "e2",
+    "name": "Reid",
+    "level": "Federal",
+    "party": "ALP",
+    "margin": 4.1,
+    "swing": 0.8,
+    "marginal": true,
+    "color": "#E53E3E",
+    "pids": [
+      1,
+      12,
+      35
+    ],
+    "nextElec": "May 2025",
+    "incumbent": "Sally Sitou",
+    "key": "Metro West Strathfield/SOP stations, Meadowbank precinct"
+  },
+  {
+    "id": "e3",
+    "name": "Macquarie",
+    "level": "Federal",
+    "party": "ALP",
+    "margin": 2.8,
+    "swing": -2.1,
+    "marginal": true,
+    "color": "#E53E3E",
+    "pids": [
+      2,
+      3,
+      24,
+      33
+    ],
+    "nextElec": "May 2025",
+    "incumbent": "Susan Templeman",
+    "key": "WSA Metro, Airport roads — most infrastructure-exposed seat in NSW"
+  },
+  {
+    "id": "e4",
+    "name": "McMahon",
+    "level": "Federal",
+    "party": "ALP",
+    "margin": 5.5,
+    "swing": 1.2,
+    "marginal": false,
+    "color": "#E53E3E",
+    "pids": [
+      2,
+      3,
+      27
+    ],
+    "nextElec": "May 2025",
+    "incumbent": "Chris Bowen",
+    "key": "Energy Minister — WSA Metro, M9 Orbital"
+  },
+  {
+    "id": "e5",
+    "name": "Cook",
+    "level": "Federal",
+    "party": "LNP",
+    "margin": 8.2,
+    "swing": 2.3,
+    "marginal": false,
+    "color": "#3182CE",
+    "pids": [
+      6
+    ],
+    "nextElec": "May 2025",
+    "incumbent": "Mark Speakman",
+    "key": "F6 Extension — safe seat reduces project delivery urgency"
+  },
+  {
+    "id": "e6",
+    "name": "Warringah",
+    "level": "Federal",
+    "party": "IND",
+    "margin": 6.1,
+    "swing": -0.5,
+    "marginal": false,
+    "color": "#10D97A",
+    "pids": [],
+    "nextElec": "May 2025",
+    "incumbent": "Zali Steggall",
+    "key": "Northern Beaches transit — IND voice, no party whip pressure"
+  },
+  {
+    "id": "e7",
+    "name": "Greenway",
+    "level": "Federal",
+    "party": "ALP",
+    "margin": 1.9,
+    "swing": -3.2,
+    "marginal": true,
+    "color": "#E53E3E",
+    "pids": [
+      11,
+      27
+    ],
+    "nextElec": "May 2025",
+    "incumbent": "Michelle Rowland",
+    "key": "Most marginal NSW federal seat — Blacktown housing delivery critical"
+  },
+  {
+    "id": "e8",
+    "name": "Sydney",
+    "level": "Federal",
+    "party": "ALP",
+    "margin": 14.5,
+    "swing": 0.2,
+    "marginal": false,
+    "color": "#E53E3E",
+    "pids": [
+      9,
+      22,
+      34
+    ],
+    "nextElec": "May 2025",
+    "incumbent": "Tanya Plibersek",
+    "key": "Tech Central, Barangaroo, cycleways — safe inner-city seat"
+  },
+  {
+    "id": "e9",
+    "name": "Parramatta",
+    "level": "State",
+    "party": "ALP",
+    "margin": 2.8,
+    "swing": -1.5,
+    "marginal": true,
+    "color": "#E53E3E",
+    "pids": [
+      1,
+      8,
+      10
+    ],
+    "nextElec": "Mar 2027",
+    "incumbent": "Donna Davis",
+    "key": "PLR Stage 2, Metro West — marginal state seat"
+  },
+  {
+    "id": "e10",
+    "name": "Ryde",
+    "level": "State",
+    "party": "LNP",
+    "margin": 1.4,
+    "swing": 3.8,
+    "marginal": true,
+    "color": "#3182CE",
+    "pids": [
+      12
+    ],
+    "nextElec": "Mar 2027",
+    "incumbent": "Jordan Lane",
+    "key": "Meadowbank precinct — NSW ultimate bellwether seat"
+  },
+  {
+    "id": "e11",
+    "name": "Balmain",
+    "level": "State",
+    "party": "Greens",
+    "margin": 4.2,
+    "swing": 1.1,
+    "marginal": false,
+    "color": "#38A169",
+    "pids": [
+      5,
+      20,
+      36
+    ],
+    "nextElec": "Mar 2027",
+    "incumbent": "Kobi Shetty",
+    "key": "WestConnex, WHT, Iron Cove Link — Greens opposing all tunnels"
+  },
+  {
+    "id": "e12",
+    "name": "Heathcote",
+    "level": "State",
+    "party": "ALP",
+    "margin": 3.1,
+    "swing": -0.9,
+    "marginal": true,
+    "color": "#E53E3E",
+    "pids": [
+      6,
+      18
+    ],
+    "nextElec": "Mar 2027",
+    "incumbent": "Lee Evans",
+    "key": "F6 Extension Stage 2, Kurnell Desal expansion"
+  },
+  {
+    "id": "e13",
+    "name": "North Sydney",
+    "level": "Federal",
+    "party": "IND",
+    "margin": 5.2,
+    "swing": 0.3,
+    "marginal": false,
+    "color": "#10D97A",
+    "pids": [
+      20,
+      29
+    ],
+    "nextElec": "May 2025",
+    "incumbent": "Kylea Tink",
+    "key": "Western Harbour Tunnel impacts, Crows Nest TOD 6,800 dwellings"
+  },
+  {
+    "id": "e14",
+    "name": "Bennelong",
+    "level": "Federal",
+    "party": "ALP",
+    "margin": 3.8,
+    "swing": -1.4,
+    "marginal": true,
+    "color": "#E53E3E",
+    "pids": [
+      12,
+      10
+    ],
+    "nextElec": "May 2025",
+    "incumbent": "Jerome Laxale",
+    "key": "Meadowbank housing, TOD rezonings — marginal outer-north seat"
+  },
+  {
+    "id": "e15",
+    "name": "Lindsay",
+    "level": "Federal",
+    "party": "ALP",
+    "margin": 2.1,
+    "swing": -2.8,
+    "marginal": true,
+    "color": "#E53E3E",
+    "pids": [
+      31,
+      2,
+      3
+    ],
+    "nextElec": "May 2025",
+    "incumbent": "Jodie Harrison",
+    "key": "WSA Airport, Aerotropolis housing — outer-western Sydney bellwether"
+  },
+  {
+    "id": "e16",
+    "name": "Macarthur",
+    "level": "Federal",
+    "party": "ALP",
+    "margin": 3.4,
+    "swing": -1.8,
+    "marginal": true,
+    "color": "#E53E3E",
+    "pids": [
+      37
+    ],
+    "nextElec": "May 2025",
+    "incumbent": "Dr Mike Freelander",
+    "key": "SWRL Extension — Oran Park and Narellan with no rail"
+  }
+]

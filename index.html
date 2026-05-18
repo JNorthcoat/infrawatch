@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>InfraWatch SYD — Sydney Infrastructure Intelligence</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+
+  <script type="module" crossorigin src="/infrawatch/assets/index-goUMjT2w.js"></script>
+  <link rel="stylesheet" crossorigin href="/infrawatch/assets/index-BHNZ3K3r.css">
+</head>
+<body>
+<div id="app">
+
+<!-- HEADER -->
+<div id="hdr">
+  <div class="logo">🏗</div>
+  <div class="logo-text">
+    <div class="t1">INFRAWATCH SYD</div>
+    <div class="t2">SYDNEY INFRASTRUCTURE INTELLIGENCE</div>
+  </div>
+  <div class="vdiv"></div>
+  <div class="stat"><div class="stat-v" id="h-total">—</div><div class="stat-l">Pipeline</div></div>
+  <div class="stat"><div class="stat-v" id="h-fed" style="color:var(--accent)">—</div><div class="stat-l">Federal</div></div>
+  <div class="stat"><div class="stat-v" id="h-state" style="color:#FFB020">—</div><div class="stat-l">NSW State</div></div>
+  <div class="stat"><div class="stat-v" id="h-private" style="color:#FF5FA0">—</div><div class="stat-l">Private/PPP</div></div>
+  <div class="stat"><div class="stat-v" id="h-count">—</div><div class="stat-l">Projects</div></div>
+  <div class="stat"><div class="stat-v" id="h-risk" style="color:var(--red)">—</div><div class="stat-l">At Risk</div></div>
+  <div class="vdiv"></div>
+  <div style="display:flex;gap:3px;align-items:center">
+    <span style="font-size:10px;color:var(--dim);letter-spacing:.1em">VIEW</span>
+    <button class="hdr-mode-pill on" onclick="setMode('cat',this)">Type</button>
+    <button class="hdr-mode-pill" onclick="setMode('risk',this)">Risk</button>
+    <button class="hdr-mode-pill" onclick="setMode('prob',this)">Status</button>
+    <button class="hdr-mode-pill" onclick="setMode('budget',this)">Budget</button>
+  </div>
+  <div class="vdiv"></div>
+  <div id="live"><div id="ldot"></div><span style="font-size:8px;color:var(--green);letter-spacing:.1em">LIVE</span></div>
+</div>
+
+<div id="sidebar-overlay" onclick="toggleSidebar()"></div>
+
+<div id="body">
+
+<!-- LEFT SIDEBAR -->
+<div id="left">
+<div id="sidebar-handle"></div>
+<div class="scr">
+
+  <div class="ss" style="border:none;padding-bottom:5px">
+    <span class="sl">🔍 Search</span>
+    <input type="text" id="search-input" placeholder="Project, electorate, council, suburb..."
+      oninput="onSearch()" autocomplete="off"
+      style="width:100%;background:var(--panel2);border:1px solid var(--border2);color:var(--text);padding:5px 8px;border-radius:3px;font-family:var(--mono);font-size:10px;outline:none">
+    <div id="search-results" style="display:none;margin-top:4px;max-height:160px;overflow-y:auto;background:var(--panel);border:1px solid var(--border2);border-radius:3px"></div>
+  </div>
+
+  <div class="ss">
+    <span class="sl">Categories</span>
+    <div id="cat-btns"></div>
+  </div>
+
+  <div class="ss">
+    <span class="sl">🏘 Property Price Layer</span>
+    <button class="sb" id="btn-prices" style="--ac:#10D97A" onclick="toggleF('showPrices','btn-prices','chk-prices')">
+      <div class="chk" id="chk-prices" style="--ac:#10D97A"></div>Suburb price growth
+    </button>
+    <div style="display:flex;gap:3px;margin-top:4px">
+      <button class="pill on" id="pmode-growth" onclick="setPriceMode('growth',this)">12mo Growth</button>
+      <button class="pill" id="pmode-projected" onclick="setPriceMode('projected',this)">Projected</button>
+    </div>
+    <div style="font-size:9px;color:var(--dim);padding:3px 6px 0;line-height:1.4">Green = strong growth. Projected mode uses timeline slider as target year and adds infrastructure-driven uplift.</div>
+  </div>
+
+  <div id="adv-body">
+
+    <div class="ss">
+      <span class="sl">Electoral Map</span>
+      <button class="sb" id="btn-el" style="--ac:#E53E3E" onclick="toggleF('showElec','btn-el','chk-el')">
+        <div class="chk" id="chk-el" style="--ac:#E53E3E"></div>Federal Seats (2025)
+      </button>
+      <button class="sb" id="btn-st" style="--ac:#3182CE" onclick="toggleF('showState','btn-st','chk-st')">
+        <div class="chk" id="chk-st" style="--ac:#3182CE"></div>NSW State Seats (2023)
+      </button>
+      <button class="sb" id="btn-coun" style="--ac:#FFB020" onclick="toggleF('showCouncils','btn-coun','chk-coun')">
+        <div class="chk" id="chk-coun" style="--ac:#FFB020"></div>Local Council Areas
+      </button>
+      <button class="sb" id="btn-iz" style="--ac:#3DDB8E" onclick="toggleF('showImpactZones','btn-iz','chk-iz')">
+        <div class="chk" id="chk-iz" style="--ac:#3DDB8E"></div>Project Impact Zones
+      </button>
+      <button class="sb" id="btn-m" style="--ac:#9B6DFF" onclick="toggleF('marginal','btn-m','chk-m')">
+        <div class="chk" id="chk-m" style="--ac:#9B6DFF"></div>Federal Marginals
+      </button>
+      <button class="sb" id="btn-ms" style="--ac:#FF5FA0" onclick="toggleF('marginalState','btn-ms','chk-ms')">
+        <div class="chk" id="chk-ms" style="--ac:#FF5FA0"></div>State Marginals
+      </button>
+      <button class="sb" id="btn-bt" style="--ac:#FF5FA0" onclick="toggleF('showBooths','btn-bt','chk-bt')">
+        <div class="chk" id="chk-bt" style="--ac:#FF5FA0"></div>Voting Patterns
+      </button>
+      <div style="font-size:9px;color:var(--dim);padding:3px 6px 0;line-height:1.4">Margin intensity: light = marginal, dark = very safe (Centre for Western Sydney scheme).<br>Federal Marginals (purple) and State Marginals (pink) toggle independently — both can be active at once.</div>
+    </div>
+
+    <div class="ss">
+      <span class="sl">📅 Completion Timeline</span>
+      <div style="display:flex;align-items:center;gap:6px;margin-bottom:4px">
+        <span id="timeline-label" style="font-size:9px;color:var(--muted);font-weight:700">All years</span>
+      </div>
+      <input type="range" id="timeline-slider" min="2025" max="2040" value="2040" step="1"
+        oninput="onTimelineChange(this.value)"
+        style="width:100%;cursor:pointer">
+      <div style="display:flex;justify-content:space-between;font-size:9px;color:var(--dim);margin-top:2px">
+        <span>2025</span><span>2030</span><span>2035</span><span>2040+</span>
+      </div>
+      <div style="font-size:9px;color:var(--dim);margin-top:3px;line-height:1.3">Show projects opening by selected year</div>
+    </div>
+
+    <div class="ss">
+      <span class="sl">Value Range</span>
+      <div style="display:flex;flex-wrap:wrap">
+        <button class="pill on" onclick="setRange('all',this)">All</button>
+        <button class="pill" onclick="setRange('sm',this)">&lt;$500M</button>
+        <button class="pill" onclick="setRange('md',this)">$500M–5B</button>
+        <button class="pill" onclick="setRange('lg',this)">$5–20B</button>
+        <button class="pill" onclick="setRange('xl',this)">&gt;$20B</button>
+      </div>
+    </div>
+
+    <div class="ss">
+      <span class="sl">Project Likelihood</span>
+      <div style="display:flex;flex-wrap:wrap">
+        <button class="pill on" id="prob-all" onclick="setProbFilter('all',this)">All</button>
+        <button class="pill" onclick="setProbFilter('high',this)">High chance</button>
+        <button class="pill" onclick="setProbFilter('med',this)">Moderate</button>
+        <button class="pill" onclick="setProbFilter('low',this)">Lower chance</button>
+      </div>
+    </div>
+
+    <div class="ss">
+      <span class="sl">Map Layers</span>
+      <div id="layer-toggles"></div>
+    </div>
+
+    <div class="ss">
+      <span class="sl">📊 Project Density Heatmap</span>
+      <button class="sb" id="btn-heat" style="--ac:#FF8B45" onclick="toggleF('showHeatmap','btn-heat','chk-heat')">
+        <div class="chk" id="chk-heat" style="--ac:#FF8B45"></div>Show density clusters
+      </button>
+      <div style="font-size:9px;color:var(--dim);padding:3px 6px 0;line-height:1.4">Highlights project hotspots — Aerotropolis, Bays, Parramatta, etc.</div>
+    </div>
+
+    <div class="ss">
+      <span class="sl">🏥 Amenity Layers</span>
+      <button class="sb" id="btn-hosp" style="--ac:#FF6677" onclick="toggleAmenity('showHospitals','btn-hosp','chk-hosp')">
+        <div class="chk" id="chk-hosp" style="--ac:#FF6677"></div>Hospitals
+      </button>
+      <button class="sb" id="btn-uni" style="--ac:#5DE0FF" onclick="toggleAmenity('showUnis','btn-uni','chk-uni')">
+        <div class="chk" id="chk-uni" style="--ac:#5DE0FF"></div>Universities
+      </button>
+      <button class="sb" id="btn-sch" style="--ac:#FFC444" onclick="toggleAmenity('showSchools','btn-sch','chk-sch')">
+        <div class="chk" id="chk-sch" style="--ac:#FFC444"></div>Top Schools (selective + grammar)
+      </button>
+      <button class="sb" id="btn-stn" style="--ac:#3DDB8E" onclick="toggleAmenity('showStations','btn-stn','chk-stn')">
+        <div class="chk" id="chk-stn" style="--ac:#3DDB8E"></div>Train Interchanges (existing)
+      </button>
+      <button class="sb" id="btn-tt" style="--ac:#56C596" onclick="toggleF('showTravelTime','btn-tt','chk-tt')">
+        <div class="chk" id="chk-tt" style="--ac:#56C596"></div>Travel time to CBD
+      </button>
+      <div style="font-size:9px;color:var(--dim);padding:3px 6px 0;line-height:1.4">Cross-reference amenity locations against project corridors and price growth.</div>
+    </div>
+
+    <div class="ss">
+      <span class="sl">Risk Classification <button onclick="toggleRiskLegend()" style="background:none;border:1px solid var(--border2);color:var(--dim);cursor:pointer;border-radius:2px;padding:0 4px;font-family:var(--font);font-size:8px;margin-left:3px">?</button></span>
+      <div style="margin-bottom:3px;display:flex;align-items:center;gap:5px"><div style="width:7px;height:7px;border-radius:50%;background:var(--green);flex-shrink:0"></div><div><div style="font-size:9px;color:var(--muted)">Low</div><div style="font-size:9px;color:var(--dim)">Score 0–30 · On track</div></div></div>
+      <div style="margin-bottom:3px;display:flex;align-items:center;gap:5px"><div style="width:7px;height:7px;border-radius:50%;background:var(--amber);flex-shrink:0"></div><div><div style="font-size:9px;color:var(--muted)">Medium</div><div style="font-size:9px;color:var(--dim)">Score 31–55</div></div></div>
+      <div style="margin-bottom:3px;display:flex;align-items:center;gap:5px"><div style="width:7px;height:7px;border-radius:50%;background:var(--red);flex-shrink:0"></div><div><div style="font-size:9px;color:var(--muted)">High</div><div style="font-size:9px;color:var(--dim)">Score 56–75</div></div></div>
+      <div style="display:flex;align-items:center;gap:5px"><div style="width:7px;height:7px;border-radius:50%;background:#CC0022;flex-shrink:0"></div><div><div style="font-size:9px;color:var(--muted)">Very High</div><div style="font-size:9px;color:var(--dim)">Score 76–100</div></div></div>
+    </div>
+
+    <div class="ss">
+      <span class="sl">Line Style Legend</span>
+      <div style="margin-bottom:4px;display:flex;align-items:center;gap:7px">
+        <svg width="36" height="6"><line x1="0" y1="3" x2="36" y2="3" stroke="#7A9AB8" stroke-width="3" stroke-linecap="round"/></svg>
+        <div style="font-size:9px;color:var(--muted)">Under construction / opening soon</div>
+      </div>
+      <div style="margin-bottom:4px;display:flex;align-items:center;gap:7px">
+        <svg width="36" height="6"><line x1="0" y1="3" x2="36" y2="3" stroke="#7A9AB8" stroke-width="3" stroke-linecap="round" stroke-dasharray="8,5"/></svg>
+        <div style="font-size:9px;color:var(--muted)">Funded — not yet started</div>
+      </div>
+      <div style="margin-bottom:4px;display:flex;align-items:center;gap:7px">
+        <svg width="36" height="6"><line x1="0" y1="3" x2="36" y2="3" stroke="#7A9AB8" stroke-width="3" stroke-linecap="round" stroke-dasharray="12,7"/></svg>
+        <div style="font-size:9px;color:var(--muted)">Proposed / unfunded</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:7px">
+        <svg width="36" height="6"><line x1="0" y1="3" x2="36" y2="3" stroke="#3A5060" stroke-width="2.5" stroke-linecap="round"/></svg>
+        <div style="font-size:9px;color:var(--dim)">Operational (context)</div>
+      </div>
+    </div>
+
+    <div class="ss" style="border:none">
+      <span class="sl">Bubble = Project Value</span>
+      <div style="display:flex;align-items:flex-end;gap:12px;padding-top:4px">
+        <div style="display:flex;flex-direction:column;align-items:center;gap:3px"><div style="width:10px;height:10px;border-radius:50%;border:1.5px solid var(--dimmer);opacity:.7"></div><span style="font-size:9px;color:var(--dim)">$1B</span></div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:3px"><div style="width:20px;height:20px;border-radius:50%;border:1.5px solid var(--dimmer);opacity:.7"></div><span style="font-size:9px;color:var(--dim)">$10B</span></div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:3px"><div style="width:36px;height:36px;border-radius:50%;border:1.5px solid var(--dimmer);opacity:.7"></div><span style="font-size:9px;color:var(--dim)">$100B</span></div>
+      </div>
+    </div>
+
+  </div><!-- /adv-body -->
+
+</div>
+</div>
+
+<!-- MAP -->
+<div id="map-wrap">
+  <div id="map"></div>
+
+  <!-- MAP TOOLBAR (top-left overlay) -->
+  <div id="map-toolbar" style="position:absolute;top:10px;left:10px;z-index:850;display:flex;flex-wrap:wrap;gap:4px;max-width:calc(100% - 240px)">
+    <button class="toolbar-btn" onclick="openPresets()">⭐ Presets</button>
+    <button class="toolbar-btn" onclick="exportCSV()">📊 CSV</button>
+    <button class="toolbar-btn" onclick="exportPNG()">📷 Image</button>
+    <button class="toolbar-btn" id="cmp-toggle-btn" onclick="toggleCompareMode()">⚖ Compare</button>
+    <button class="toolbar-btn" onclick="openSimulator()">🗳 Election Sim</button>
+    <button class="toolbar-btn" onclick="openNewsFeed()">📰 News</button>
+    <button class="toolbar-btn" onclick="openSnowflakeModal()">🔬 Infra Score</button>
+    <button class="toolbar-btn" onclick="openImpactRankings()">🏆 Top Impact</button>
+    <button class="toolbar-btn" onclick="openPriceProjection()">📈 Price Projection</button>
+    <button class="toolbar-btn" onclick="openSourcesModal()">📚 Sources</button>
+  </div>
+
+  <!-- COMPARE PANEL -->
+  <div id="cmp-panel">
+    <div id="cmp-content" style="font-size:9px;color:var(--muted)">Compare mode: select two projects from the list or map.</div>
+  </div>
+
+  <!-- MODAL OVERLAYS -->
+  <div id="modal-backdrop" style="position:fixed;inset:0;background:#000c;z-index:9999;display:none" onclick="closeModal()"></div>
+  <div id="modal-content" style="position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);background:var(--panel);border:1px solid var(--border2);border-radius:8px;box-shadow:0 8px 40px #000d;padding:0;z-index:10000;display:none;min-width:480px;max-width:92vw;max-height:88vh;overflow:hidden;font-family:var(--font)"></div>
+
+  <div id="map-bottom"><div id="map-coords"></div></div>
+  <button id="sidebar-toggle" onclick="toggleSidebar()">&#9776; Filters</button>
+
+  <!-- BOOTH 2PP LEGEND (visible only when showBooths is on) -->
+  <div id="booth-legend" style="position:absolute;top:10px;right:10px;background:var(--panel);border:1px solid var(--border2);border-radius:6px;padding:9px 11px;z-index:800;display:none;min-width:190px;box-shadow:0 4px 16px #0009;font-family:var(--font)">
+    <div style="font-size:9px;font-weight:700;letter-spacing:.1em;color:var(--text);margin-bottom:3px">📍 BOOTH 2PP HEATMAP</div>
+    <div style="font-size:10px;color:var(--dim);margin-bottom:6px;line-height:1.45">
+      <strong style="color:var(--muted)">2PP = Two-Party Preferred</strong>: after preferences flow, what % of voters chose ALP vs LNP. Suburb colour shows which party won that booth.
+    </div>
+    <div style="display:flex;flex-direction:column;gap:2px">
+      <div style="display:flex;align-items:center;gap:6px;font-size:9px"><div style="width:16px;height:8px;background:#A02030;border-radius:1px"></div><span style="color:var(--muted)">ALP &gt;15% lead</span></div>
+      <div style="display:flex;align-items:center;gap:6px;font-size:9px"><div style="width:16px;height:8px;background:#D64052;border-radius:1px"></div><span style="color:var(--muted)">Solid ALP</span></div>
+      <div style="display:flex;align-items:center;gap:6px;font-size:9px"><div style="width:16px;height:8px;background:#E88090;border-radius:1px"></div><span style="color:var(--muted)">Lean ALP</span></div>
+      <div style="display:flex;align-items:center;gap:6px;font-size:9px"><div style="width:16px;height:8px;background:#9F6FB0;border-radius:1px"></div><span style="color:var(--muted)">Marginal (±3%)</span></div>
+      <div style="display:flex;align-items:center;gap:6px;font-size:9px"><div style="width:16px;height:8px;background:#7090D0;border-radius:1px"></div><span style="color:var(--muted)">Lean LNP</span></div>
+      <div style="display:flex;align-items:center;gap:6px;font-size:9px"><div style="width:16px;height:8px;background:#3B6BC0;border-radius:1px"></div><span style="color:var(--muted)">Solid LNP</span></div>
+      <div style="display:flex;align-items:center;gap:6px;font-size:9px"><div style="width:16px;height:8px;background:#1F4AA0;border-radius:1px"></div><span style="color:var(--muted)">LNP &gt;15% lead</span></div>
+      <div style="display:flex;align-items:center;gap:6px;font-size:9px;margin-top:3px;padding-top:3px;border-top:1px solid var(--border2)"><div style="width:16px;height:8px;background:#10D97A;border-radius:1px"></div><span style="color:var(--muted)">IND won booth</span></div>
+      <div style="display:flex;align-items:center;gap:6px;font-size:9px"><div style="width:16px;height:8px;background:#38A169;border-radius:1px"></div><span style="color:var(--muted)">Greens primary</span></div>
+    </div>
+    <div style="margin-top:7px;padding-top:6px;border-top:1px solid var(--border2);font-size:10px;color:var(--dim);line-height:1.4">Hover a suburb for full breakdown.<br>Based on 2022 AEC 2PP results.<br><br><strong style="color:var(--muted)">How to read:</strong> Pink/red = ALP-leaning. Blue = LNP-leaning. Purple = highly marginal. Green/yellow = minor party or IND won the booth.</div>
+  </div>
+
+  <!-- ELECTORATE MARGIN LEGEND -->
+  <!-- PRICE LAYER LEGEND -->
+  <div id="price-legend" style="position:absolute;top:10px;right:240px;background:var(--panel);border:1px solid var(--border2);border-radius:6px;padding:8px 10px;z-index:801;display:none;min-width:180px;box-shadow:0 4px 16px #0009;font-family:var(--font)">
+    <div style="font-size:9px;font-weight:700;color:var(--text);margin-bottom:3px">🏘 <span id="price-legend-title">PROPERTY PRICE GROWTH</span></div>
+    <div id="price-legend-sub" style="font-size:9px;color:var(--dim);margin-bottom:5px;line-height:1.4">12-month change · Cotality / Domain Sep 2025</div>
+    <div style="display:flex;flex-direction:column;gap:2px">
+      <div style="display:flex;align-items:center;gap:6px;font-size:8px"><div style="width:14px;height:7px;background:#FF4455"></div><span style="color:var(--muted)">&lt; 3% (cooling)</span></div>
+      <div style="display:flex;align-items:center;gap:6px;font-size:8px"><div style="width:14px;height:7px;background:#FFB020"></div><span style="color:var(--muted)">3–5% (modest)</span></div>
+      <div style="display:flex;align-items:center;gap:6px;font-size:8px"><div style="width:14px;height:7px;background:#FFD060"></div><span style="color:var(--muted)">5–7% (steady)</span></div>
+      <div style="display:flex;align-items:center;gap:6px;font-size:8px"><div style="width:14px;height:7px;background:#65D67A"></div><span style="color:var(--muted)">7–10% (strong)</span></div>
+      <div style="display:flex;align-items:center;gap:6px;font-size:8px"><div style="width:14px;height:7px;background:#10D97A"></div><span style="color:var(--muted)">10–15% (hot)</span></div>
+      <div style="display:flex;align-items:center;gap:6px;font-size:8px"><div style="width:14px;height:7px;background:#00C0FF"></div><span style="color:var(--muted)">&gt;15% (boom)</span></div>
+    </div>
+  </div>
+  <div id="travel-legend" style="position:absolute;top:10px;right:440px;background:var(--panel);border:1px solid var(--border2);border-radius:6px;padding:8px 10px;z-index:801;display:none;min-width:170px;box-shadow:0 4px 16px #0009;font-family:var(--font)">
+    <div style="font-size:9px;font-weight:700;color:var(--text);margin-bottom:3px">🚆 TRAVEL TIME TO TOWN HALL</div>
+    <div style="font-size:9px;color:var(--dim);margin-bottom:5px;line-height:1.4">AM-peak rail + walk · heuristic estimate</div>
+    <div style="display:flex;flex-direction:column;gap:2px">
+      <div style="display:flex;align-items:center;gap:6px;font-size:8px"><div style="width:14px;height:7px;background:#C8E3C8"></div><span style="color:var(--muted)">&le; 15 min</span></div>
+      <div style="display:flex;align-items:center;gap:6px;font-size:8px"><div style="width:14px;height:7px;background:#7FC97F"></div><span style="color:var(--muted)">15 – 30 min</span></div>
+      <div style="display:flex;align-items:center;gap:6px;font-size:8px"><div style="width:14px;height:7px;background:#2E8B8A"></div><span style="color:var(--muted)">30 – 45 min</span></div>
+      <div style="display:flex;align-items:center;gap:6px;font-size:8px"><div style="width:14px;height:7px;background:#3D4A87"></div><span style="color:var(--muted)">45 – 60 min</span></div>
+      <div style="display:flex;align-items:center;gap:6px;font-size:8px"><div style="width:14px;height:7px;background:#1A1A1A"></div><span style="color:var(--muted)">&gt; 60 min</span></div>
+    </div>
+    <div style="font-size:8px;color:var(--dim);margin-top:5px;line-height:1.4;border-top:1px solid var(--border2);padding-top:4px">Walk to nearest station (4.5 km/h) + AM peak rail time. Methodology in Sources &amp; Methodology modal. ±5 min for well-connected suburbs, ±10 min for poorly-connected.</div>
+  </div>
+
+  <!-- COMPACT ELECTORAL LEGEND — collapsed by default, click to expand -->
+  <div id="elec-legend" style="position:absolute;top:10px;right:10px;background:var(--panel);border:1px solid var(--border2);border-radius:6px;z-index:800;display:none;box-shadow:0 4px 16px #0009;font-family:var(--font);overflow:hidden">
+    <div onclick="toggleElecLegend()" style="cursor:pointer;padding:6px 10px;display:flex;align-items:center;gap:6px;font-size:9px;font-weight:700;color:var(--text);user-select:none">
+      <span>🗳</span><span>Electoral Margins</span>
+      <span id="elec-legend-arrow" style="margin-left:auto;color:var(--dim);transition:transform .2s">▼</span>
+    </div>
+    <div id="elec-legend-body" style="padding:0 10px 9px;display:none;min-width:200px;max-width:230px">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:2px 8px;margin-bottom:4px">
+        <div style="font-size:8px;color:#E53E3E;font-weight:700">LABOR</div>
+        <div style="font-size:8px;color:#3182CE;font-weight:700">LIBERAL</div>
+        <div style="display:flex;align-items:center;gap:4px;font-size:8px"><div style="width:14px;height:7px;background:#FFB8C5"></div><span style="color:var(--muted)">0–5%</span></div>
+        <div style="display:flex;align-items:center;gap:4px;font-size:8px"><div style="width:14px;height:7px;background:#BDD6F0"></div><span style="color:var(--muted)">0–5%</span></div>
+        <div style="display:flex;align-items:center;gap:4px;font-size:8px"><div style="width:14px;height:7px;background:#E53E3E"></div><span style="color:var(--muted)">6–10%</span></div>
+        <div style="display:flex;align-items:center;gap:4px;font-size:8px"><div style="width:14px;height:7px;background:#3182CE"></div><span style="color:var(--muted)">6–10%</span></div>
+        <div style="display:flex;align-items:center;gap:4px;font-size:8px"><div style="width:14px;height:7px;background:#A01020"></div><span style="color:var(--muted)">11–20%</span></div>
+        <div style="display:flex;align-items:center;gap:4px;font-size:8px"><div style="width:14px;height:7px;background:#1F4AA0"></div><span style="color:var(--muted)">11–20%</span></div>
+        <div style="display:flex;align-items:center;gap:4px;font-size:8px"><div style="width:14px;height:7px;background:#5C0810"></div><span style="color:var(--muted)">21%+</span></div>
+        <div style="display:flex;align-items:center;gap:4px;font-size:8px"><div style="width:14px;height:7px;background:#0A2560"></div><span style="color:var(--muted)">21%+</span></div>
+      </div>
+      <div style="padding-top:4px;border-top:1px solid var(--border2);display:flex;gap:8px;margin-bottom:4px">
+        <div style="display:flex;align-items:center;gap:4px;font-size:8px"><div style="width:12px;height:7px;background:#38A169"></div><span style="color:var(--muted)">GRN</span></div>
+        <div style="display:flex;align-items:center;gap:4px;font-size:8px"><div style="width:12px;height:7px;background:#F9A825"></div><span style="color:var(--muted)">IND/Teal</span></div>
+      </div>
+      <div style="padding-top:4px;border-top:1px solid var(--border2);font-size:9px;color:var(--dim);line-height:1.45">
+        2PP = two-party preferred. 5% = a 2.5% swing flips it.<br>
+        Federal: solid · State: dashed · Council: dotted
+      </div>
+    </div>
+  </div>
+  <div id="risk-legend-tip">
+    <div style="font-size:11px;font-weight:700;color:var(--text);margin-bottom:10px">📊 Risk & Probability Model</div>
+    <div style="font-size:9px;color:var(--muted);line-height:1.6;margin-bottom:10px">Composite risk scored 0–100. Probability-to-proceed modelled on Australian project track record for similar stage/type/political context.</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;font-size:9px">
+      <div style="background:var(--panel2);padding:7px;border-radius:4px;border-left:2px solid var(--amber)"><div style="color:var(--amber);font-weight:700;margin-bottom:3px">Budget Risk (35%)</div><div style="color:var(--dim)">Cost overruns, estimate revisions, contract disputes</div></div>
+      <div style="background:var(--panel2);padding:7px;border-radius:4px;border-left:2px solid var(--purple)"><div style="color:var(--purple);font-weight:700;margin-bottom:3px">Political Risk (25%)</div><div style="color:var(--dim)">Marginal seats, election cycles, Canberra-Sydney tensions</div></div>
+      <div style="background:var(--panel2);padding:7px;border-radius:4px;border-left:2px solid var(--blue)"><div style="color:var(--blue);font-weight:700;margin-bottom:3px">Delivery Risk (20%)</div><div style="color:var(--dim)">Construction complexity, contractor capacity, supply chain</div></div>
+      <div style="background:var(--panel2);padding:7px;border-radius:4px;border-left:2px solid var(--cyan)"><div style="color:var(--cyan);font-weight:700;margin-bottom:3px">Planning Risk (12%)</div><div style="color:var(--dim)">Environmental approvals, heritage, community opposition</div></div>
+      <div style="background:var(--panel2);padding:7px;border-radius:4px;border-left:2px solid var(--teal);grid-column:span 2"><div style="color:var(--teal);font-weight:700;margin-bottom:3px">Market Risk (8%)</div><div style="color:var(--dim)">Demand forecasts, revenue assumptions, patronage models</div></div>
+    </div>
+    <div style="margin-top:10px;padding-top:8px;border-top:1px solid var(--border2);font-size:10px;color:var(--dim);line-height:1.5">Historic project data: Deloitte Access Economics Investment Monitor (Dec 2025). Probability-to-proceed modelled on Australian track record 2010–2024.</div>
+    <button onclick="toggleRiskLegend()" style="margin-top:8px;width:100%;padding:5px;background:var(--border2);border:none;border-radius:4px;color:var(--muted);cursor:pointer;font-family:var(--font);font-size:10px">Close</button>
+  </div>
+</div>
+
+<!-- RIGHT SIDEBAR -->
+<div id="right">
+  <div style="display:flex;border-bottom:1px solid var(--border);flex-shrink:0;background:var(--panel)">
+    <button class="rtab on" id="tab-news-btn" onclick="switchTab('news',this)" style="flex:1;padding:7px 3px;font-size:8px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;background:none;border:none;border-bottom:2px solid var(--blue);color:var(--blue);cursor:pointer;font-family:var(--font);margin-bottom:-1px">📡 NEWS</button>
+    <button class="rtab" id="tab-proj-btn" onclick="switchTab('proj',this)" style="flex:1;padding:7px 3px;font-size:8px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;background:none;border:none;border-bottom:2px solid transparent;color:var(--dim);cursor:pointer;font-family:var(--font);margin-bottom:-1px">📋 PROJECTS</button>
+    <button class="rtab" id="tab-elec-btn" onclick="switchTab('elec',this)" style="flex:1;padding:7px 3px;font-size:8px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;background:none;border:none;border-bottom:2px solid transparent;color:var(--dim);cursor:pointer;font-family:var(--font);margin-bottom:-1px">🗳 SEATS</button>
+    <button class="rtab" id="tab-invest-btn" onclick="switchTab('invest',this)" style="flex:1;padding:7px 3px;font-size:8px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;background:none;border:none;border-bottom:2px solid transparent;color:var(--dim);cursor:pointer;font-family:var(--font);margin-bottom:-1px">🏡 INVEST</button>
+    <button class="rtab" id="tab-politics-btn" onclick="switchTab('politics',this)" style="flex:1;padding:7px 3px;font-size:8px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;background:none;border:none;border-bottom:2px solid transparent;color:var(--dim);cursor:pointer;font-family:var(--font);margin-bottom:-1px">🏛 OUTLOOK</button>
+  </div>
+
+  <!-- NEWS TAB -->
+  <div id="tab-news" style="display:flex;flex-direction:column;flex:1;overflow:hidden">
+    <div style="padding:7px 10px;border-bottom:1px solid var(--border);flex-shrink:0;background:var(--panel)">
+      <div style="display:flex;gap:3px;flex-wrap:wrap;margin-bottom:5px" id="news-tag-row">
+        <button class="ntag-btn on" onclick="setNewsTag('',this)">All</button>
+        <button class="ntag-btn" onclick="setNewsTag('transport',this)">Transport</button>
+        <button class="ntag-btn" onclick="setNewsTag('housing',this)">Housing</button>
+        <button class="ntag-btn" onclick="setNewsTag('energy',this)">Energy</button>
+        <button class="ntag-btn" onclick="setNewsTag('water',this)">Water</button>
+        <button class="ntag-btn" onclick="setNewsTag('political',this)">Political</button>
+        <button class="ntag-btn" onclick="setNewsTag('budget',this)">Budget</button>
+      </div>
+      <input id="news-search" oninput="filterNews()" placeholder="search news…" style="width:100%;background:var(--panel2);border:1px solid var(--border2);border-radius:3px;padding:4px 7px;color:var(--text);font-family:var(--font);font-size:9px;outline:none"/>
+    </div>
+    <div class="scr" id="news-list"></div>
+  </div>
+
+  <!-- PROJECTS TAB -->
+  <div id="tab-proj" style="display:none;flex-direction:column;flex:1;overflow:hidden">
+    <div style="padding:7px 10px;border-bottom:1px solid var(--border);flex-shrink:0;background:var(--panel)">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:5px">
+        <span style="font-size:9px;color:var(--muted)"><span id="pcount">—</span> projects</span>
+        <div style="display:flex;gap:2px">
+          <button class="mpill on" id="sort-val" onclick="setSort('val',this)">$Value</button>
+          <button class="mpill" id="sort-prob" onclick="setSort('prob',this)">Prob</button>
+          <button class="mpill" id="sort-risk" onclick="setSort('risk',this)">Risk</button>
+        </div>
+      </div>
+    </div>
+    <div class="scr" id="proj-list"></div>
+  </div>
+
+  <!-- ELECTORATES TAB -->
+  <div id="tab-elec" style="display:none;flex-direction:column;flex:1;overflow:hidden">
+    <div style="padding:7px 10px;border-bottom:1px solid var(--border);flex-shrink:0;background:var(--panel)">
+      <div style="font-size:10px;font-weight:700;color:var(--text);margin-bottom:2px">Sydney Electorates — Infrastructure Impact</div>
+      <div style="font-size:10px;color:var(--muted)">Federal &amp; State seats. Marginal = &lt;5% margin. Click to highlight projects.</div>
+    </div>
+    <div class="scr" id="elec-list"></div>
+  </div>
+
+  <!-- INVEST TAB -->
+  <div id="tab-invest" style="display:none;flex-direction:column;flex:1;overflow:hidden">
+    <div class="scr" id="invest-panel"></div>
+  </div>
+
+  <!-- POLITICAL OUTLOOK TAB -->
+  <div id="tab-politics" style="display:none;flex-direction:column;flex:1;overflow:hidden">
+    <div class="scr" id="politics-panel"></div>
+  </div>
+</div>
+
+</div><!-- /body -->
+</div><!-- /app -->
+<script>
+function toggleAdvanced() {
+  var b = document.getElementById('adv-body');
+  var a = document.getElementById('adv-arrow');
+  var open = b.style.display === 'none';
+  b.style.display = open ? 'block' : 'none';
+  a.textContent = open ? '▲' : '▼';
+}
+</script>
+
+</body>
+</html>
