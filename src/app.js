@@ -2807,7 +2807,7 @@ function renderMarkers(){
         color:col, weight:lw, opacity:lo,
         dashArray:crd.dashArray||null, lineCap:"round", lineJoin:"round"
       }).addTo(map);
-      line.bindPopup(popup, {maxWidth:340});
+      line.bindPopup(popup, {maxWidth:340, autoPanPaddingTopLeft:[10,55]});
       line.on("click", ()=>{ ST.selId=p.id; updateMarkerIcons(); buildProjList(); });
       leafletMarkers[p.id] = line;
 
@@ -2819,7 +2819,7 @@ function renderMarkers(){
           fillOpacity:isSel?1:0.92
         }).addTo(map);
         dot.bindTooltip(s.name, {className:"stn-tooltip", direction:"top", offset:[0,-5]});
-        dot.bindPopup(popup, {maxWidth:340});
+        dot.bindPopup(popup, {maxWidth:340, autoPanPaddingTopLeft:[10,55]});
         dot.on("click", ()=>{ ST.selId=p.id; updateMarkerIcons(); buildProjList(); });
         leafletMarkers[`stn_${p.id}_${s.name.replace(/\W/g,"_")}`] = dot;
       });
@@ -2830,7 +2830,7 @@ function renderMarkers(){
         radius:isSel?9:6, fillColor:col, color:isSel?"#fff":col,
         weight:isSel?2.5:1.8, fillOpacity:isSel?1:0.92
       }).addTo(map);
-      anch.bindPopup(popup, {maxWidth:340});
+      anch.bindPopup(popup, {maxWidth:340, autoPanPaddingTopLeft:[10,55]});
       anch.on("click", ()=>{ ST.selId=p.id; updateMarkerIcons(); buildProjList(); });
       leafletMarkers[`anchor_${p.id}`] = anch;
 
