@@ -33,15 +33,15 @@ async function refreshLiveNews(force = false) {
 // ══════════════════════════════════════════════════════════════
 
 const CAT = {
-  transport:{icon:"🚇",color:"#2A8EFF",label:"Transport"},
+  transport:{icon:"🚇",color:"#2D6A8A",label:"Transport"},
   housing:  {icon:"🏘",color:"#10D97A",label:"Housing"},
   energy:   {icon:"⚡",color:"#FFB020",label:"Energy"},
-  water:    {icon:"💧",color:"#00CFFF",label:"Water"},
+  water:    {icon:"💧",color:"#2E9B8A",label:"Water"},
   other:    {icon:"🏗",color:"#9B6DFF",label:"Other"},
 };
 
 const RCOL = {"Low":"#10D97A","Medium":"#FFB020","High":"#FF4455","Very High":"#CC0022"};
-const SCOL = {critical:"#FF4455",high:"#FFB020",medium:"#2A8EFF",low:"#10D97A"};
+const SCOL = {critical:"#FF4455",high:"#FFB020",medium:"#536253",low:"#10D97A"};
 
 // ══ CORRIDOR & GEOMETRY DATA ══
 // VISUAL LANGUAGE:
@@ -612,7 +612,7 @@ function markerColor(p){
   if(ST.mode === "budget"){
     if(p.val > 20000) return "#FF4455";
     if(p.val > 5000) return "#FFB020";
-    if(p.val > 500) return "#2A8EFF";
+    if(p.val > 500) return "#536253";
     return "#10D97A";
   }
   return CAT[p.cat]?.color || "#fff";
@@ -1182,7 +1182,7 @@ function openNewsFeed(){
       ${arts.map(a => {
         const mentioned = (a.pids||[]).map(id => P.find(x => x.id === id)).filter(Boolean);
         const tags = mentioned.slice(0,4).map(p => `<span style="font-size:7px;padding:1px 5px;background:${CAT[p.cat]?.color}15;color:${CAT[p.cat]?.color};border-radius:2px;border:1px solid ${CAT[p.cat]?.color}33">${p.name.split(" ").slice(0,3).join(" ")}</span>`).join(" ");
-        return `<div style="padding:9px 18px;border-bottom:1px solid var(--border);cursor:pointer" onmouseover="this.style.background='#0A1420'" onmouseout="this.style.background='transparent'">
+        return `<div style="padding:9px 18px;border-bottom:1px solid var(--border);cursor:pointer" onmouseover="this.style.background='var(--panel2)'" onmouseout="this.style.background=''">
           <div style="display:flex;justify-content:space-between;gap:10px;margin-bottom:3px">
             <div style="font-size:10px;color:var(--text);font-weight:600;line-height:1.3">${a.title}</div>
             <div style="font-size:10px;color:var(--dim);white-space:nowrap">${a.date}</div>
@@ -1626,7 +1626,7 @@ function openImpactRankings(){
     if(!items.length) return `<div style="font-size:9px;color:var(--dim);padding:4px">No data</div>`;
     return items.map((x, i) => `
       <div onclick="closeModal();selFromList(${x.p.id})" style="padding:5px 6px;border-bottom:1px solid var(--border);cursor:pointer;display:grid;grid-template-columns:18px 1fr auto;gap:6px;align-items:center"
-           onmouseover="this.style.background='#0A1420'" onmouseout="this.style.background='transparent'">
+           onmouseover="this.style.background='var(--panel2)'" onmouseout="this.style.background=''">
         <div style="font-size:11px;font-weight:700;color:${i===0?'#FFB020':'var(--dim)'};text-align:center">${i+1}</div>
         <div>
           <div style="font-size:9px;font-weight:700;color:var(--text);line-height:1.2">${x.p.name}</div>
@@ -1649,7 +1649,7 @@ function openImpactRankings(){
         ${ranked("dwellings", v => v >= 1000 ? (v/1000).toFixed(0)+"k" : v)}
       </div>
       <div>
-        <div style="font-size:10px;color:#2A8EFF;font-weight:700;margin-bottom:5px;letter-spacing:.06em">👥 POPULATION UPLIFT</div>
+        <div style="font-size:10px;color:#536253;font-weight:700;margin-bottom:5px;letter-spacing:.06em">👥 POPULATION UPLIFT</div>
         ${ranked("population", v => v >= 1000 ? (v/1000).toFixed(0)+"k" : v)}
       </div>
       <div>
@@ -2632,7 +2632,7 @@ function openSuburbReport(rawName) {
     { label: 'INFRA',     score: Math.round(composite), color: infra.color  },
     { label: 'POLITICAL', score: sf.political.score,    color: '#9B6DFF'    },
     { label: 'BUDGET',    score: sf.budget.score,       color: '#FFC444'    },
-    { label: 'SPEND',     score: sf.spend.score,        color: '#2A8EFF'    },
+    { label: 'SPEND',     score: sf.spend.score,        color: '#536253'    },
     { label: 'MOMENTUM',  score: sf.momentum.score,     color: '#10D97A'    },
     { label: 'DIVERSITY', score: sf.diversity.score,    color: '#FF8B45'    },
   ];
@@ -3233,7 +3233,7 @@ function electorateTooltip(e, isState){
     <div style="margin-top:5px;padding-top:4px;border-top:1px solid var(--border2);font-size:9px;color:#8AA8C0">
       ${band}${e.swing!==0?` · <span style="color:${swingCol}">${swingArr} ${Math.abs(e.swing).toFixed(1)}% swing</span>`:""}
     </div>
-    ${projectCount > 0 ? `<div style="margin-top:3px;font-size:8px;color:#2A8EFF">🏗 ${projectCount} active infrastructure project${projectCount>1?"s":""}</div>` : ""}
+    ${projectCount > 0 ? `<div style="margin-top:3px;font-size:8px;color:#536253">🏗 ${projectCount} active infrastructure project${projectCount>1?"s":""}</div>` : ""}
     ${noteHtml}
   </div>`;
 }
@@ -3591,13 +3591,13 @@ function buildPopup(p){
 
   const fundingHtml = `
     <div style="display:flex;height:10px;border-radius:3px;overflow:hidden;background:var(--panel2);margin-bottom:6px">
-      ${fedPct>0?`<div style="width:${fedPct}%;background:#2A8EFF" title="Federal ${fedPct}%"></div>`:""}
+      ${fedPct>0?`<div style="width:${fedPct}%;background:#536253" title="Federal ${fedPct}%"></div>`:""}
       ${statePct>0?`<div style="width:${statePct}%;background:#FFB020" title="State ${statePct}%"></div>`:""}
       ${privatePct>0?`<div style="width:${privatePct}%;background:#FF5FA0" title="Private ${privatePct}%"></div>`:""}
       ${localPct>0?`<div style="width:${localPct}%;background:#10D97A" title="Local ${localPct}%"></div>`:""}
       ${otherPct>0?`<div style="width:${otherPct}%;background:#9B6DFF" title="Other ${otherPct}%"></div>`:""}
     </div>
-    ${fundRow("Federal", fedPct, p.fed, "#2A8EFF")}
+    ${fundRow("Federal", fedPct, p.fed, "#536253")}
     ${fundRow("State (NSW)", statePct, f.state, "#FFB020")}
     ${fundRow("Private / PPP", privatePct, f.private, "#FF5FA0")}
     ${fundRow("Local Council", localPct, f.local, "#10D97A")}
@@ -3635,7 +3635,7 @@ function buildPopup(p){
       if(!im) return "";
       const cells = [];
       if(im.dwellings > 0) cells.push(`<div class="pu-impact-cell"><div class="pu-impact-num" style="color:#10D97A">${im.dwellings>=1000?(im.dwellings/1000).toFixed(0)+"k":im.dwellings}</div><div class="pu-impact-lbl">dwellings unlocked</div></div>`);
-      if(im.population > 0) cells.push(`<div class="pu-impact-cell"><div class="pu-impact-num" style="color:#2A8EFF">${im.population>=1000?(im.population/1000).toFixed(0)+"k":im.population}</div><div class="pu-impact-lbl">population uplift</div></div>`);
+      if(im.population > 0) cells.push(`<div class="pu-impact-cell"><div class="pu-impact-num" style="color:#536253">${im.population>=1000?(im.population/1000).toFixed(0)+"k":im.population}</div><div class="pu-impact-lbl">population uplift</div></div>`);
       if(im.jobs > 0) cells.push(`<div class="pu-impact-cell"><div class="pu-impact-num" style="color:#FFB020">${im.jobs>=1000?(im.jobs/1000).toFixed(0)+"k":im.jobs}</div><div class="pu-impact-lbl">jobs (direct + indirect)</div></div>`);
       if(im.travelMins > 0) cells.push(`<div class="pu-impact-cell"><div class="pu-impact-num" style="color:#FF8B45">−${im.travelMins} min</div><div class="pu-impact-lbl">travel time saving</div></div>`);
       if(im.propertyUplift !== 0) cells.push(`<div class="pu-impact-cell"><div class="pu-impact-num" style="color:${im.propertyUplift>0?'#10D97A':'#FF4455'}">${im.propertyUplift>0?'+':''}${im.propertyUplift}%</div><div class="pu-impact-lbl">property value uplift</div></div>`);
@@ -3894,7 +3894,7 @@ function buildInvestPanel(){
     <div style="font-size:10px;color:var(--muted);line-height:1.5">Infrastructure-led investment opportunities, ranked by proximity to high-probability projects. Click to fly to location.</div>
   </div>`;
   HOTSPOTS.sort((a,b)=>b.score-a.score).forEach((h,i)=>{
-    const scoreCol = h.score>=85?"#10D97A":h.score>=70?"#FFB020":"#2A8EFF";
+    const scoreCol = h.score>=85?"#10D97A":h.score>=70?"#FFB020":"#536253";
     const relProj = h.pids.map(id=>{const p=P.find(x=>x.id===id);return p?`<span style="font-size:7px;color:${CAT[p.cat]?.color};background:${CAT[p.cat]?.color}12;border:1px solid ${CAT[p.cat]?.color}25;padding:1px 4px;border-radius:2px;margin:1px">${CAT[p.cat]?.icon} ${p.name.split(" ").slice(0,3).join(" ")}</span>`:""}).filter(Boolean).join("");
     html += `<div class="hs-card" style="--hs-col:${scoreCol}" onclick="flyToSpot('${h.id}')">
       <div style="background:${scoreCol}10;padding:8px 10px 6px;border-bottom:1px solid ${scoreCol}20">
@@ -4028,7 +4028,7 @@ function buildPoliticsPanel(){
       </div>
       <div style="font-size:10px;color:var(--dim);line-height:1.45;padding:5px 7px;background:var(--panel);border-radius:3px;border-left:2px solid ${riskCol};margin-bottom:4px">${pi.risk}</div>
       ${affectedNames.length ? `<div style="display:flex;flex-wrap:wrap;gap:2px">
-        ${affectedNames.slice(0,4).map(n => `<span style="font-size:7px;padding:1px 4px;border-radius:2px;background:#2A8EFF18;color:#2A8EFF;border:1px solid #2A8EFF33">🏗 ${n}</span>`).join("")}
+        ${affectedNames.slice(0,4).map(n => `<span style="font-size:7px;padding:1px 4px;border-radius:2px;background:#53625318;color:#536253;border:1px solid #53625333">🏗 ${n}</span>`).join("")}
       </div>` : ""}
     </div>`;
   });
@@ -4293,9 +4293,7 @@ export async function _boot() {
   COUNCILS_GEOJSON = _data.COUNCILS_GEOJSON;
 
   // ── Original boot sequence ──
-  // ntag-btn class needed
-  document.querySelectorAll(".ntag-btn").forEach(b=>b.style.cssText="font-size:8px;padding:2px 6px;border-radius:3px;cursor:pointer;font-family:var(--font);background:none;border:1px solid var(--border2);color:var(--dim);transition:all .12s;margin:1px");
-  
+
   // ══════════════════════════════════════════════════════════════
   // BOOT
   // ══════════════════════════════════════════════════════════════
