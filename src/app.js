@@ -4190,6 +4190,15 @@ function setMode(m, btn){
   updateMarkerIcons();
 }
 
+function toggleSidebar(){
+  const left = document.getElementById('left');
+  const overlay = document.getElementById('sidebar-overlay');
+  const btn = document.getElementById('sidebar-toggle');
+  const open = left.classList.toggle('open');
+  overlay.classList.toggle('show', open);
+  if(btn) btn.classList.toggle('open', open);
+}
+
 function toggleF(f, btnId, chkId){
   ST[f] = !ST[f];
   document.getElementById(btnId).classList.toggle("on", ST[f]);
@@ -4329,7 +4338,7 @@ export async function _boot() {
     openImpactRankings, openNewsFeed, openPresets, openPriceProjection,
     openSimulator, openSnowflakeModal, openSourcesModal, setMode, setNewsTag,
     setPriceMode, setProbFilter, setRange, setSort, switchTab, toggleAmenity,
-    toggleCompareMode, toggleElecLegend, toggleF, toggleRiskLegend,
+    toggleCompareMode, toggleElecLegend, toggleF, toggleRiskLegend, toggleSidebar,
     // From dynamically-generated HTML
     analyseNewsItem, analyseProject, applyFilters, applySimulation,
     deletePreset, filterByPolicy, flyToSpot, saveCurrentPreset,

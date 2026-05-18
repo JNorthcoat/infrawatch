@@ -41,10 +41,13 @@
   <div id="live"><div id="ldot"></div><span style="font-size:8px;color:var(--green);letter-spacing:.1em">LIVE</span></div>
 </div>
 
+<div id="sidebar-overlay" onclick="toggleSidebar()"></div>
+
 <div id="body">
 
 <!-- LEFT SIDEBAR -->
 <div id="left">
+<div id="sidebar-handle"></div>
 <div class="scr">
 
   <div class="ss" style="border:none;padding-bottom:5px">
@@ -238,6 +241,7 @@
   <div id="modal-content" style="position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);background:var(--panel);border:1px solid var(--border2);border-radius:8px;box-shadow:0 8px 40px #000d;padding:0;z-index:10000;display:none;min-width:480px;max-width:92vw;max-height:88vh;overflow:hidden;font-family:var(--font)"></div>
 
   <div id="map-bottom"><div id="map-coords"></div></div>
+  <button id="sidebar-toggle" onclick="toggleSidebar()">&#9776; Filters</button>
 
   <!-- BOOTH 2PP LEGEND (visible only when showBooths is on) -->
   <div id="booth-legend" style="position:absolute;top:10px;right:10px;background:var(--panel);border:1px solid var(--border2);border-radius:6px;padding:9px 11px;z-index:800;display:none;min-width:190px;box-shadow:0 4px 16px #0009;font-family:var(--font)">
