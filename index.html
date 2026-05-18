@@ -69,9 +69,6 @@
       <button class="pill on" id="pmode-growth" onclick="setPriceMode('growth',this)">12mo Growth</button>
       <button class="pill" id="pmode-projected" onclick="setPriceMode('projected',this)">Projected</button>
     </div>
-    <button class="sb" id="btn-tt" style="--ac:#56C596;margin-top:6px" onclick="toggleF('showTravelTime','btn-tt','chk-tt')">
-      <div class="chk" id="chk-tt" style="--ac:#56C596"></div>Travel time to CBD
-    </button>
     <div style="font-size:9px;color:var(--dim);padding:3px 6px 0;line-height:1.4">Green = strong growth. Projected mode uses timeline slider as target year and adds infrastructure-driven uplift.</div>
   </div>
 
@@ -164,6 +161,9 @@
       </button>
       <button class="sb" id="btn-stn" style="--ac:#3DDB8E" onclick="toggleAmenity('showStations','btn-stn','chk-stn')">
         <div class="chk" id="chk-stn" style="--ac:#3DDB8E"></div>Train Interchanges (existing)
+      </button>
+      <button class="sb" id="btn-tt" style="--ac:#56C596" onclick="toggleF('showTravelTime','btn-tt','chk-tt')">
+        <div class="chk" id="chk-tt" style="--ac:#56C596"></div>Travel time to CBD
       </button>
       <div style="font-size:9px;color:var(--dim);padding:3px 6px 0;line-height:1.4">Cross-reference amenity locations against project corridors and price growth.</div>
     </div>
