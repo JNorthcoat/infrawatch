@@ -29,7 +29,7 @@
   --accent-container:#d0e9d4;
   --sage:#536253;
   --font:Inter,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;
-  --mono:'JetBrains Mono','IBM Plex Mono','Courier New',monospace;
+  --mono:Inter,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
 }
 html,body{height:100%;overflow:hidden;background:var(--bg);color:var(--text);font-family:var(--font);font-size:13px;line-height:1.5;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
 #app{display:flex;flex-direction:column;height:100vh;overflow:hidden}
